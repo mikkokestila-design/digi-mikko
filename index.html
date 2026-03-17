@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- AI Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot">
+        <div class="chatbot-header">
+            <span class="chatbot-title">🤖 Digi-Avustaja</span>
+            <button class="chatbot-minimize" id="chatbotMinimize">−</button>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="bot-message">Hei! Olen Digi-Mikkon AI-avustaja. Miten voin auttaa sinua tänään?</div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." />
+                <button id="chatbotSend">Lähetä</button>
+            </div>
+        </div>
+        <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+    </div>
+
     <header>
         <nav>
             <div class="logo">
@@ -41,6 +59,55 @@
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn btn-primary">Varaa aika</a>
                     <a href="tel:+358401234567" class="btn btn-secondary">📞 Soita heti</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview Section -->
+        <section class="services-preview">
+            <div class="container">
+                <h2>Palvelumme</h2>
+                <p class="section-subtitle">Autamme sinua kaikissa digitaalisissa tarpeissasi</p>
+                <div class="services-preview-grid">
+                    <div class="service-preview-card">
+                        <div class="service-preview-icon">🏠</div>
+                        <h3>Kotikäynti</h3>
+                        <p>Henkilökohtainen apu kotonasi</p>
+                        <span class="service-price">50 €/tunti</span>
+                    </div>
+                    <div class="service-preview-card">
+                        <div class="service-preview-icon">💻</div>
+                        <h3>Etätuki</h3>
+                        <p>Nopea apu puhelimitse tai etäyhteydellä</p>
+                        <span class="service-price">40 €/tunti</span>
+                    </div>
+                    <div class="service-preview-card">
+                        <div class="service-preview-icon">🔒</div>
+                        <h3>Tietoturva</h3>
+                        <p>Suojaa tietosi ja laitteet uhkilta</p>
+                        <span class="service-price">60 €/tunti</span>
+                    </div>
+                    <div class="service-preview-card">
+                        <div class="service-preview-icon">🤖</div>
+                        <h3>Tekoäly-opastus</h3>
+                        <p>Opi käyttämään ChatGPT:tä ja muita AI-työkaluja</p>
+                        <span class="service-price">50 €/tunti</span>
+                    </div>
+                    <div class="service-preview-card">
+                        <div class="service-preview-icon">📱</div>
+                        <h3>Laitteen käyttöönotto</h3>
+                        <p>Uusi puhelin tai tietokone välittömään käyttöön</p>
+                        <span class="service-price">80 € (2h)</span>
+                    </div>
+                    <div class="service-preview-card">
+                        <div class="service-preview-icon">👨‍🏫</div>
+                        <h3>Henkilökohtainen koulutus</h3>
+                        <p>Räätälöity koulutus tarpeillesi</p>
+                        <span class="service-price">120 € (3h)</span>
+                    </div>
+                </div>
+                <div class="cta-center">
+                    <a href="services.html" class="btn btn-primary">Katso kaikki palvelut</a>
                 </div>
             </div>
         </section>

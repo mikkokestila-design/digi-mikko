@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- AI Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot">
+        <div class="chatbot-header">
+            <span class="chatbot-title">🤖 Digi-Avustaja</span>
+            <button class="chatbot-minimize" id="chatbotMinimize">−</button>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="bot-message">Hei! Olen Digi-Mikkon AI-avustaja. Miten voin auttaa sinua tänään?</div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." />
+                <button id="chatbotSend">Lähetä</button>
+            </div>
+        </div>
+        <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+    </div>
+
     <header>
         <nav>
             <div class="logo">

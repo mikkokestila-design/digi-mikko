@@ -272,4 +272,118 @@ if ('serviceWorker' in navigator) {
     //         console.log('ServiceWorker registration failed: ', err);
     //     });
     // });
+    
+    // ===================================
+    // AI CHATBOT FUNCTIONALITY
+    // ===================================
+    
+    const chatbotWidget = document.getElementById('chatbot');
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotMinimize = document.getElementById('chatbotMinimize');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const chatbotSend = document.getElementById('chatbotSend');
+    
+    if (chatbotWidget) {
+        // Toggle chatbot open/close
+        chatbotToggle.addEventListener('click', function() {
+            chatbotWidget.classList.remove('minimized');
+            chatbotWidget.classList.add('open');
+        });
+        
+        // Minimize chatbot
+        chatbotMinimize.addEventListener('click', function() {
+            chatbotWidget.classList.remove('open');
+            chatbotWidget.classList.add('minimized');
+        });
+        
+        // Send message function
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (!message) return;
+            
+            // Add user message to chat
+            addMessage(message, 'user');
+            chatbotInput.value = '';
+            
+            // Simulate bot response (in production, this would call an AI API)
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+        
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = sender === 'user' ? 'user-message' : 'bot-message';
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+        
+        // Get bot response based on keywords
+        function getBotResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            // Knowledge base responses
+            if (lowerMessage.includes('hinta') || lowerMessage.includes('maksa') || lowerMessage.includes('kustann')) {
+                return 'Kotikäynti on 50€/tunti + matkakulut. Etätuki on 40€/tunti ilman matkakuluja. Ensimmäinen 15 min pikatuesta on ilmaista! Katso kaikki hinnastosta: https://digi-mikko.netlify.app/services.html';
+            }
+            
+            if (lowerMessage.includes('aika') || lowerMessage.includes('varaa') || lowerMessage.includes('sopimus')) {
+                return 'Voit varata ajan soittamalla numeroon 040 123 4567 tai lähettämällä viestin yhteystietolomakkeella. Olen käytettävissä ma-pe 9-18 ja la 10-14.';
+            }
+            
+            if (lowerMessage.includes('puhelin') || lowerMessage.includes('älypuhelin') || lowerMessage.includes('iphone') || lowerMessage.includes('android')) {
+                return 'Autan mielellään älypuhelimien kanssa! Opetan peruskäytön, sovellusten asennuksen, kuvien ottamisen ja paljon muuta. Katso ilmaiset ohjeet: https://digi-mikko.netlify.app/self-help.html';
+            }
+            
+            if (lowerMessage.includes('tietokone') || lowerMessage.includes('windows') || lowerMessage.includes('pc')) {
+                return 'Tietokoneiden kanssa olen kotoissani! Autan käyttöönotossa, ongelmien ratkaisussa ja peruskäytön opetuksessa. Voin tulla kotiin tai auttaa etänä.';
+            }
+            
+            if (lowerMessage.includes('sähköposti') || lowerMessage.includes('gmail') || lowerMessage.includes('outlook')) {
+                return 'Sähköposti on tärkeä! Opetan sinulle miten lähetetään viestejä, liitetään tiedostoja ja pidetään sähköposti turvallisena. Meillä on myös ilmainen ohje: https://digi-mikko.netlify.app/self-help.html#send-email';
+            }
+            
+            if (lowerMessage.includes('pankki') || lowerMessage.includes('verkkopankki') || lowerMessage.includes('e-lasku')) {
+                return 'Verkkopankin käyttö turvallisesti on tärkeää! Opetan sinulle kaikki turvallisuusvinkit ja perustoiminnot. Katso myös turvallisuusohje: https://digi-mikko.netlify.app/self-help.html#online-banking';
+            }
+            
+            if (lowerMessage.includes('turva') || lowerMessage.includes('huijaus') || lowerMessage.includes('salasana')) {
+                return 'Tietoturva on erittäin tärkeää! Tarjoan tietoturvapalveluja joissa käydään läpi kaikki turvallisuusasetukset, salasanojen hallinta ja huijausten tunnistaminen. Uusi palvelumme: Tietoturvatarkastus 60€/tunti.';
+            }
+            
+            if (lowerMessage.includes('tekoäly') || lowerMessage.includes('ai') || lowerMessage.includes('chatgpt')) {
+                return 'Tekoäly on tulevaisuutta! Tarjoan tekoäly-opastusta jossa opit käyttämään ChatGPT:tä, kuvageneraattoreita ja muita AI-työkaluja. Tämä on uusi palvelumme 50€/tunti. Kiinnostaako?';
+            }
+            
+            if (lowerMessage.includes('zoom') || lowerMessage.includes('teams') || lowerMessage.includes('videokeskustelu') || lowerMessage.includes('videoyhteys')) {
+                return 'Videoyhteydet ovat hienoja pitämään yhteyttä läheisiin! Opetan sinulle Zoomin, Teamsin ja WhatsApp-videon käytön. Katso ohje: https://digi-mikko.netlify.app/self-help.html#zoom-call';
+            }
+            
+            if (lowerMessage.includes('kiitos') || lowerMessage.includes('hyvä') || lowerMessage.includes('mahtava')) {
+                return 'Ole hyvä! Olen iloinen voidessani auttaa. Jos tarvitset lisäapua, ota rohkeasti yhteyttä!';
+            }
+            
+            if (lowerMessage.includes('hei') || lowerMessage.includes('moi') || lowerMessage.includes('terve')) {
+                return 'Hei! Kiva kun olet täällä. Miten voin auttaa sinua tänään? Voin kertoa palveluistamme, hinnoista tai antaa neuvoja digitaalisiin ongelmiin.';
+            }
+            
+            // Default response
+            return 'Kiitos viestistäsi! Voin auttaa sinua monenlaisissa asioissa. Kysy minulta palveluistamme, hinnoista tai digitaalisista ongelmista. Tai soita suoraan numeroon 040 123 4567 niin jutellaan lisää!';
+        }
+        
+        // Send button click
+        chatbotSend.addEventListener('click', sendMessage);
+        
+        // Enter key to send
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
 }
+

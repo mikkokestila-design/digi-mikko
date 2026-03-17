@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- AI Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot">
+        <div class="chatbot-header">
+            <span class="chatbot-title">🤖 Digi-Avustaja</span>
+            <button class="chatbot-minimize" id="chatbotMinimize">−</button>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="bot-message">Hei! Olen Digi-Mikkon AI-avustaja. Miten voin auttaa sinua tänään?</div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." />
+                <button id="chatbotSend">Lähetä</button>
+            </div>
+        </div>
+        <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+    </div>
+
     <header>
         <nav>
             <div class="logo">
@@ -176,6 +194,58 @@
                             <span class="price-note">Sen jälkeen 40 €/tunti</span>
                         </div>
                         <a href="tel:+358401234567" class="btn btn-primary">📞 Soita nyt: 040 123 4567</a>
+                    </div>
+                </div>
+
+                <!-- Service 7 - NEW -->
+                <div class="service-detail-card featured">
+                    <div class="service-header">
+                        <span class="service-icon">🔒</span>
+                        <h2>Tietoturvapalvelut</h2>
+                    </div>
+                    <div class="service-content">
+                        <p class="service-description">Suojaa itsesi ja laitteesi verkkouhkilta. Autan sinua pysymään turvassa digitaalisessa maailmassa.</p>
+                        <h3>Mitä sisältyy:</h3>
+                        <ul>
+                            <li>Tietoturvakatsaus kaikille laitteillesi</li>
+                            <li>Virustorjunnan asennus ja päivitys</li>
+                            <li>Salasanojen hallinta ja vahvistaminen</li>
+                            <li>Kahden tekijän tunnistautumisen käyttöönotto</li>
+                            <li>Huijausviestien tunnistaminen</li>
+                            <li>Tietojen varmuuskopiointi</li>
+                            <li>Yksityisyysasetusten tarkistus</li>
+                        </ul>
+                        <div class="pricing">
+                            <span class="price">60 €/tunti</span>
+                            <span class="price-note">Kattava tietoturvatarkastus 2-3h</span>
+                        </div>
+                        <a href="contact.html?service=tietoturva" class="btn btn-primary">Varaa tietoturvatarkastus</a>
+                    </div>
+                </div>
+
+                <!-- Service 8 - NEW -->
+                <div class="service-detail-card featured">
+                    <div class="service-header">
+                        <span class="service-icon">🤖</span>
+                        <h2>Tekoäly-opastus</h2>
+                    </div>
+                    <div class="service-content">
+                        <p class="service-description">Opi käyttämään tekoälyä arkesi helpottamiseen! ChatGPT, kuvageneraattorit ja muut AI-työkalut käyttöön.</p>
+                        <h3>Mitä sisältyy:</h3>
+                        <ul>
+                            <li>ChatGPT:n perus käyttö ja hyödyntäminen</li>
+                            <li>AI-avustajien käyttö kirjoittamiseen</li>
+                            <li>Kuvien luominen tekoälyllä</li>
+                            <li>Tekoälyn käyttö tiedonhaussa</li>
+                            <li>Käännöstyökalut ja niiden käyttö</li>
+                            <li>Turvallisuus ja vastuullisuus AI:n käytössä</li>
+                            <li>Käytännön esimerkkejä ja harjoituksia</li>
+                        </ul>
+                        <div class="pricing">
+                            <span class="price">50 €/tunti</span>
+                            <span class="price-note">Suositus: 2 tunnin koulutuspaketti</span>
+                        </div>
+                        <a href="contact.html?service=tekoäly" class="btn btn-primary">Varaa AI-opastus</a>
                     </div>
                 </div>
             </div>
