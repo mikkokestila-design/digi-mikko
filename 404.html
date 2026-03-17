@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivua ei löydy - Digi-Mikko</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 4rem 2rem;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .error-code {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        .error-message {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .error-description {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🔧 Digi-Mikko</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="services.html">Palvelut</a></li>
+                <li><a href="self-help.html">Ohjeet</a></li>
+                <li><a href="contact.html">Ota yhteyttä</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Avaa valikko">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <h1 class="error-message">Hups! Sivua ei löytynyt</h1>
+            <p class="error-description">
+                Etsimääsi sivua ei valitettavasti löytynyt. Se on ehkä siirretty tai poistettu.
+            </p>
+            <div class="cta-buttons">
+                <a href="index.html" class="btn btn-primary">Takaisin etusivulle</a>
+                <a href="contact.html" class="btn btn-secondary">Ota yhteyttä</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Digi-Mikko</h3>
+                    <p>Digituki ikäihmisille</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Yhteystiedot</h4>
+                    <p>Puh: 040 123 4567</p>
+                    <p>Email: mikko@digi-mikko.fi</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Aukioloajat</h4>
+                    <p>Ma-Pe: 9:00-18:00</p>
+                    <p>La: 10:00-14:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Digi-Mikko. Kaikki oikeudet pidätetään.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
