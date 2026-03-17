@@ -123,6 +123,16 @@ nav {
     color: var(--primary-color);
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -974,9 +984,14 @@ a:focus {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.chatbot-widget.minimized .chatbot-header,
-.chatbot-widget.minimized .chatbot-body {
+.chatbot-widget .chatbot-header,
+.chatbot-widget .chatbot-body {
     display: none;
+}
+
+.chatbot-widget.open .chatbot-header,
+.chatbot-widget.open .chatbot-body {
+    display: flex;
 }
 
 .chatbot-widget.open .chatbot-toggle {
@@ -1035,7 +1050,6 @@ a:focus {
     color: white;
     padding: 16px 18px;
     border-radius: 12px 12px 0 0;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
@@ -1068,7 +1082,6 @@ a:focus {
     background: white;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 8px 32px rgba(37, 99, 235, 0.15);
-    display: flex;
     flex-direction: column;
     border: 2px solid #e0e7ff;
     border-top: none;
@@ -1367,10 +1380,10 @@ a:focus {
 /* Mobile responsive adjustments for chatbot */
 @media (max-width: 768px) {
     .chatbot-body {
-        width: calc(100vw - 40px);
-        max-width: 340px;
-        height: 60vh;
-        max-height: 450px;
+        width: calc(100vw - 32px);
+        max-width: 320px;
+        height: 50vh;
+        max-height: 350px;
     }
     
     .chatbot-widget {
@@ -1384,6 +1397,8 @@ a:focus {
         right: 8px;
         left: auto;
         top: auto;
+        width: auto;
+        height: auto;
         z-index: 1000;
     }
     

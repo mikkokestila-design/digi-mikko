@@ -290,7 +290,6 @@ if ('serviceWorker' in navigator) {
         
         // Toggle chatbot open/close
         chatbotToggle.addEventListener('click', function() {
-            chatbotWidget.classList.remove('minimized');
             chatbotWidget.classList.add('open');
             chatbotInput.focus();
         });
@@ -298,7 +297,6 @@ if ('serviceWorker' in navigator) {
         // Minimize chatbot
         chatbotMinimize.addEventListener('click', function() {
             chatbotWidget.classList.remove('open');
-            chatbotWidget.classList.add('minimized');
         });
         
         // Send message function
