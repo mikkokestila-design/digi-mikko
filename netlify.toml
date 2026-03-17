@@ -3,6 +3,7 @@
 # Build settings
 [build]
   publish = "."
+  functions = "netlify/functions"
   
 # Redirect rules
 [[redirects]]

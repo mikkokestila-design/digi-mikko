@@ -1,0 +1,269 @@
+{
+  "palvelut": {
+    "kotikäynti": {
+      "kuvaus": "Tulen sinun luoksesi kotiin ja käymme rauhassa läpi ongelmasi omalla laitteellasi.",
+      "hinta": "50 €/tunti + matkakulut 0,50 €/km",
+      "sisältö": ["Henkilökohtainen opastus kotonasi", "Käytämme sinun omia laitteitasi", "Kärsivällinen opetus omaan tahtiin", "Kirjalliset muistiinpanot tarvittaessa"],
+      "alue": "Pääkaupunkiseutu ja lähikunnat"
+    },
+    "etätuki": {
+      "kuvaus": "Puhelimitse tai etäyhteyden kautta voin auttaa sinua nopeasti ilman kotikäyntiä.",
+      "hinta": "40 €/tunti, ei matkakuluja",
+      "sisältö": ["Nopea apu puhelimitse", "Turvallinen etäyhteys tietokoneellesi", "Ohjaan sinua askel askeleelta", "Sopii pienten ongelmien ratkaisuun"]
+    },
+    "käyttöönotto": {
+      "kuvaus": "Autan uuden laitteen käyttöönotossa ja opetan perusteet.",
+      "hinta": "80 € (sisältää 2 tuntia + kotikäynti lähialueella)",
+      "sisältö": ["Laitteen peruskäyttöönotto", "Sovellusten asennus", "Sähköpostin ja tilien käyttöönotto", "Turvallisuusasetusten tarkistus"]
+    },
+    "koulutus": {
+      "kuvaus": "Räätälöity henkilökohtainen koulutus sinun tarpeisiisi.",
+      "hinta": "120 € (3 tuntia)",
+      "aiheet": ["Sähköposti (Gmail, Outlook)", "Verkkopankki ja e-laskut", "Videoneuvottelut (Zoom, Teams, WhatsApp)", "Kuvien ottaminen ja jakaminen", "Sosiaalinen media", "Verkko-ostokset"]
+    },
+    "tekninen_apu": {
+      "kuvaus": "Teknisten ongelmien selvitys ja korjaus.",
+      "hinta": "50 €/tunti + mahdolliset varaosakustannukset",
+      "sisältö": ["Ongelman diagnosointi", "Virustorjunta ja haittaohjelmien poisto", "Ohjelmistojen päivitys", "Internet-ongelmat", "Tulostimen asennus", "Varmuuskopiointi"]
+    },
+    "pikatuki": {
+      "kuvaus": "Soita, niin yritän auttaa heti puhelimessa.",
+      "hinta": "Ensimmäiset 15 minuuttia ILMAISEKSI, sen jälkeen 40 €/tunti",
+      "sisältö": ["Nopeat kysymykset", "Unohtunut salasana", "Pikaohjeet"]
+    },
+    "tietoturva": {
+      "kuvaus": "Suojaa itsesi ja laitteesi verkkouhkilta.",
+      "hinta": "60 €/tunti (kattava tarkastus 2-3h)",
+      "sisältö": ["Tietoturvakatsaus kaikille laitteille", "Virustorjunnan asennus ja päivitys", "Salasanojen hallinta ja vahvistaminen", "Kahden tekijän tunnistautuminen", "Huijausviestien tunnistaminen", "Tietojen varmuuskopiointi", "Yksityisyysasetusten tarkistus"]
+    },
+    "tekoäly": {
+      "kuvaus": "Opi käyttämään tekoälyä arkesi helpottamiseen.",
+      "hinta": "50 €/tunti (suositus 2 tunnin paketti)",
+      "sisältö": ["ChatGPT:n peruskäyttö", "AI-avustajien käyttö kirjoittamiseen", "Kuvien luominen tekoälyllä", "Tekoäly tiedonhaussa", "Käännöstyökalut", "Turvallisuus AI:n käytössä"]
+    }
+  },
+  "yhteystiedot": {
+    "puhelin": "040 123 4567",
+    "email": "mikko@digi-mikko.fi",
+    "aukioloajat": "Ma-Pe 9:00-18:00, La 10:00-14:00",
+    "alue": "Pääkaupunkiseutu ja lähikunnat",
+    "maksaminen": "Käteinen tai lasku. Voit maksaa heti tai lasku jälkikäteen.",
+    "peruutus": "Voit perua ajan 24h ennen sovittua aikaa ilman veloitusta."
+  },
+  "ohjeet": {
+    "kuvan_ottaminen": {
+      "otsikko": "Kuvan ottaminen älypuhelimella",
+      "taso": "helppo",
+      "vaiheet": [
+        "Avaa Kamera-sovellus kotinäytöltä (kamera-kuvake).",
+        "Suuntaa puhelin kohteeseen. Pidä vakaasti.",
+        "Paina isoa pyöreää nappia ruudun alareunassa.",
+        "Tarkista kuva vasemman alakulman pienestä kuvasta."
+      ],
+      "vinkki": "Pidä puhelin vakaasti molemmilla käsillä ja odota hetki ennen kuin painat nappia."
+    },
+    "salasanan_vaihto": {
+      "otsikko": "Salasanan vaihtaminen",
+      "taso": "keskitaso",
+      "hyvä_salasana": "Vähintään 12 merkkiä, isoja ja pieniä kirjaimia, numeroita ja erikoismerkkejä. EI syntymäaikoja tai nimiä. Esimerkki: MinullaOn5Kissaa!2026",
+      "vaiheet": [
+        "Kirjaudu sisään palveluun.",
+        "Mene Asetuksiin tai Profiili-sivulle.",
+        "Etsi 'Turvallisuus' tai 'Salasana'.",
+        "Klikkaa 'Vaihda salasana'.",
+        "Syötä vanha salasanasi.",
+        "Syötä uusi salasana kahdesti.",
+        "Klikkaa 'Tallenna'."
+      ],
+      "tärkeää": "Älä koskaan kerro salasanaasi kenellekään! Pankki tai viranomaiset eivät koskaan kysy salasanaasi."
+    },
+    "sähköposti": {
+      "otsikko": "Sähköpostin lähettäminen",
+      "taso": "helppo",
+      "vaiheet": [
+        "Avaa sähköpostiohjelma (Gmail, Outlook tms.).",
+        "Klikkaa 'Luo uusi' tai 'Kirjoita' tai plus-merkkiä.",
+        "Kirjoita vastaanottajan osoite 'Vastaanottaja' kenttään.",
+        "Kirjoita aihe 'Aihe' kenttään (esim. 'Terveisiä mökiltä').",
+        "Kirjoita viestisi isoon tekstikenttään.",
+        "Klikkaa 'Lähetä' nappia."
+      ],
+      "vinkki": "Voit tallentaa viestin luonnoksena ja jatkaa myöhemmin."
+    },
+    "zoom": {
+      "otsikko": "Videoyhteyden aloittaminen (Zoom)",
+      "taso": "keskitaso",
+      "vaiheet": [
+        "Avaa saamasi kutsulinkin sähköpostista tai tekstiviestistä.",
+        "Kun selain kysyy 'Avaa Zoom?', klikkaa 'Avaa' tai 'OK'.",
+        "Kirjoita nimesi ja klikkaa 'Liity kokoukseen'.",
+        "Salli kamera ja mikrofoni kun selain kysyy.",
+        "Olet mukana! Näet muut osallistujat."
+      ],
+      "painikkeet": "Mute/Mykistä = sammuttaa mikrofonin. Stop Video = sammuttaa kameran. Leave/Poistu = poistut kokouksesta.",
+      "vinkki": "Testaa kamera ja mikrofoni etukäteen osoitteessa zoom.us/test"
+    },
+    "verkkopankki": {
+      "otsikko": "Verkkopankin käyttö turvallisesti",
+      "taso": "keskitaso",
+      "vaiheet": [
+        "Kirjoita pankkisi osoite suoraan selaimen osoiteriville. ÄLÄ klikkaa sähköpostin linkkejä!",
+        "Varmista, että osoite alkaa 'https://' ja näet lukkomerkin.",
+        "Kirjaudu verkkopankkitunnuksillasi tai mobiiliavaimella.",
+        "Tee asioitasi (maksa laskuja, tarkista saldo jne.).",
+        "Kirjaudu AINA ulos kun olet valmis."
+      ],
+      "turvallisuus": [
+        "Älä koskaan jaa tunnuksiasi kenellekään.",
+        "Pankki ei koskaan kysy tunnuksia puhelimitse.",
+        "Älä kirjaudu verkkopankkiin julkisessa wifi-verkossa.",
+        "Jos jokin tuntuu oudolta, lopeta ja soita pankkiin."
+      ]
+    },
+    "wifi": {
+      "otsikko": "WiFi-verkkoon yhdistäminen",
+      "taso": "helppo",
+      "tietokone": [
+        "Klikkaa WiFi-kuvaketta ruudun oikeassa alanurkassa (aaltoviivat).",
+        "Näet listan saatavilla olevista verkoista.",
+        "Klikkaa oman verkkosi nimeä.",
+        "Klikkaa 'Yhdistä'.",
+        "Kirjoita salasana ja klikkaa 'Seuraava'.",
+        "Odota hetki - olet nyt verkossa!"
+      ],
+      "puhelin": [
+        "Avaa Asetukset.",
+        "Valitse 'WiFi' tai 'WLAN'.",
+        "Kytke WiFi päälle liukupainikkeesta.",
+        "Napauta oman verkkosi nimeä.",
+        "Kirjoita salasana ja napauta 'Yhdistä'."
+      ],
+      "vinkki": "WiFi-salasana löytyy usein reitittimen pohjasta tarrasta."
+    },
+    "huijausviestit": {
+      "otsikko": "Huijausviestien tunnistaminen",
+      "taso": "keskitaso",
+      "merkit": [
+        "Kiire: 'Toimi heti tai tilisi lukitaan!'",
+        "Pelottelu: 'Sinun tilisi on vaarassa!'",
+        "Liian hyvä: 'Olet voittanut miljoona euroa!'",
+        "Pyydetään salasanoja tai tunnuksia.",
+        "Oudot linkit (esim. 'p4nkki.fi' oikean 'pankki.fi' sijaan).",
+        "Huono kieli ja kirjoitusvirheet.",
+        "Tuntematon lähettäjä."
+      ],
+      "toimintaohjeet": [
+        "ÄLÄ klikkaa linkkejä.",
+        "ÄLÄ vastaa viestiin.",
+        "ÄLÄ anna henkilötietoja.",
+        "Poista viesti tai merkitse roskapostiksi.",
+        "Soita pankkiin jos viesti väittää olevansa sieltä."
+      ],
+      "tärkeää": "Pankit, viranomaiset ja yritykset eivät KOSKAAN pyydä salasanoja tai pankkitunnuksia sähköpostitse tai tekstiviestitse!"
+    },
+    "whatsapp": {
+      "otsikko": "WhatsApp-viestien lähettäminen",
+      "taso": "helppo",
+      "vaiheet": [
+        "Avaa WhatsApp (vihreä kuvake).",
+        "Napauta henkilön nimeä keskustelulistasta.",
+        "Kirjoita viestisi alaosan tekstikenttään.",
+        "Paina sinistä lähetyspainiketta (paperilennokki)."
+      ],
+      "kuvan_lähetys": [
+        "Avaa keskustelu.",
+        "Napauta paperiliitti- tai kamera-kuvaketta.",
+        "Valitse 'Galleria' ja valitse kuva.",
+        "Napauta vihreää lähetyspainiketta."
+      ],
+      "vinkki": "Merkit: ✓ = lähetetty, ✓✓ = toimitettu, sininen ✓✓ = luettu."
+    },
+    "tulostaminen": {
+      "otsikko": "Tulostaminen tietokoneelta",
+      "taso": "helppo",
+      "vaiheet": [
+        "Avaa tulostettava dokumentti tai verkkosivu.",
+        "Paina näppäimistöstä Ctrl + P (tai Komento + P Macilla).",
+        "Valitse tulostimesi listasta.",
+        "Tarkista asetukset (sivumäärä, väri/mustavalko).",
+        "Klikkaa 'Tulosta'."
+      ],
+      "vinkki": "Jos tulostin ei näy listassa, tarkista onko se päällä ja yhdistetty samaan WiFi-verkkoon."
+    },
+    "sovelluksen_asennus": {
+      "otsikko": "Sovelluksen asentaminen puhelimeen",
+      "taso": "helppo",
+      "android": [
+        "Avaa Google Play Kauppa (värikäs kolmio-kuvake).",
+        "Kirjoita hakukenttään sovelluksen nimi.",
+        "Napauta oikeaa sovellusta hakutuloksista.",
+        "Napauta 'Asenna'.",
+        "Odota latauksen ja asennuksen valmistumista.",
+        "Sovellus ilmestyy kotinäytöllesi."
+      ],
+      "iphone": [
+        "Avaa App Store (sininen A-kuvake).",
+        "Napauta 'Haku' alaosassa.",
+        "Kirjoita sovelluksen nimi.",
+        "Napauta 'Hae' tai pilvi-kuvaketta.",
+        "Vahvista Face ID:llä tai salasanalla.",
+        "Sovellus ilmestyy kotinäytöllesi."
+      ]
+    },
+    "varmuuskopiointi": {
+      "otsikko": "Kuvien ja tiedostojen varmuuskopiointi",
+      "taso": "keskitaso",
+      "puhelin": [
+        "Avaa Google Kuvat (Android) tai iCloud (iPhone).",
+        "Tarkista että automaattinen varmuuskopiointi on päällä asetuksissa.",
+        "Kuvasi tallentuvat automaattisesti pilveen kun olet WiFi-verkossa."
+      ],
+      "tietokone": [
+        "Liitä USB-muistitikku tai ulkoinen kovalevy.",
+        "Kopioi tärkeät tiedostot muistitikulle (klikkaa hiiren oikealla → Kopioi, sitten liitä muistitikulle).",
+        "Voit myös käyttää OneDrivea tai Google Drivea pilvivarmuuskopiointiin."
+      ],
+      "tärkeää": "Tee varmuuskopiot säännöllisesti! Suositus vähintään kerran kuukaudessa."
+    },
+    "näytön_kuvakaappaus": {
+      "otsikko": "Kuvakaappauksen ottaminen",
+      "taso": "helppo",
+      "windows": "Paina Print Screen -näppäintä (PrtSc) tai Windows + Shift + S.",
+      "android": "Paina samanaikaisesti virtanäppäintä ja äänenvoimakkuuden vähennystä.",
+      "iphone": "Paina samanaikaisesti sivupainiketta ja äänenvoimakkuuden lisäystä."
+    },
+    "fonttikoon_muuttaminen": {
+      "otsikko": "Tekstin koon suurentaminen",
+      "taso": "helppo",
+      "selain": "Pidä Ctrl-näppäin pohjassa ja paina + (plus) suurentaaksesi tai - (miinus) pienentääksesi. Ctrl + 0 palauttaa normaaliksi.",
+      "windows": "Asetukset → Helppokäyttöisyys → Näyttö → Tekstin koko → vedä liukusäädintä oikealle.",
+      "puhelin": "Asetukset → Näyttö → Fonttikoko → valitse suurempi koko."
+    },
+    "päivitykset": {
+      "otsikko": "Laitteen ja sovellusten päivittäminen",
+      "taso": "keskitaso",
+      "miksi": "Päivitykset korjaavat tietoturva-aukkoja ja parantavat laitteen toimintaa. Pidä laitteet aina ajan tasalla!",
+      "windows": [
+        "Avaa Asetukset (hammasratas Käynnistä-valikosta).",
+        "Klikkaa 'Päivitys ja tietoturva'.",
+        "Klikkaa 'Tarkista päivitykset'.",
+        "Asenna saatavilla olevat päivitykset.",
+        "Käynnistä tietokone uudelleen kun pyydetään."
+      ],
+      "puhelin": [
+        "Avaa Asetukset.",
+        "Valitse 'Ohjelmistopäivitys' tai 'Järjestelmäpäivitykset'.",
+        "Napauta 'Tarkista päivitykset'.",
+        "Jos päivitys on saatavilla, napauta 'Lataa ja asenna'."
+      ]
+    }
+  },
+  "usein_kysytyt": {
+    "mikä_on_digi_mikko": "Digi-Mikko on digituki ikäihmisille. Autamme kaikissa tietokoneen, älypuhelimen ja tabletin ongelmissa. Voimme tulla kotiin tai auttaa etänä.",
+    "miten_varaan_ajan": "Voit varata ajan soittamalla numeroon 040 123 4567 tai lähettämällä viestin yhteystietolomakkeella sivullamme. Palvelemme ma-pe 9-18 ja la 10-14.",
+    "paljonko_maksaa": "Hinnat vaihtelevat palvelun mukaan: Etätuki 40€/h, Kotikäynti 50€/h, Käyttöönotto 80€ (2h), Koulutus 120€ (3h), Tietoturva 60€/h, AI-opastus 50€/h. Ensimmäinen 15 min puhelintukea on ilmaista!",
+    "missä_toimitte": "Toimimme pääkaupunkiseudulla ja lähikunnissa. Etätuki toimii kaikkialla Suomessa.",
+    "saanko_kotiin": "Kyllä! Kotikäynti on yksi suosituimmista palveluistamme. Tulen luoksesi ja autamme rauhassa omilla laitteillasi.",
+    "voiko_perua": "Kyllä, voit perua ajan 24 tuntia ennen sovittua aikaa ilman veloitusta."
+  }
+}

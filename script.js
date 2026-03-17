@@ -285,10 +285,14 @@ if ('serviceWorker' in navigator) {
     const chatbotSend = document.getElementById('chatbotSend');
     
     if (chatbotWidget) {
+        // Conversation history for context
+        const chatHistory = [];
+        
         // Toggle chatbot open/close
         chatbotToggle.addEventListener('click', function() {
             chatbotWidget.classList.remove('minimized');
             chatbotWidget.classList.add('open');
+            chatbotInput.focus();
         });
         
         // Minimize chatbot
@@ -298,81 +302,88 @@ if ('serviceWorker' in navigator) {
         });
         
         // Send message function
-        function sendMessage() {
+        async function sendMessage() {
             const message = chatbotInput.value.trim();
             if (!message) return;
             
             // Add user message to chat
             addMessage(message, 'user');
             chatbotInput.value = '';
+            chatbotInput.disabled = true;
+            chatbotSend.disabled = true;
             
-            // Simulate bot response (in production, this would call an AI API)
-            setTimeout(() => {
-                const response = getBotResponse(message);
-                addMessage(response, 'bot');
-            }, 1000);
+            // Show typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'bot-message typing-indicator';
+            typingDiv.innerHTML = '<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
+            chatbotMessages.appendChild(typingDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            
+            // Add to history
+            chatHistory.push({ role: 'user', content: message });
+            
+            try {
+                // Call serverless function
+                const response = await fetch('/.netlify/functions/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        message: message,
+                        history: chatHistory.slice(-6)
+                    })
+                });
+                
+                // Remove typing indicator
+                typingDiv.remove();
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    const botReply = data.response;
+                    addMessage(botReply, 'bot');
+                    chatHistory.push({ role: 'assistant', content: botReply });
+                } else {
+                    throw new Error('API error');
+                }
+            } catch (error) {
+                // Remove typing indicator
+                typingDiv.remove();
+                // Fallback if serverless function fails
+                const fallback = getLocalFallback(message);
+                addMessage(fallback, 'bot');
+                chatHistory.push({ role: 'assistant', content: fallback });
+            }
+            
+            chatbotInput.disabled = false;
+            chatbotSend.disabled = false;
+            chatbotInput.focus();
         }
         
-        // Add message to chat
+        // Add message to chat with markdown-like formatting
         function addMessage(text, sender) {
             const messageDiv = document.createElement('div');
             messageDiv.className = sender === 'user' ? 'user-message' : 'bot-message';
-            messageDiv.textContent = text;
+            
+            // Simple formatting: **bold**, numbered lists, bullet points
+            let formatted = text
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/^(\d+)\.\s/gm, '<br>$1. ')
+                .replace(/^•\s/gm, '<br>• ')
+                .replace(/\n/g, '<br>');
+            
+            messageDiv.innerHTML = formatted;
             chatbotMessages.appendChild(messageDiv);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
         
-        // Get bot response based on keywords
-        function getBotResponse(message) {
-            const lowerMessage = message.toLowerCase();
-            
-            // Knowledge base responses
-            if (lowerMessage.includes('hinta') || lowerMessage.includes('maksa') || lowerMessage.includes('kustann')) {
-                return 'Kotikäynti on 50€/tunti + matkakulut. Etätuki on 40€/tunti ilman matkakuluja. Ensimmäinen 15 min pikatuesta on ilmaista! Katso kaikki hinnastosta: https://digi-mikko.netlify.app/services.html';
-            }
-            
-            if (lowerMessage.includes('aika') || lowerMessage.includes('varaa') || lowerMessage.includes('sopimus')) {
-                return 'Voit varata ajan soittamalla numeroon 040 123 4567 tai lähettämällä viestin yhteystietolomakkeella. Olen käytettävissä ma-pe 9-18 ja la 10-14.';
-            }
-            
-            if (lowerMessage.includes('puhelin') || lowerMessage.includes('älypuhelin') || lowerMessage.includes('iphone') || lowerMessage.includes('android')) {
-                return 'Autan mielellään älypuhelimien kanssa! Opetan peruskäytön, sovellusten asennuksen, kuvien ottamisen ja paljon muuta. Katso ilmaiset ohjeet: https://digi-mikko.netlify.app/self-help.html';
-            }
-            
-            if (lowerMessage.includes('tietokone') || lowerMessage.includes('windows') || lowerMessage.includes('pc')) {
-                return 'Tietokoneiden kanssa olen kotoissani! Autan käyttöönotossa, ongelmien ratkaisussa ja peruskäytön opetuksessa. Voin tulla kotiin tai auttaa etänä.';
-            }
-            
-            if (lowerMessage.includes('sähköposti') || lowerMessage.includes('gmail') || lowerMessage.includes('outlook')) {
-                return 'Sähköposti on tärkeä! Opetan sinulle miten lähetetään viestejä, liitetään tiedostoja ja pidetään sähköposti turvallisena. Meillä on myös ilmainen ohje: https://digi-mikko.netlify.app/self-help.html#send-email';
-            }
-            
-            if (lowerMessage.includes('pankki') || lowerMessage.includes('verkkopankki') || lowerMessage.includes('e-lasku')) {
-                return 'Verkkopankin käyttö turvallisesti on tärkeää! Opetan sinulle kaikki turvallisuusvinkit ja perustoiminnot. Katso myös turvallisuusohje: https://digi-mikko.netlify.app/self-help.html#online-banking';
-            }
-            
-            if (lowerMessage.includes('turva') || lowerMessage.includes('huijaus') || lowerMessage.includes('salasana')) {
-                return 'Tietoturva on erittäin tärkeää! Tarjoan tietoturvapalveluja joissa käydään läpi kaikki turvallisuusasetukset, salasanojen hallinta ja huijausten tunnistaminen. Uusi palvelumme: Tietoturvatarkastus 60€/tunti.';
-            }
-            
-            if (lowerMessage.includes('tekoäly') || lowerMessage.includes('ai') || lowerMessage.includes('chatgpt')) {
-                return 'Tekoäly on tulevaisuutta! Tarjoan tekoäly-opastusta jossa opit käyttämään ChatGPT:tä, kuvageneraattoreita ja muita AI-työkaluja. Tämä on uusi palvelumme 50€/tunti. Kiinnostaako?';
-            }
-            
-            if (lowerMessage.includes('zoom') || lowerMessage.includes('teams') || lowerMessage.includes('videokeskustelu') || lowerMessage.includes('videoyhteys')) {
-                return 'Videoyhteydet ovat hienoja pitämään yhteyttä läheisiin! Opetan sinulle Zoomin, Teamsin ja WhatsApp-videon käytön. Katso ohje: https://digi-mikko.netlify.app/self-help.html#zoom-call';
-            }
-            
-            if (lowerMessage.includes('kiitos') || lowerMessage.includes('hyvä') || lowerMessage.includes('mahtava')) {
-                return 'Ole hyvä! Olen iloinen voidessani auttaa. Jos tarvitset lisäapua, ota rohkeasti yhteyttä!';
-            }
-            
-            if (lowerMessage.includes('hei') || lowerMessage.includes('moi') || lowerMessage.includes('terve')) {
-                return 'Hei! Kiva kun olet täällä. Miten voin auttaa sinua tänään? Voin kertoa palveluistamme, hinnoista tai antaa neuvoja digitaalisiin ongelmiin.';
-            }
-            
-            // Default response
-            return 'Kiitos viestistäsi! Voin auttaa sinua monenlaisissa asioissa. Kysy minulta palveluistamme, hinnoista tai digitaalisista ongelmista. Tai soita suoraan numeroon 040 123 4567 niin jutellaan lisää!';
+        // Local fallback if API is unavailable
+        function getLocalFallback(message) {
+            const m = message.toLowerCase();
+            if (/^(hei|moi|terve|huomenta)/i.test(m)) return 'Hei! Olen Digi-Mikkon AI-avustaja 🤖 Miten voin auttaa sinua?';
+            if (/hinta|maksa|paljonko/.test(m)) return 'Etätuki 40€/h, Kotikäynti 50€/h, Tietoturva 60€/h. Ensimmäiset 15 min pikatuesta ilmaiseksi! Soita 040 123 4567.';
+            if (/salasana/.test(m)) return 'Hyvä salasana on vähintään 12 merkkiä ja sisältää isoja/pieniä kirjaimia, numeroita ja erikoismerkkejä. Vaihda: Asetukset → Turvallisuus → Vaihda salasana.';
+            if (/wifi|wlan|netti/.test(m)) return 'WiFi-yhteys: Klikkaa WiFi-kuvaketta → Valitse verkko → Syötä salasana → Yhdistä. Salasana löytyy usein reitittimen pohjasta.';
+            if (/kiitos/.test(m)) return 'Ole hyvä! 😊 Kysy rohkeasti lisää!';
+            return 'Kiitos kysymyksestäsi! Soita 040 123 4567 niin autamme sinua henkilökohtaisesti. Palvelemme ma-pe 9-18 ja la 10-14.';
         }
         
         // Send button click
