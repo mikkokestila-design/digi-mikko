@@ -258,14 +258,12 @@ nav {
     font-size: 5rem;
 }
 
-/* If you want to use a real image instead, uncomment this and add your image:
 .hero-avatar img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
-*/
 
 .page-hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
