@@ -262,6 +262,59 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+    // ===================================
+    // SCROLL ANIMATIONS & DYNAMIC EFFECTS
+    // ===================================
+    
+    // Header shrink on scroll
+    const header = document.querySelector('header');
+    if (header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    }
+    
+    // Scroll reveal: observe elements with .reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children
+    const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children').forEach(function(el) {
+        revealObserver.observe(el);
+    });
+    
+    // Counter animation for stats
+    document.querySelectorAll('[data-count]').forEach(function(counter) {
+        const countObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-count'), 10);
+                    let current = 0;
+                    const step = Math.ceil(target / 40);
+                    const timer = setInterval(function() {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        entry.target.textContent = current + (entry.target.getAttribute('data-suffix') || '');
+                    }, 30);
+                    countObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        countObserver.observe(counter);
+    });
+
 // Service Worker registration for PWA capabilities (optional enhancement)
 if ('serviceWorker' in navigator) {
     // Uncomment to enable PWA features
