@@ -213,6 +213,7 @@ nav {
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cta-center {
