@@ -3,43 +3,91 @@
     "kotikäynti": {
       "kuvaus": "Tulen sinun luoksesi kotiin ja käymme rauhassa läpi ongelmasi omalla laitteellasi.",
       "hinta": "50 €/tunti + matkakulut 0,50 €/km",
-      "sisältö": ["Henkilökohtainen opastus kotonasi", "Käytämme sinun omia laitteitasi", "Kärsivällinen opetus omaan tahtiin", "Kirjalliset muistiinpanot tarvittaessa"],
+      "sisältö": [
+        "Henkilökohtainen opastus kotonasi",
+        "Käytämme sinun omia laitteitasi",
+        "Kärsivällinen opetus omaan tahtiin",
+        "Kirjalliset muistiinpanot tarvittaessa"
+      ],
       "alue": "Pääkaupunkiseutu ja lähikunnat"
     },
     "etätuki": {
       "kuvaus": "Puhelimitse tai etäyhteyden kautta voin auttaa sinua nopeasti ilman kotikäyntiä.",
       "hinta": "40 €/tunti, ei matkakuluja",
-      "sisältö": ["Nopea apu puhelimitse", "Turvallinen etäyhteys tietokoneellesi", "Ohjaan sinua askel askeleelta", "Sopii pienten ongelmien ratkaisuun"]
+      "sisältö": [
+        "Nopea apu puhelimitse",
+        "Turvallinen etäyhteys tietokoneellesi",
+        "Ohjaan sinua askel askeleelta",
+        "Sopii pienten ongelmien ratkaisuun"
+      ]
     },
     "käyttöönotto": {
       "kuvaus": "Autan uuden laitteen käyttöönotossa ja opetan perusteet.",
       "hinta": "80 € (sisältää 2 tuntia + kotikäynti lähialueella)",
-      "sisältö": ["Laitteen peruskäyttöönotto", "Sovellusten asennus", "Sähköpostin ja tilien käyttöönotto", "Turvallisuusasetusten tarkistus"]
+      "sisältö": [
+        "Laitteen peruskäyttöönotto",
+        "Sovellusten asennus",
+        "Sähköpostin ja tilien käyttöönotto",
+        "Turvallisuusasetusten tarkistus"
+      ]
     },
     "koulutus": {
       "kuvaus": "Räätälöity henkilökohtainen koulutus sinun tarpeisiisi.",
       "hinta": "120 € (3 tuntia)",
-      "aiheet": ["Sähköposti (Gmail, Outlook)", "Verkkopankki ja e-laskut", "Videoneuvottelut (Zoom, Teams, WhatsApp)", "Kuvien ottaminen ja jakaminen", "Sosiaalinen media", "Verkko-ostokset"]
+      "aiheet": [
+        "Sähköposti (Gmail, Outlook)",
+        "Verkkopankki ja e-laskut",
+        "Videoneuvottelut (Zoom, Teams, WhatsApp)",
+        "Kuvien ottaminen ja jakaminen",
+        "Sosiaalinen media",
+        "Verkko-ostokset"
+      ]
     },
     "tekninen_apu": {
       "kuvaus": "Teknisten ongelmien selvitys ja korjaus.",
       "hinta": "50 €/tunti + mahdolliset varaosakustannukset",
-      "sisältö": ["Ongelman diagnosointi", "Virustorjunta ja haittaohjelmien poisto", "Ohjelmistojen päivitys", "Internet-ongelmat", "Tulostimen asennus", "Varmuuskopiointi"]
+      "sisältö": [
+        "Ongelman diagnosointi",
+        "Virustorjunta ja haittaohjelmien poisto",
+        "Ohjelmistojen päivitys",
+        "Internet-ongelmat",
+        "Tulostimen asennus",
+        "Varmuuskopiointi"
+      ]
     },
     "pikatuki": {
       "kuvaus": "Soita, niin yritän auttaa heti puhelimessa.",
       "hinta": "Ensimmäiset 15 minuuttia ILMAISEKSI, sen jälkeen 40 €/tunti",
-      "sisältö": ["Nopeat kysymykset", "Unohtunut salasana", "Pikaohjeet"]
+      "sisältö": [
+        "Nopeat kysymykset",
+        "Unohtunut salasana",
+        "Pikaohjeet"
+      ]
     },
     "tietoturva": {
       "kuvaus": "Suojaa itsesi ja laitteesi verkkouhkilta.",
       "hinta": "60 €/tunti (kattava tarkastus 2-3h)",
-      "sisältö": ["Tietoturvakatsaus kaikille laitteille", "Virustorjunnan asennus ja päivitys", "Salasanojen hallinta ja vahvistaminen", "Kahden tekijän tunnistautuminen", "Huijausviestien tunnistaminen", "Tietojen varmuuskopiointi", "Yksityisyysasetusten tarkistus"]
+      "sisältö": [
+        "Tietoturvakatsaus kaikille laitteille",
+        "Virustorjunnan asennus ja päivitys",
+        "Salasanojen hallinta ja vahvistaminen",
+        "Kahden tekijän tunnistautuminen",
+        "Huijausviestien tunnistaminen",
+        "Tietojen varmuuskopiointi",
+        "Yksityisyysasetusten tarkistus"
+      ]
     },
     "tekoäly": {
       "kuvaus": "Opi käyttämään tekoälyä arkesi helpottamiseen.",
       "hinta": "50 €/tunti (suositus 2 tunnin paketti)",
-      "sisältö": ["ChatGPT:n peruskäyttö", "AI-avustajien käyttö kirjoittamiseen", "Kuvien luominen tekoälyllä", "Tekoäly tiedonhaussa", "Käännöstyökalut", "Turvallisuus AI:n käytössä"]
+      "sisältö": [
+        "ChatGPT:n peruskäyttö",
+        "AI-avustajien käyttö kirjoittamiseen",
+        "Kuvien luominen tekoälyllä",
+        "Tekoäly tiedonhaussa",
+        "Käännöstyökalut",
+        "Turvallisuus AI:n käytössä"
+      ]
     }
   },
   "yhteystiedot": {
@@ -256,6 +304,50 @@
         "Napauta 'Tarkista päivitykset'.",
         "Jos päivitys on saatavilla, napauta 'Lataa ja asenna'."
       ]
+    },
+    "sähköinen_allekirjoitus": {
+      "otsikko": "Sähköinen allekirjoitus",
+      "taso": "keskitaso",
+      "kategoria": "viranomaiset",
+      "vaiheet": [
+        "Kun saat dokumentin allekirjoitettavaksi, avaa saamasi linkki.",
+        "Tunnistaudu pankkitunnuksilla tai mobiilivarmenteella.",
+        "Lue dokumentti huolellisesti.",
+        "Klikkaa 'Allekirjoita' tai 'Hyväksy'.",
+        "Vahvista allekirjoitus tunnistautumalla uudelleen.",
+        "Saat vahvistuksen sähköpostiin kun allekirjoitus on tehty."
+      ],
+      "tärkeää": "Sähköinen allekirjoitus on laillisesti yhtä pätevä kuin käsin kirjoitettu."
+    },
+    "asetukset_näyttö": {
+      "otsikko": "Näytön kirkkauden ja tekstikoon säätö",
+      "taso": "helppo",
+      "kategoria": "asetukset",
+      "puhelin": [
+        "Pyyhkäise ylhäältä alas nähdäksesi pika-asetukset.",
+        "Vedä kirkkauden liukusäädintä vasemmalle (tummempi) tai oikealle (kirkkaampi).",
+        "Tekstikokoa muutetaan: Asetukset → Näyttö → Fonttikoko."
+      ],
+      "tietokone": [
+        "Klikkaa oikeassa alanurkassa olevaa ilmoitusaluetta.",
+        "Vedä kirkkauden liukusäädintä.",
+        "Tekstikokoa muutetaan: Asetukset → Helppokäyttöisyys → Näyttö → Tekstin koko."
+      ],
+      "vinkki": "Yötilassa (tumma tila) näyttö on miellyttävämpi silmille pimeässä. Löytyy yleensä pika-asetuksista."
+    },
+    "spotify_musiikki": {
+      "otsikko": "Musiikin kuuntelu Spotifyssa",
+      "taso": "helppo",
+      "kategoria": "viihde",
+      "vaiheet": [
+        "Asenna Spotify-sovellus (vihreä kuvake) sovelluskaupasta.",
+        "Avaa Spotify ja luo tili tai kirjaudu sisään.",
+        "Napauta yläosan hakukenttää.",
+        "Kirjoita artistin nimi tai kappaleen nimi.",
+        "Napauta haluttua kappaletta aloittaaksesi kuuntelun.",
+        "Alaosassa näet soittimen jolla voit pysäyttää, kelata ja säätää äänenvoimakkuutta."
+      ],
+      "vinkki": "Spotify Free on ilmainen mutta sisältää mainoksia. Spotify Premium (10,99€/kk) poistaa mainokset."
     }
   },
   "usein_kysytyt": {

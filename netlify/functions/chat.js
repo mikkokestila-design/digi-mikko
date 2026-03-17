@@ -28,7 +28,7 @@ function findRelevantContext(message) {
     }
   }
 
-  // Check guides
+  // Check guides - static keywords + dynamic matching for new guides
   const guideKeywords = {
     kuvan_ottaminen: ["kuva", "valoku", "kamera", "selfie"],
     salasanan_vaihto: ["salasana", "password", "kirjautu"],
@@ -46,29 +46,49 @@ function findRelevantContext(message) {
     päivitykset: ["päivit", "update", "ajan tasalle"],
   };
 
+  // Helper to format a guide into text
+  function formatGuide(guide) {
+    let guideText = `Ohje "${guide.otsikko}" (${guide.taso || ""}): `;
+    if (guide.vaiheet) {
+      guideText += `Vaiheet: ${guide.vaiheet.map((v, i) => `${i + 1}. ${v}`).join(" ")}`;
+    }
+    if (guide.vinkki) guideText += ` Vinkki: ${guide.vinkki}`;
+    if (guide.tärkeää) guideText += ` Tärkeää: ${guide.tärkeää}`;
+    if (guide.turvallisuus) guideText += ` Turvallisuus: ${Array.isArray(guide.turvallisuus) ? guide.turvallisuus.join(" ") : guide.turvallisuus}`;
+    if (guide.merkit) guideText += ` Merkit: ${guide.merkit.join(" ")}`;
+    if (guide.toimintaohjeet) guideText += ` Toimintaohjeet: ${guide.toimintaohjeet.join(" ")}`;
+    if (guide.painikkeet) guideText += ` Painikkeet: ${guide.painikkeet}`;
+    if (guide.tietokone) guideText += ` Tietokone: ${Array.isArray(guide.tietokone) ? guide.tietokone.join(" ") : guide.tietokone}`;
+    if (guide.puhelin && Array.isArray(guide.puhelin)) guideText += ` Puhelin: ${guide.puhelin.join(" ")}`;
+    if (guide.android) guideText += ` Android: ${Array.isArray(guide.android) ? guide.android.join(" ") : guide.android}`;
+    if (guide.iphone) guideText += ` iPhone: ${Array.isArray(guide.iphone) ? guide.iphone.join(" ") : guide.iphone}`;
+    if (guide.windows) guideText += ` Windows: ${Array.isArray(guide.windows) ? guide.windows.join(" ") : guide.windows}`;
+    if (guide.selain) guideText += ` Selain: ${guide.selain}`;
+    return guideText;
+  }
+
+  const matchedGuideKeys = new Set();
+
   for (const [key, keywords] of Object.entries(guideKeywords)) {
     if (keywords.some((kw) => lowerMsg.includes(kw))) {
       const guide = knowledgeBase.ohjeet[key];
       if (guide) {
-        let guideText = `Ohje "${guide.otsikko}" (${guide.taso}): `;
-        if (guide.vaiheet) {
-          guideText += `Vaiheet: ${guide.vaiheet.map((v, i) => `${i + 1}. ${v}`).join(" ")}`;
-        }
-        if (guide.vinkki) guideText += ` Vinkki: ${guide.vinkki}`;
-        if (guide.tärkeää) guideText += ` Tärkeää: ${guide.tärkeää}`;
-        if (guide.turvallisuus) guideText += ` Turvallisuus: ${guide.turvallisuus.join(" ")}`;
-        if (guide.merkit) guideText += ` Merkit: ${guide.merkit.join(" ")}`;
-        if (guide.toimintaohjeet) guideText += ` Toimintaohjeet: ${guide.toimintaohjeet.join(" ")}`;
-        // Handle sub-sections
-        if (guide.tietokone) guideText += ` Tietokone: ${guide.tietokone.join(" ")}`;
-        if (guide.puhelin && Array.isArray(guide.puhelin)) guideText += ` Puhelin: ${guide.puhelin.join(" ")}`;
-        if (guide.android) guideText += ` Android: ${guide.android.join ? guide.android.join(" ") : guide.android}`;
-        if (guide.iphone) guideText += ` iPhone: ${guide.iphone.join ? guide.iphone.join(" ") : guide.iphone}`;
-        if (guide.windows && typeof guide.windows === "string") guideText += ` Windows: ${guide.windows}`;
-        if (guide.windows && Array.isArray(guide.windows)) guideText += ` Windows: ${guide.windows.join(" ")}`;
-        if (guide.selain) guideText += ` Selain: ${guide.selain}`;
-        contexts.push(guideText);
+        contexts.push(formatGuide(guide));
+        matchedGuideKeys.add(key);
       }
+    }
+  }
+
+  // Dynamic matching: search all guides by title and key words
+  for (const [key, guide] of Object.entries(knowledgeBase.ohjeet || {})) {
+    if (matchedGuideKeys.has(key)) continue; // already matched
+    const titleWords = (guide.otsikko || "").toLowerCase().split(/\s+/);
+    const keyWords = key.toLowerCase().replace(/_/g, " ").split(/\s+/);
+    const categoryMatch = guide.kategoria && lowerMsg.includes(guide.kategoria.toLowerCase());
+    const titleMatch = titleWords.some((w) => w.length > 3 && lowerMsg.includes(w));
+    const keyMatch = keyWords.some((w) => w.length > 3 && lowerMsg.includes(w));
+    if (categoryMatch || titleMatch || keyMatch) {
+      contexts.push(formatGuide(guide));
     }
   }
 
