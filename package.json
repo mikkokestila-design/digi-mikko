@@ -1,0 +1,22 @@
+{
+  "name": "digi-mikko",
+  "version": "1.0.0",
+  "description": "Digital support service website for elderly people",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR-USERNAME/digi-mikko.git"
+  },
+  "keywords": [
+    "digital-support",
+    "elderly-care",
+    "tech-help",
+    "website"
+  ],
+  "author": "Mikko",
+  "license": "MIT"
+}

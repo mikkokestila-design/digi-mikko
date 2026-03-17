@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ota yhteyttä - Digi-Mikko</title>
+    <meta name="description" content="Ota yhteyttä Digi-Mikkoon. Varaa aika tai kysy lisätietoja digituesta ikäihmisille.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🔧 Digi-Mikko</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="services.html">Palvelut</a></li>
+                <li><a href="self-help.html">Ohjeet</a></li>
+                <li><a href="contact.html" class="active">Ota yhteyttä</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Avaa valikko">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Ota yhteyttä</h1>
+                <p class="hero-subtitle">Kerro ongelmastasi, niin otamme sinuun yhteyttä pian</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2>Lähetä viesti</h2>
+                        <p>Täytä alla oleva lomake, niin otamme sinuun yhteyttä 24 tunnin sisällä.</p>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nimesi *</label>
+                                <input type="text" id="name" name="name" required placeholder="Esim. Maija Meikäläinen">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Puhelinnumero *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="Esim. 040 123 4567">
+                                <small>Soitamme sinulle takaisin tähän numeroon</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Sähköpostiosoite</label>
+                                <input type="email" id="email" name="email" placeholder="Esim. maija@example.com">
+                                <small>Valinnainen, mutta suositeltava</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Minkä palvelun kaipaisit? *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Valitse palvelu...</option>
+                                    <option value="kotikäynti">Kotikäynti</option>
+                                    <option value="etätuki">Etätuki</option>
+                                    <option value="käyttöönotto">Laitteen käyttöönotto</option>
+                                    <option value="koulutus">Henkilökohtainen koulutus</option>
+                                    <option value="tekninen">Tekninen apu</option>
+                                    <option value="pikatuki">Pikatuki</option>
+                                    <option value="muu">Muu / En ole varma</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Kerro ongelmastasi *</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Esim. Tarvitsen apua sähköpostin käyttöön. Uusi puhelin hankittu eikä osaa ottaa käyttöön..."></textarea>
+                                <small>Mitä tarkemmin kerrot, sitä paremmin voimme auttaa</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="preferred-time">Milloin sinulle sopisi parhaiten?</label>
+                                <textarea id="preferred-time" name="preferred-time" rows="3" placeholder="Esim. Arkipäivisin klo 10-14 tai lauantaina"></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                    <span>Hyväksyn, että yhteystietojani käytetään yhteydenottoon *</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large">Lähetä viesti</button>
+                            
+                            <p class="form-note">* = Pakollinen tieto</p>
+                        </form>
+
+                        <div id="formSuccess" class="success-message" style="display: none;">
+                            <h3>✅ Kiitos yhteydenotostasi!</h3>
+                            <p>Olemme vastaanottaneet viestisi ja otamme sinuun yhteyttä pian.</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info Sidebar -->
+                    <div class="contact-info-sidebar">
+                        <div class="contact-card">
+                            <h3>📞 Soita meille</h3>
+                            <p class="contact-detail"><strong>040 123 4567</strong></p>
+                            <p>Ma-Pe: 9:00-18:00<br>La: 10:00-14:00</p>
+                            <p class="small-text">Ensimmäiset 15 min ilmaista neuvontaa!</p>
+                            <a href="tel:+358401234567" class="btn btn-secondary">Soita nyt</a>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3>📧 Sähköposti</h3>
+                            <p class="contact-detail">mikko@digi-mikko.fi</p>
+                            <p>Vastaamme sähköposteihin arkisin 24 tunnin sisällä.</p>
+                            <a href="mailto:mikko@digi-mikko.fi" class="btn btn-secondary">Lähetä email</a>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3>📍 Palvelualue</h3>
+                            <p>Pääkaupunkiseutu ja lähikunnat:</p>
+                            <ul class="area-list">
+                                <li>Helsinki</li>
+                                <li>Espoo</li>
+                                <li>Vantaa</li>
+                                <li>Kauniainen</li>
+                                <li>+ lähikunnat</li>
+                            </ul>
+                            <p class="small-text">Palvelemme myös etänä kaikkialla Suomessa!</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3>💬 WhatsApp</h3>
+                            <p>Voit myös lähettää viestin WhatsAppilla numeroon:</p>
+                            <p class="contact-detail"><strong>040 123 4567</strong></p>
+                        </div>
+
+                        <div class="contact-card highlight">
+                            <h3>⚡ Kiireellinen apu?</h3>
+                            <p>Jos tarvitset apua heti, soita suoraan. Yritämme vastata aina mahdollisimman nopeasti!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Usein kysytyt kysymykset</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Kuinka nopeasti pääsen apuun?</h3>
+                        <p>Yleensä saamme varattua ajan 1-3 päivän sisällä. Kiireellisissä tapauksissa pyrimme auttamaan jopa samana päivänä.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Paljonko palvelut maksavat?</h3>
+                        <p>Kotikäynti 50 €/tunti + matkakulut. Etätuki 40 €/tunti. Katso kaikki hinnat <a href="services.html">Palvelut-sivulta</a>.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Voinko perua ajan?</h3>
+                        <p>Kyllä voit. Jos peruutat vähintään 24 tuntia ennen sovittua aikaa, peruutus on maksuton.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Täytyykö minun osata jotain etukäteen?</h3>
+                        <p>Et tarvitse mitään ennakkotietoja. Autamme aivan perusasioista lähtien, juuri sinun tahdissasi.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Onko etätuki turvallista?</h3>
+                        <p>Kyllä on! Käytämme turvallisia ja luotettavia ohjelmia. Näet aina mitä teemme, ja voit lopettaa yhteyden milloin vain.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Miten maksan palvelun?</h3>
+                        <p>Voit maksaa käteisellä kotikäynnillä tai lähetämme laskun sähköpostitse tai postitse.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Digi-Mikko</h3>
+                    <p>Digituki ikäihmisille</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Yhteystiedot</h4>
+                    <p>Puh: 040 123 4567</p>
+                    <p>Email: mikko@digi-mikko.fi</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Aukioloajat</h4>
+                    <p>Ma-Pe: 9:00-18:00</p>
+                    <p>La: 10:00-14:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Digi-Mikko. Kaikki oikeudet pidätetään.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

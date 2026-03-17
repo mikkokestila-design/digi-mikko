@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilmaiset ohjeet - Digi-Mikko</title>
+    <meta name="description" content="Ilmaiset askel-askeleelta ohjeet yleisimpiin digitaalisiin ongelmiin ikäihmisille.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🔧 Digi-Mikko</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="services.html">Palvelut</a></li>
+                <li><a href="self-help.html" class="active">Ohjeet</a></li>
+                <li><a href="contact.html">Ota yhteyttä</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Avaa valikko">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Ilmaiset ohjeet</h1>
+                <p class="hero-subtitle">Kokeile ensin itse näiden selkeiden ohjeiden avulla</p>
+                <p class="help-note">💡 Jos et saa ongelmaa ratkaistua, <a href="contact.html">ota yhteyttä</a> - autamme mielellään!</p>
+            </div>
+        </section>
+
+        <!-- Search/Filter -->
+        <section class="help-filter">
+            <div class="container">
+                <input type="text" id="helpSearch" placeholder="🔍 Hae ohjeista..." class="search-box">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Kaikki</button>
+                    <button class="filter-btn" data-category="phone">📱 Puhelin</button>
+                    <button class="filter-btn" data-category="computer">💻 Tietokone</button>
+                    <button class="filter-btn" data-category="email">📧 Sähköposti</button>
+                    <button class="filter-btn" data-category="banking">🏦 Pankki</button>
+                    <button class="filter-btn" data-category="security">🔒 Turvallisuus</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Articles -->
+        <section class="help-articles">
+            <div class="container">
+                <!-- Article 1 -->
+                <article class="help-article" id="take-photo" data-category="phone">
+                    <div class="article-header">
+                        <h2>📱 Kuvan ottaminen älypuhelimella</h2>
+                        <span class="difficulty easy">Helppo</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Vaihe-vaiheelta ohje:</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Avaa Kamera-sovellus</strong>
+                                <p>Etsi kotinäytöltä kamera-kuvake (yleensä näyttää kameralta). Napauta sitä kerran.</p>
+                            </li>
+                            <li>
+                                <strong>Suuntaa puhelin kohteeseen</strong>
+                                <p>Pidä puhelinta vakaasti kohti sitä, mitä haluat kuvata. Näet esikatselun ruudulla.</p>
+                            </li>
+                            <li>
+                                <strong>Ota kuva</strong>
+                                <p>Paina isoa pyöreää nappia ruudun alareunassa. Kuulet napsahduksen.</p>
+                            </li>
+                            <li>
+                                <strong>Tarkista kuva</strong>
+                                <p>Vasemman alakulman pienestä kuvasta näet juuri ottamasi kuvan. Napauta sitä nähdäksesi kuvan suurempana.</p>
+                            </li>
+                        </ol>
+                        <div class="tip-box">
+                            <strong>💡 Vinkki:</strong> Pidä puhelin vakaasti molemmilla käsillä ja odota hetki ennen kuin painat kamera-nappia. Näin kuvasta tulee terävämpÄ!
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="help-article" id="change-password" data-category="security">
+                    <div class="article-header">
+                        <h2>🔐 Salasanan vaihtaminen</h2>
+                        <span class="difficulty medium">Keskitaso</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Hyvä salasana:</h3>
+                        <ul>
+                            <li>Vähintään 12 merkkiä pitkä</li>
+                            <li>Sisältää isoja ja pieniä kirjaimia</li>
+                            <li>Sisältää numeroita</li>
+                            <li>Sisältää erikoismerkkejä (!@#$%)</li>
+                            <li>EI syntymäaikoja tai nimiä</li>
+                        </ul>
+                        
+                        <h3>Esimerkki hyvästä salasanasta:</h3>
+                        <div class="example-box">
+                            <code>MinullaOn5Kissaa!2026</code>
+                        </div>
+                        
+                        <h3>Salasanan vaihto (yleinen ohje):</h3>
+                        <ol class="step-list">
+                            <li>Kirjaudu sisään palveluun</li>
+                            <li>Mene Asetuksiin tai Profiili-sivulle</li>
+                            <li>Etsi "Turvallisuus" tai "Salasana"</li>
+                            <li>Klikkaa "Vaihda salasana"</li>
+                            <li>Syötä vanha salasanasi</li>
+                            <li>Syötä uusi salasana kahdesti</li>
+                            <li>Klikkaa "Tallenna"</li>
+                        </ol>
+                        
+                        <div class="warning-box">
+                            <strong>⚠️ Tärkeää:</strong> Älä koskaan kerro salasanaasi kenellekään! Pankki tai viranomaiset eivät koskaan kysy salasanaasi puhelimessa tai sähköpostissa.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="help-article" id="send-email" data-category="email">
+                    <div class="article-header">
+                        <h2>📧 Sähköpostin lähettäminen</h2>
+                        <span class="difficulty easy">Helppo</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Näin lähetät sähköpostia:</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Avaa sähköposti</strong>
+                                <p>Avaa Gmail, Outlook tai muu sähköpostiohjelma.</p>
+                            </li>
+                            <li>
+                                <strong>Klikkaa "Luo uusi" tai "Kirjoita"</strong>
+                                <p>Etsi nappi, jossa lukee "Uusi viesti", "Kirjoita" tai plus-merkki (+).</p>
+                            </li>
+                            <li>
+                                <strong>Kirjoita vastaanottajan osoite</strong>
+                                <p>Kenttään "Vastaanottaja" tai "To" kirjoita henkilön sähköpostiosoite (esim. matti.meikalainen@email.fi).</p>
+                            </li>
+                            <li>
+                                <strong>Kirjoita aihe</strong>
+                                <p>"Aihe" tai "Subject" -kenttään lyhyt kuvaus (esim. "Terveisiä mökiltä").</p>
+                            </li>
+                            <li>
+                                <strong>Kirjoita viesti</strong>
+                                <p>Isoon tekstikenttään kirjoita itse viestisi.</p>
+                            </li>
+                            <li>
+                                <strong>Lähetä</strong>
+                                <p>Klikkaa "Lähetä" tai "Send" -nappia. Viesti lähtee heti!</p>
+                            </li>
+                        </ol>
+                        
+                        <div class="tip-box">
+                            <strong>💡 Vinkki:</strong> Voit tallentaa viestin luonnoksena klikkaamalla "Tallenna luonnos". Näin voit jatkaa kirjoittamista myöhemmin.
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="help-article" id="zoom-call" data-category="computer">
+                    <div class="article-header">
+                        <h2>👨‍👩‍👧 Videoyhteyden aloittaminen (Zoom)</h2>
+                        <span class="difficulty medium">Keskitaso</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Liittyminen Zoom-kokoukseen:</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Avaa kutsulinkkisi</strong>
+                                <p>Olet saanut sähköpostissa tai tekstiviestissä linkin. Klikkaa sitä.</p>
+                            </li>
+                            <li>
+                                <strong>Avaa Zoom</strong>
+                                <p>Selain kysyy "Avaa Zoom?". Klikkaa "Avaa" tai "OK".</p>
+                            </li>
+                            <li>
+                                <strong>Kirjoita nimesi</strong>
+                                <p>Jos kysytään, kirjoita nimesi ja klikkaa "Liity kokoukseen".</p>
+                            </li>
+                            <li>
+                                <strong>Salli kamera ja mikrofoni</strong>
+                                <p>Kun selain kysyy lupaa kameralle ja mikrofonille, klikkaa "Salli".</p>
+                            </li>
+                            <li>
+                                <strong>Olet mukana!</strong>
+                                <p>Nyt näet muut osallistujat ja he näkevät sinut.</p>
+                            </li>
+                        </ol>
+                        
+                        <h3>Tärkeät painikkeet Zoomissa:</h3>
+                        <ul>
+                            <li><strong>🎤 Mute/Mykistä:</strong> Sammuttaa mikrofonisi</li>
+                            <li><strong>📹 Stop Video:</strong> Sammuttaa kamerasi</li>
+                            <li><strong>📞 Leave/Poistu:</strong> Poistut kokouksesta</li>
+                        </ul>
+                        
+                        <div class="tip-box">
+                            <strong>💡 Vinkki:</strong> Kokeile Zoomia etukäteen! Voit testata kameran ja mikrofonin toimivuutta osoitteessa <a href="https://zoom.us/test" target="_blank">zoom.us/test</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="help-article" id="online-banking" data-category="banking">
+                    <div class="article-header">
+                        <h2>🏦 Verkkopankin käyttö turvallisesti</h2>
+                        <span class="difficulty medium">Keskitaso</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Turvallisen kirjautumisen vaiheet:</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Mene pankkisi sivuille</strong>
+                                <p>Kirjoita pankkisi osoite suoraan selaimen osoiteriville. ÄLÄ klikkaa sähköpostin linkkejä!</p>
+                            </li>
+                            <li>
+                                <strong>Tarkista osoite</strong>
+                                <p>Varmista, että osoite alkaa "https://" ja näet lukkomerkin osoiterivillä.</p>
+                            </li>
+                            <li>
+                                <strong>Kirjaudu tunnuksillasi</strong>
+                                <p>Käytä verkkopankkitunnuksiasi tai mobiiliavaimia.</p>
+                            </li>
+                            <li>
+                                <strong>Tee asioitasi</strong>
+                                <p>Voit maksaa laskuja, tarkistaa saldoa jne.</p>
+                            </li>
+                            <li>
+                                <strong>Kirjaudu AINA ulos</strong>
+                                <p>Kun olet valmis, klikkaa "Kirjaudu ulos" -nappia. Tämä on tärkeää!</p>
+                            </li>
+                        </ol>
+                        
+                        <h3>Turvallisuusvinkit:</h3>
+                        <div class="warning-box">
+                            <ul>
+                                <li>⚠️ Älä koskaan jaa tunnuksiasi kenellekään</li>
+                                <li>⚠️ Pankki ei koskaan kysy tunnuksia puhelimitse</li>
+                                <li>⚠️ Älä kirjaudu verkkopankkiin julkisessa wifi-verkossa</li>
+                                <li>⚠️ Jos jokin tuntuu oudolta, lopeta ja soita pankkiin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="help-article" id="wifi-connection" data-category="computer">
+                    <div class="article-header">
+                        <h2>📡 WiFi-verkkoon yhdistäminen</h2>
+                        <span class="difficulty easy">Helppo</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Tietokoneella (Windows):</h3>
+                        <ol class="step-list">
+                            <li>Klikkaa WiFi-kuvaketta ruudun oikeassa alanurkassa (näyttää aaltoviivoilta)</li>
+                            <li>Näet listan saatavilla olevista verkoista</li>
+                            <li>Klikkaa oman verkkoosi nimeä</li>
+                            <li>Klikkaa "Yhdistä"</li>
+                            <li>Kirjoita salasana ja klikkaa "Seuraava"</li>
+                            <li>Odota hetki - olet nyt verkossa!</li>
+                        </ol>
+                        
+                        <h3>Älypuhelimella:</h3>
+                        <ol class="step-list">
+                            <li>Avaa Asetukset</li>
+                            <li>Valitse "WiFi" tai "WLAN"</li>
+                            <li>Kytke WiFi päälle (liukupainike)</li>
+                            <li>Napauta oman verkkosi nimeä</li>
+                            <li>Kirjoita salasana ja napauta "Yhdistä"</li>
+                            <li>Olet nyt verkossa!</li>
+                        </ol>
+                        
+                        <div class="tip-box">
+                            <strong>💡 Vinkki:</strong> WiFi-salasana löytyy usein reitittimen pohjasta tarrasta. Etsi tekstiä "Password", "Key" tai "Salasana".
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 7 -->
+                <article class="help-article" id="scam-recognition" data-category="security">
+                    <div class="article-header">
+                        <h2>🛡️ Huijausviestien tunnistaminen</h2>
+                        <span class="difficulty medium">Keskitaso</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Tyypillisiä merkkejä huijausviestistä:</h3>
+                        <div class="warning-box">
+                            <ul>
+                                <li>⚠️ Kiire: "Toimi heti tai tilisi lukitaan!"</li>
+                                <li>⚠️ Pelottelu: "Sinun tilisi on vaarassa!"</li>
+                                <li>⚠️ Liian hyvä ollakseen totta: "Olet voittanut miljoona euroa!"</li>
+                                <li>⚠️ Pyydetään salasanoja tai tunnuksia</li>
+                                <li>⚠️ Oudot linkit (esim. "p4nkki.fi" oikean "pankki.fi" sijaan)</li>
+                                <li>⚠️ Huono kieli ja kirjoitusvirheet</li>
+                                <li>⚠️ Tuntematon lähettäjä</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Mitä tehdä epäilyttävän viestin saatuasi:</h3>
+                        <ol class="step-list">
+                            <li><strong>ÄLÄ klikkaa linkkejä</strong></li>
+                            <li><strong>ÄLÄ vastaa viestiin</strong></li>
+                            <li><strong>ÄLÄ anna henkilötietoja</strong></li>
+                            <li>Poista viesti tai merkitse roskapostiksi</li>
+                            <li>Jos epäilyttävä viesti väittää olevan pankistasi, soita pankkiin ja varmista</li>
+                        </ol>
+                        
+                        <div class="tip-box">
+                            <strong>💡 Muista:</strong> Pankit, viranomaiset ja luotettavat yritykset eivät KOSKAAN pyydä salasanoja, pankkitunnuksia tai luottokorttitietoja sähköpostitse tai tekstiviestitse!
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 8 -->
+                <article class="help-article" id="whatsapp-basics" data-category="phone">
+                    <div class="article-header">
+                        <h2>💬 WhatsApp-viestien lähettäminen</h2>
+                        <span class="difficulty easy">Helppo</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Viestin lähettäminen:</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Avaa WhatsApp</strong>
+                                <p>Napauta vihreää WhatsApp-kuvaketta puhelimessasi.</p>
+                            </li>
+                            <li>
+                                <strong>Valitse keskustelu</strong>
+                                <p>Näet listan keskusteluista. Napauta henkilön nimeä, jolle haluat kirjoittaa.</p>
+                            </li>
+                            <li>
+                                <strong>Kirjoita viestisi</strong>
+                                <p>Alaosassa on tekstikenttä. Napauta sitä ja kirjoita viestisi.</p>
+                            </li>
+                            <li>
+                                <strong>Lähetä</strong>
+                                <p>Painatasinistä lähetyspainiketta (näyttää paperilennokille).</p>
+                            </li>
+                        </ol>
+                        
+                        <h3>Kuvan lähettäminen:</h3>
+                        <ol class="step-list">
+                            <li>Avaa keskustelu</li>
+                            <li>Napauta paperliitti- tai kamera-kuvaketta</li>
+                            <li>Valitse "Galleria" ja valitse kuva</li>
+                            <li>Napauta vihreää lähetyspainiketta</li>
+                        </ol>
+                        
+                        <div class="tip-box">
+                            <strong>💡 Vinkki:</strong> Näet viestin perässä merkkejä: ✓ = lähetetty, ✓✓ = toimitettu, sininen ✓✓ = luettu.
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Still Need Help -->
+        <section class="contact-cta">
+            <div class="container">
+                <h2>Eikö ohje auttanut?</h2>
+                <p>Ei hätää! Ota yhteyttä, niin autamme sinua henkilökohtaisesti.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Lähetä viesti</a>
+                    <a href="tel:+358401234567" class="btn btn-secondary">📞 Soita: 040 123 4567</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Digi-Mikko</h3>
+                    <p>Digituki ikäihmisille</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Yhteystiedot</h4>
+                    <p>Puh: 040 123 4567</p>
+                    <p>Email: mikko@digi-mikko.fi</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Aukioloajat</h4>
+                    <p>Ma-Pe: 9:00-18:00</p>
+                    <p>La: 10:00-14:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Digi-Mikko. Kaikki oikeudet pidätetään.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
