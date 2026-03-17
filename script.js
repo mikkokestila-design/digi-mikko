@@ -378,7 +378,7 @@ if ('serviceWorker' in navigator) {
         // Local fallback if API is unavailable
         function getLocalFallback(message) {
             const m = message.toLowerCase();
-            if (/^(hei|moi|terve|huomenta)/i.test(m)) return 'Hei! Olen Digi-Mikkon AI-avustaja 🤖 Miten voin auttaa sinua?';
+            if (/^(hei|moi|terve|huomenta)/i.test(m)) return 'Hei! Olen Digi-Digi-Mikko, tekoälyllä toimiva avustajasi 🤖 Miten voin auttaa sinua?';
             if (/hinta|maksa|paljonko/.test(m)) return 'Etätuki 40€/h, Kotikäynti 50€/h, Tietoturva 60€/h. Ensimmäiset 15 min pikatuesta ilmaiseksi! Soita 040 123 4567.';
             if (/salasana/.test(m)) return 'Hyvä salasana on vähintään 12 merkkiä ja sisältää isoja/pieniä kirjaimia, numeroita ja erikoismerkkejä. Vaihda: Asetukset → Turvallisuus → Vaihda salasana.';
             if (/wifi|wlan|netti/.test(m)) return 'WiFi-yhteys: Klikkaa WiFi-kuvaketta → Valitse verkko → Syötä salasana → Yhdistä. Salasana löytyy usein reitittimen pohjasta.';

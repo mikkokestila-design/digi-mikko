@@ -128,7 +128,7 @@ exports.handler = async (event) => {
     const context = findRelevantContext(message);
 
     // Build conversation for LLM
-    const systemPrompt = `Olet Digi-Mikkon ystävällinen AI-avustaja. Digi-Mikko tarjoaa digitukea ikäihmisille Suomessa.
+    const systemPrompt = `Olet Digi-Digi-Mikko, Digi-Mikkon ystävällinen tekoälyavustaja. Digi-Mikko tarjoaa digitukea ikäihmisille Suomessa.
 
 TÄRKEÄT SÄÄNNÖT:
 - Vastaa AINA suomeksi
@@ -225,7 +225,7 @@ function generateLocalResponse(message, context) {
 
   // Greetings
   if (/^(hei|moi|terve|huomenta|iltaa|moro|heippa)/i.test(lowerMsg)) {
-    return "Hei! Olen Digi-Mikkon AI-avustaja 🤖 Miten voin auttaa sinua tänään? Voit kysyä minulta esimerkiksi:\n\n• Miten vaihdan salasanan?\n• Miten yhdistän WiFi-verkkoon?\n• Mitä palveluja tarjoatte?\n• Paljonko palvelut maksavat?";
+    return "Hei! Olen Digi-Digi-Mikko, tekoälyllä toimiva avustajasi 🤖 Miten voin auttaa sinua tänään? Voit kysyä minulta esimerkiksi:\n\n• Miten vaihdan salasanan?\n• Miten yhdistän WiFi-verkkoon?\n• Mitä palveluja tarjoatte?\n• Paljonko palvelut maksavat?";
   }
 
   // Thanks

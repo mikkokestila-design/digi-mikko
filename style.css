@@ -1367,21 +1367,30 @@ a:focus {
 /* Mobile responsive adjustments for chatbot */
 @media (max-width: 768px) {
     .chatbot-body {
-        width: calc(100vw - 32px);
-        max-width: 360px;
-        height: 70vh;
-        max-height: 500px;
+        width: calc(100vw - 40px);
+        max-width: 340px;
+        height: 60vh;
+        max-height: 450px;
     }
     
     .chatbot-widget {
-        right: 16px;
-        bottom: 16px;
+        right: 8px;
+        bottom: 8px;
+    }
+    
+    .chatbot-widget.open {
+        position: fixed;
+        bottom: 8px;
+        right: 8px;
+        left: auto;
+        top: auto;
+        z-index: 1000;
     }
     
     .chatbot-toggle {
-        width: 60px;
-        height: 60px;
-        font-size: 26px;
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
     }
     
     .services-preview-grid {
@@ -1406,6 +1415,44 @@ a:focus {
     .hero-avatar {
         width: 100px;
         height: 100px;
+    }
+    
+    .chatbot-messages {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .bot-message, .user-message {
+        font-size: 14px;
+        padding: 8px 12px;
+        max-width: 85%;
+    }
+    
+    .bot-message::before {
+        font-size: 20px;
+        width: 28px;
+        height: 28px;
+        left: 10px;
+        top: 8px;
+    }
+    
+    .bot-message {
+        padding-left: 42px;
+    }
+    
+    .chatbot-input-area {
+        padding: 10px;
+        gap: 6px;
+    }
+    
+    .chatbot-input-area input {
+        font-size: 14px;
+        padding: 9px 12px;
+    }
+    
+    .chatbot-input-area button {
+        font-size: 14px;
+        padding: 9px 16px;
     }
 }
 
