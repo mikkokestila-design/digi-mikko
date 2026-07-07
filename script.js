@@ -517,7 +517,7 @@ if ('serviceWorker' in navigator) {
         function getLocalFallback(message) {
             const m = message.toLowerCase();
             if (/^(hei|moi|terve|huomenta)/i.test(m)) return 'Hei! Olen Digi-Mikko, tekoälyllä toimiva avustajasi. Miten voin auttaa sinua?';
-            if (/hinta|maksa|paljonko/.test(m)) return 'Etätuki 40 EUR/h, Kotikäynti 50 EUR/h, Tietoturva 60 EUR/h. Ensimmäiset 15 min pikatuesta ilmaiseksi! Soita 0405044593.';
+            if (/hinta|maksa|paljonko/.test(m)) return 'Kaikissa palveluissa on sama hinta: minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla. Soita 0405044593.';
             if (/salasana/.test(m)) return 'Hyvä salasana on vähintään 12 merkkiä ja sisältää isoja/pieniä kirjaimia, numeroita ja erikoismerkkejä. Vaihda: Asetukset -> Turvallisuus -> Vaihda salasana.';
             if (/wifi|wlan|netti/.test(m)) return 'WiFi-yhteys: Klikkaa WiFi-kuvaketta -> Valitse verkko -> Syötä salasana -> Yhdistä. Salasana löytyy usein reitittimen pohjasta.';
             if (/kiitos/.test(m)) return 'Ole hyvä! Kysy rohkeasti lisää!';

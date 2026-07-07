@@ -288,7 +288,7 @@ function generateLocalResponse(message, context) {
 
     // Price info
     if (/hinta|maksa|kustann|paljonko/i.test(lowerMsg)) {
-      return "**Digi-Mikko hinnat:**\n\nPikatuki: Ensimmaiset 15 min ILMAISEKSI\nEtatuki: 40 EUR/tunti\nKotikaynti: 50 EUR/tunti + matkakulut\nTekoaly-opastus: 50 EUR/tunti\nTietoturva: 60 EUR/tunti\nKayttoonotto: 80 EUR (2 tuntia)\nKoulutus: 120 EUR (3 tuntia)\n\nSoita 0405044593 niin sovitaan sinulle sopiva palvelu!";
+      return "**Digi-Mikko hinnat:**\n\nKaikki palvelut samalla hinnalla:\n- Minimiveloitus 100 EUR/palvelukerta\n- Sen jälkeen 100 EUR/tunti\n- Kuukausituki saatavilla jatkuviin tarpeisiin\n\nSoita 0405044593 niin sovitaan sinulle sopiva palvelu!";
     }
 
     // Security topics

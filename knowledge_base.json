@@ -2,7 +2,7 @@
   "palvelut": {
     "kotikäynti": {
       "kuvaus": "Tulen sinun luoksesi kotiin ja käymme rauhassa läpi ongelmasi omalla laitteellasi.",
-      "hinta": "50 �,�/tunti + matkakulut 0,50 �,�/km",
+      "hinta": "Minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla.",
       "sisältö": [
         "Henkilökohtainen opastus kotonasi",
         "Käytämme sinun omia laitteitasi",
@@ -13,7 +13,7 @@
     },
     "etätuki": {
       "kuvaus": "Puhelimitse tai etäyhteyden kautta voin auttaa sinua nopeasti ilman kotikäyntiä.",
-      "hinta": "40 �,�/tunti, ei matkakuluja",
+      "hinta": "Minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla.",
       "sisältö": [
         "Nopea apu puhelimitse",
         "Turvallinen etäyhteys tietokoneellesi",
@@ -23,7 +23,7 @@
     },
     "käyttöönotto": {
       "kuvaus": "Autan uuden laitteen käyttöönotossa ja opetan perusteet.",
-      "hinta": "80 �,� (sisältää 2 tuntia + kotikäynti lähialueella)",
+      "hinta": "Minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla.",
       "sisältö": [
         "Laitteen peruskäyttöönotto",
         "Sovellusten asennus",
@@ -33,7 +33,7 @@
     },
     "koulutus": {
       "kuvaus": "Räätälöity henkilökohtainen koulutus sinun tarpeisiisi.",
-      "hinta": "120 �,� (3 tuntia)",
+      "hinta": "Minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla.",
       "aiheet": [
         "Sähköposti (Gmail, Outlook)",
         "Verkkopankki ja e-laskut",
@@ -45,7 +45,7 @@
     },
     "tekninen_apu": {
       "kuvaus": "Teknisten ongelmien selvitys ja korjaus.",
-      "hinta": "50 �,�/tunti + mahdolliset varaosakustannukset",
+      "hinta": "Minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla.",
       "sisältö": [
         "Ongelman diagnosointi",
         "Virustorjunta ja haittaohjelmien poisto",
@@ -57,7 +57,7 @@
     },
     "pikatuki": {
       "kuvaus": "Soita, niin yritän auttaa heti puhelimessa.",
-      "hinta": "Ensimmäiset 15 minuuttia ILMAISEKSI, sen jälkeen 40 �,�/tunti",
+      "hinta": "Minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla.",
       "sisältö": [
         "Nopeat kysymykset",
         "Unohtunut salasana",
@@ -66,7 +66,7 @@
     },
     "tietoturva": {
       "kuvaus": "Suojaa itsesi ja laitteesi verkkouhkilta.",
-      "hinta": "60 �,�/tunti (kattava tarkastus 2-3h)",
+      "hinta": "Minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla.",
       "sisältö": [
         "Tietoturvakatsaus kaikille laitteille",
         "Virustorjunnan asennus ja päivitys",
@@ -79,7 +79,7 @@
     },
     "tekoäly": {
       "kuvaus": "Opi käyttämään tekoälyä arkesi helpottamiseen.",
-      "hinta": "50 �,�/tunti (suositus 2 tunnin paketti)",
+      "hinta": "Minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla.",
       "sisältö": [
         "ChatGPT:n peruskäyttö",
         "AI-avustajien käyttö kirjoittamiseen",
@@ -662,7 +662,7 @@
   "usein_kysytyt": {
     "mikä_on_digi_mikko": "Digi-Mikko on digituki ikäihmisille. Autamme kaikissa tietokoneen, älypuhelimen ja tabletin ongelmissa. Voimme tulla kotiin tai auttaa etänä.",
     "miten_varaan_ajan": "Voit varata ajan soittamalla numeroon 0405044593 tai lähettämällä viestin yhteystietolomakkeella sivullamme. Palvelemme ma-pe 9-18 ja la 10-14.",
-    "paljonko_maksaa": "Hinnat vaihtelevat palvelun mukaan: Etätuki 40�,�/h, Kotikäynti 50�,�/h, Käyttöönotto 80�,� (2h), Koulutus 120�,� (3h), Tietoturva 60�,�/h, AI-opastus 50�,�/h. Ensimmäinen 15 min puhelintukea on ilmaista!",
+    "paljonko_maksaa": "Kaikissa palveluissa on sama hinta: minimiveloitus 100 EUR/palvelukerta, sen jälkeen 100 EUR/tunti. Kuukausituki saatavilla jatkuviin tarpeisiin.",
     "missä_toimitte": "Toimimme pääkaupunkiseudulla ja lähikunnissa. Etätuki toimii kaikkialla Suomessa.",
     "saanko_kotiin": "Kyllä! Kotikäynti on yksi suosituimmista palveluistamme. Tulen luoksesi ja autamme rauhassa omilla laitteillasi.",
     "voiko_perua": "Kyllä, voit perua ajan 24 tuntia ennen sovittua aikaa ilman veloitusta."
