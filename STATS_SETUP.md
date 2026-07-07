@@ -26,7 +26,7 @@ In Netlify dashboard -> Site configuration -> Environment variables, add:
 - `RESEND_API_KEY` = your Resend API key
 - `STATS_EMAIL_TO` = `mikko.kestila@gmail.com`
 - `STATS_EMAIL_FROM` = e.g. `Digi-Mikko Stats <onboarding@resend.dev>`
-- `STATS_DASHBOARD_KEY` = long random secret (used for private stats page)
+- `STATS_DASHBOARD_KEY` = optional long random secret (used for admin page)
 
 Notes:
 - `STATS_EMAIL_TO` defaults to `mikko.kestila@gmail.com` if not set.
@@ -48,14 +48,15 @@ Open this URL once after deploy to test email sending:
 
 If there is data and env vars are set, an email is sent.
 
-## Private dashboard page
+## Stats dashboard pages
 
 Two pages are available:
 
-- `/stats.html` (site-styled dashboard)
-- `/admin-stats.html` (minimal admin-only dashboard)
+- `/stats.html` (site-styled public dashboard)
+- `/admin-stats.html` (minimal admin dashboard)
 
-Both call `/.netlify/functions/stats-read` and require `STATS_DASHBOARD_KEY`.
+Both call `/.netlify/functions/stats-read`.
+`/stats.html` is public. `/admin-stats.html` can still use `STATS_DASHBOARD_KEY` in the page UI.
 
 ## 5. Automatic weekly schedule
 

@@ -35,13 +35,9 @@
 
   <main class="stats-wrap">
     <h1>Digi-Mikko stats</h1>
-    <p>Private dashboard for daily site statistics.</p>
+    <p>Public dashboard for daily site statistics.</p>
 
     <div class="stats-toolbar">
-      <div>
-        <label for="statsKey">Dashboard key</label>
-        <input id="statsKey" type="password" placeholder="Enter key">
-      </div>
       <div>
         <label for="statsDate">Date (UTC)</label>
         <input id="statsDate" type="date">
@@ -67,7 +63,6 @@
 
   <script>
     (function() {
-      const keyInput = document.getElementById('statsKey');
       const dateInput = document.getElementById('statsDate');
       const loadBtn = document.getElementById('loadStats');
       const statsGrid = document.getElementById('statsGrid');
@@ -96,18 +91,10 @@
         topPagesBody.innerHTML = '';
         topPagesTable.style.display = 'none';
 
-        const key = keyInput.value.trim();
         const date = dateInput.value;
 
-        if (!key) {
-          statsError.textContent = 'Please enter dashboard key.';
-          return;
-        }
-
         try {
-          const res = await fetch('/.netlify/functions/stats-read?date=' + encodeURIComponent(date), {
-            headers: { 'x-stats-key': key }
-          });
+          const res = await fetch('/.netlify/functions/stats-read?date=' + encodeURIComponent(date));
 
           const data = await res.json();
           if (!res.ok || !data.ok) {
@@ -145,6 +132,7 @@
       }
 
       loadBtn.addEventListener('click', loadStats);
+      loadStats();
     })();
   </script>
 </body>

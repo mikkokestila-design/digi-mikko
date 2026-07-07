@@ -37,29 +37,6 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const expectedKey = process.env.STATS_DASHBOARD_KEY;
-  if (!expectedKey) {
-    return {
-      statusCode: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Missing STATS_DASHBOARD_KEY environment variable' })
-    };
-  }
-
-  const providedKey =
-    event.headers?.['x-stats-key'] ||
-    event.headers?.['X-Stats-Key'] ||
-    event.queryStringParameters?.key ||
-    '';
-
-  if (providedKey !== expectedKey) {
-    return {
-      statusCode: 401,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Unauthorized' })
-    };
-  }
-
   const date = event.queryStringParameters?.date || dayKeyOffset(0);
   const compare = event.queryStringParameters?.compare || dayKeyOffset(1);
 
