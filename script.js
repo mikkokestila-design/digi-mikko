@@ -80,24 +80,50 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Lähetetään...';
             }
 
-            // If Netlify Forms attributes are present, allow normal POST submission.
-            if (contactForm.getAttribute('data-netlify') === 'true') {
+            // Local file preview fallback.
+            if (window.location.protocol === 'file:') {
+                if (formSuccess) {
+                    contactForm.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                    formSuccess.scrollIntoView({ behavior: 'smooth' });
+                }
                 return;
             }
 
-            // Fallback for local preview when no backend is configured.
-            e.preventDefault();
-            if (formSuccess) {
-                contactForm.style.display = 'none';
-                formSuccess.style.display = 'block';
-                formSuccess.scrollIntoView({ behavior: 'smooth' });
-            }
+            const formData = new FormData(contactForm);
+            const encoded = new URLSearchParams(formData).toString();
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: encoded
+            })
+                .then(function(res) {
+                    if (!res.ok) {
+                        throw new Error('Form submit failed with status ' + res.status);
+                    }
+
+                    if (formSuccess) {
+                        contactForm.style.display = 'none';
+                        formSuccess.style.display = 'block';
+                        formSuccess.scrollIntoView({ behavior: 'smooth' });
+                    }
+                })
+                .catch(function() {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Lähetä viesti';
+                    }
+                    alert('Viestin lähetys ei onnistunut juuri nyt. Soita 0405044593 tai yritä hetken kuluttua uudelleen.');
+                });
         });
     }
     
@@ -273,6 +299,45 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Lightweight first-party event tracking for daily stats email.
+    const scamHighlights = document.getElementById('scamHighlights');
+    if (scamHighlights) {
+        fetch('/.netlify/functions/scam-highlights')
+            .then(function(res) {
+                if (!res.ok) {
+                    throw new Error('Failed to load scam highlights');
+                }
+                return res.json();
+            })
+            .then(function(data) {
+                const items = Array.isArray(data.highlights) ? data.highlights : [];
+                scamHighlights.innerHTML = '';
+
+                if (!items.length) {
+                    const li = document.createElement('li');
+                    li.textContent = 'Ajankohtaisia nostoja ei löytynyt juuri nyt. Tarkista Traficom.fi.';
+                    scamHighlights.appendChild(li);
+                    return;
+                }
+
+                items.slice(0, 4).forEach(function(item) {
+                    const li = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = item.url;
+                    link.target = '_blank';
+                    link.rel = 'noopener';
+                    link.textContent = item.title;
+                    li.appendChild(link);
+                    scamHighlights.appendChild(li);
+                });
+            })
+            .catch(function() {
+                scamHighlights.innerHTML = '';
+                const li = document.createElement('li');
+                li.textContent = 'Varoituksia ei voitu hakea nyt. Tarkista Traficom.fi.';
+                scamHighlights.appendChild(li);
+            });
+    }
+
     function getClientId() {
         const key = 'digi_client_id';
         let id = localStorage.getItem(key);
