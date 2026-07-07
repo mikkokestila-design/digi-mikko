@@ -1,8 +1,8 @@
-# Digi-Mikko - Digital Support Service for Elderly
+﻿# Digi-Mikko - Digital Support Service for Elderly
 
 A comprehensive, accessible website for a handyman service specializing in digital support for elderly people.
 
-## 🎯 Project Overview
+## �YZ� Project Overview
 
 Digi-Mikko is a professional service website designed to help elderly people with their digital problems. The website features:
 
@@ -11,21 +11,21 @@ Digi-Mikko is a professional service website designed to help elderly people wit
 - **Contact forms** - Easy ways for customers to get in touch
 - **Accessibility-first design** - Large fonts, high contrast, simple navigation
 
-## 📁 Project Structure
+## �Y"� Project Structure
 
 ```
 digi-mikko/
-│
-├── index.html          # Home page with overview and CTA
-├── services.html       # Detailed service offerings and pricing
-├── self-help.html      # Self-help guides and tutorials
-├── contact.html        # Contact form and information
-├── style.css           # Complete styling with accessibility focus
-├── script.js           # Interactive features and form handling
-└── README.md          # This file
+�",
+�"o�"?�"? index.html          # Home page with overview and CTA
+�"o�"?�"? services.html       # Detailed service offerings and pricing
+�"o�"?�"? self-help.html      # Self-help guides and tutorials
+�"o�"?�"? contact.html        # Contact form and information
+�"o�"?�"? style.css           # Complete styling with accessibility focus
+�"o�"?�"? script.js           # Interactive features and form handling
+�""�"?�"? README.md          # This file
 ```
 
-## ✨ Features
+## �o� Features
 
 ### For Users
 - **Easy Navigation** - Simple, clear menu structure
@@ -43,7 +43,7 @@ digi-mikko/
 - **Search & Filter** - Find help articles quickly
 - **Print-Friendly** - Help articles can be printed
 
-## 🚀 Getting Started
+## �Ys? Getting Started
 
 ### Prerequisites
 - A modern web browser (Chrome, Firefox, Safari, Edge)
@@ -74,16 +74,16 @@ digi-mikko/
 
    **Using VS Code:**
    - Install "Live Server" extension
-   - Right-click `index.html` → "Open with Live Server"
+   - Right-click `index.html` �?' "Open with Live Server"
 
-## 📝 Customization Guide
+## �Y"� Customization Guide
 
 ### Update Contact Information
 
 1. **Edit all HTML files** - Search for these placeholders:
-   - `040 123 4567` → Your actual phone number
-   - `mikko@digi-mikko.fi` → Your actual email
-   - `+358401234567` → Your phone in tel: format
+   - `0405044593` �?' Your actual phone number
+   - `mikko.kestila@gmail.com` �?' Your actual email
+   - `+358405044593` �?' Your phone in tel: format
 
 2. **Update service area** in `contact.html`:
    ```html
@@ -98,7 +98,7 @@ digi-mikko/
 Edit prices in `services.html`:
 ```html
 <div class="pricing">
-    <span class="price">Your Price €/tunti</span>
+    <span class="price">Your Price �,�/tunti</span>
     <span class="price-note">Additional notes</span>
 </div>
 ```
@@ -109,7 +109,7 @@ In `self-help.html`, add new article:
 ```html
 <article class="help-article" id="your-topic" data-category="computer">
     <div class="article-header">
-        <h2>📌 Your Topic Title</h2>
+        <h2>�Y"O Your Topic Title</h2>
         <span class="difficulty easy">Helppo</span>
     </div>
     <div class="article-content">
@@ -149,7 +149,7 @@ In `style.css`:
 }
 ```
 
-## 🔧 Backend Integration
+## �Y"� Backend Integration
 
 The contact form currently displays a success message client-side. To actually send emails:
 
@@ -181,7 +181,7 @@ app.post('/api/contact', (req, res) => {
 });
 ```
 
-## 📱 Mobile Optimization
+## �Y"� Mobile Optimization
 
 The site is fully responsive and mobile-friendly:
 - Touch-friendly buttons (min 44px)
@@ -189,7 +189,7 @@ The site is fully responsive and mobile-friendly:
 - Optimized images
 - Fast loading times
 
-## ♿ Accessibility Features
+## �T� Accessibility Features
 
 - **ARIA labels** for screen readers
 - **Keyboard navigation** support
@@ -198,7 +198,7 @@ The site is fully responsive and mobile-friendly:
 - **Semantic HTML** structure
 - **Focus indicators** for keyboard users
 
-## 🔒 Security Considerations
+## �Y"' Security Considerations
 
 Before going live:
 
@@ -208,7 +208,7 @@ Before going live:
 4. **Input sanitization** - Prevent XSS attacks
 5. **Rate limiting** - Prevent form abuse
 
-## 📊 Analytics Setup
+## �Y"S Analytics Setup
 
 To track visitor behavior:
 
@@ -224,7 +224,7 @@ To track visitor behavior:
    </script>
    ```
 
-## 🌐 Deployment Options
+## �YO� Deployment Options
 
 ### Option 1: GitHub Pages (Free)
 1. Create GitHub repository
@@ -242,7 +242,7 @@ To track visitor behavior:
 2. Upload files via FTP
 3. Configure domain DNS settings
 
-## 🛠️ Future Enhancements
+## �Y>�️ Future Enhancements
 
 Possible additions:
 - [ ] Online booking system with calendar
@@ -255,17 +255,17 @@ Possible additions:
 - [ ] FAQ with search
 - [ ] Service area map
 
-## 📄 License
+## �Y"" License
 
 This project is created for personal/commercial use. Modify as needed.
 
-## 👤 Contact
+## �Y'� Contact
 
 For questions about this website template:
 - Create an issue on GitHub
 - Email: [Your contact]
 
-## 🙏 Credits
+## �YT� Credits
 
 - Icons: Emoji (built-in)
 - Fonts: System fonts for maximum compatibility
@@ -275,3 +275,5 @@ For questions about this website template:
 ---
 
 **Made with ❤️ for helping elderly people navigate the digital world**
+
+

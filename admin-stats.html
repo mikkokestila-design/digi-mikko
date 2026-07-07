@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digi-Mikko Stats Dashboard</title>
+  <style>
+    :root {
+      --bg: #f3f7ff;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --brand: #1d4ed8;
+      --ok: #0f766e;
+      --line: #dbe3f1;
+    }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef4ff 0%, #f8fbff 100%);
+      color: var(--ink);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+    p.sub {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+      margin-bottom: 16px;
+    }
+    .controls {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr 180px 180px;
+      align-items: end;
+    }
+    label {
+      font-size: 13px;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+    button {
+      border: 0;
+      border-radius: 10px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+    .metrics {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .metric {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+    }
+    .metric .k {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .metric .v {
+      font-size: 26px;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .ok {
+      color: var(--ok);
+      font-size: 13px;
+    }
+    .err {
+      color: #b91c1c;
+      font-size: 13px;
+      white-space: pre-wrap;
+    }
+    @media (max-width: 760px) {
+      .controls {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Digi-Mikko Stats Dashboard</h1>
+    <p class="sub">Private view for daily page views, leads and click stats.</p>
+
+    <div class="card">
+      <div class="controls">
+        <div>
+          <label for="key">Dashboard key</label>
+          <input id="key" type="password" placeholder="Enter STATS_DASHBOARD_KEY">
+        </div>
+        <div>
+          <label for="date">Date</label>
+          <input id="date" type="date">
+        </div>
+        <div>
+          <label for="compare">Compare date</label>
+          <input id="compare" type="date">
+        </div>
+      </div>
+      <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
+        <button id="loadBtn" type="button">Load stats</button>
+        <span id="status" class="ok"></span>
+      </div>
+      <div id="error" class="err" style="margin-top:8px;"></div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 8px;">Current day</h3>
+      <div id="currentMetrics" class="metrics"></div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 8px;">Previous day</h3>
+      <div id="previousMetrics" class="metrics"></div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 8px;">Top pages (current day)</h3>
+      <table>
+        <thead>
+          <tr><th>Path</th><th>Views</th><th>Events</th></tr>
+        </thead>
+        <tbody id="topPagesBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const dateEl = document.getElementById('date');
+    const compareEl = document.getElementById('compare');
+    const keyEl = document.getElementById('key');
+    const loadBtn = document.getElementById('loadBtn');
+    const statusEl = document.getElementById('status');
+    const errorEl = document.getElementById('error');
+
+    function todayISO(offsetDays) {
+      const d = new Date();
+      d.setUTCDate(d.getUTCDate() + offsetDays);
+      return d.toISOString().slice(0, 10);
+    }
+
+    dateEl.value = todayISO(0);
+    compareEl.value = todayISO(-1);
+
+    const saved = sessionStorage.getItem('digi_stats_key');
+    if (saved) {
+      keyEl.value = saved;
+    }
+
+    function renderMetrics(targetId, totals) {
+      const el = document.getElementById(targetId);
+      const items = [
+        ['Page views', totals.pageViews || 0],
+        ['Unique visitors', totals.uniqueVisitors || 0],
+        ['Form submits', totals.formSubmits || 0],
+        ['Phone clicks', totals.phoneClicks || 0],
+        ['Email clicks', totals.emailClicks || 0],
+        ['Button clicks', totals.buttonClicks || 0],
+        ['Total events', totals.totalEvents || 0]
+      ];
+
+      el.innerHTML = items.map(([k, v]) => {
+        return `<div class="metric"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+      }).join('');
+    }
+
+    function renderTopPages(rows) {
+      const body = document.getElementById('topPagesBody');
+      if (!rows || !rows.length) {
+        body.innerHTML = '<tr><td colspan="3">No data</td></tr>';
+        return;
+      }
+      body.innerHTML = rows.map((r) => {
+        return `<tr><td>${r.path}</td><td>${r.pageViews}</td><td>${r.events}</td></tr>`;
+      }).join('');
+    }
+
+    async function loadStats() {
+      statusEl.textContent = '';
+      errorEl.textContent = '';
+
+      const key = keyEl.value.trim();
+      if (!key) {
+        errorEl.textContent = 'Please enter dashboard key.';
+        return;
+      }
+
+      sessionStorage.setItem('digi_stats_key', key);
+
+      const url = new URL('/.netlify/functions/stats-read', window.location.origin);
+      url.searchParams.set('date', dateEl.value || todayISO(0));
+      url.searchParams.set('compare', compareEl.value || todayISO(-1));
+
+      loadBtn.disabled = true;
+      loadBtn.textContent = 'Loading...';
+
+      try {
+        const res = await fetch(url.toString(), {
+          headers: { 'x-stats-key': key }
+        });
+
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.error || 'Failed to load stats');
+        }
+
+        renderMetrics('currentMetrics', data.current.totals || {});
+        renderMetrics('previousMetrics', data.previous.totals || {});
+        renderTopPages(data.current.topPages || []);
+
+        statusEl.textContent = `Loaded ${data.current.date || ''}`;
+      } catch (err) {
+        errorEl.textContent = String(err.message || err);
+      } finally {
+        loadBtn.disabled = false;
+        loadBtn.textContent = 'Load stats';
+      }
+    }
+
+    loadBtn.addEventListener('click', loadStats);
+  </script>
+</body>
+</html>

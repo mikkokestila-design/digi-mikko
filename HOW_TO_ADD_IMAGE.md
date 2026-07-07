@@ -1,4 +1,4 @@
-# How to Add Your Own Image to Digi-Mikko
+﻿# How to Add Your Own Image to Digi-Mikko
 
 ## Quick Guide: Replace the Emoji with Your Photo
 
@@ -20,7 +20,7 @@ Open `index.html` and **replace this:**
 
 ```html
 <div class="hero-avatar">
-    <span class="avatar-emoji">👨‍💻</span>
+    <span class="avatar-emoji">�Y'��?��Y'�</span>
 </div>
 ```
 
@@ -92,16 +92,17 @@ Your site will auto-update on Netlify in 1-2 minutes!
 ### Quick Emoji/Icon Alternatives:
 
 Instead of a photo, you can also use these emojis in the HTML:
-- 👨‍💻 (current - tech person)
-- 🧑‍🔧 (handyman)
-- 👨‍🏫 (teacher)
-- 🤝 (helping hands)
-- 💡 (ideas/solutions)
+- �Y'��?��Y'� (current - tech person)
+- �Y�'�?��Y"� (handyman)
+- �Y'��?��Y�� (teacher)
+- �Y�� (helping hands)
+- �Y'� (ideas/solutions)
 
-Just replace `👨‍💻` with any emoji you prefer!
+Just replace `�Y'��?��Y'�` with any emoji you prefer!
 
 ---
 
 ## Need Help?
 
 If you need help adding the image, just ask! I can guide you through each step.
+

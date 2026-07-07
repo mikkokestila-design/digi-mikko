@@ -4,6 +4,9 @@
 [build]
   publish = "."
   functions = "netlify/functions"
+
+[functions."daily-stats"]
+  schedule = "@weekly"
   
 # Redirect rules
 [[redirects]]

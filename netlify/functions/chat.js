@@ -1,4 +1,4 @@
-const knowledgeBase = require("../../knowledge_base.json");
+﻿const knowledgeBase = require("../../knowledge_base.json");
 
 // Build context from knowledge base based on user message
 function findRelevantContext(message) {
@@ -150,14 +150,14 @@ exports.handler = async (event) => {
     // Build conversation for LLM
     const systemPrompt = `Olet Digi-Digi-Mikko, Digi-Mikkon ystävällinen tekoälyavustaja. Digi-Mikko tarjoaa digitukea ikäihmisille Suomessa.
 
-TÄRKEÄT SÄÄNNÖT:
+  TARKEAT SAANNOT:
 - Vastaa AINA suomeksi
 - Vastaa lyhyesti ja selkeästi, mutta anna konkreettisia neuvoja
 - Käytä yksinkertaista kieltä jota ikäihmiset ymmärtävät
 - Kun annat ohjeita, numeroi vaiheet selkeästi
-- Jos et tiedä vastausta, ohjaa ottamaan yhteyttä: 040 123 4567
+- Jos et tiedä vastausta, ohjaa ottamaan yhteyttä: 0405044593
 - Olet avulias, kärsivällinen ja ystävällinen
-- Älä keksi tietoja - käytä vain annettua kontekstia
+  - Ala keksi tietoja - käyta vain annettua kontekstia
 
 TIETOKANTA-KONTEKSTI:
 ${context}`;
@@ -233,7 +233,7 @@ ${context}`;
       statusCode: 200,
       headers,
       body: JSON.stringify({
-        response: "Pahoittelen, minulla on teknisiä ongelmia juuri nyt. Voit soittaa suoraan numeroon 040 123 4567 niin saat apua!",
+        response: "Pahoittelen, minulla on teknisiä ongelmia juuri nyt. Voit soittaa suoraan numeroon 0405044593 niin saat apua!",
       }),
     };
   }
@@ -245,12 +245,12 @@ function generateLocalResponse(message, context) {
 
   // Greetings
   if (/^(hei|moi|terve|huomenta|iltaa|moro|heippa)/i.test(lowerMsg)) {
-    return "Hei! Olen Digi-Digi-Mikko, tekoälyllä toimiva avustajasi 🤖 Miten voin auttaa sinua tänään? Voit kysyä minulta esimerkiksi:\n\n• Miten vaihdan salasanan?\n• Miten yhdistän WiFi-verkkoon?\n• Mitä palveluja tarjoatte?\n• Paljonko palvelut maksavat?";
+    return "Hei! Olen Digi-Digi-Mikko, tekoalylla toimiva avustajasi. Miten voin auttaa sinua tanaan? Voit kysya minulta esimerkiksi:\n\n- Miten vaihdan salasanan?\n- Miten yhdistan WiFi-verkkoon?\n- Mita palveluja tarjoatte?\n- Paljonko palvelut maksavat?";
   }
 
   // Thanks
   if (/kiitos|hyvä|mahtava|loistava|auttoi/i.test(lowerMsg)) {
-    return "Ole hyvä! Mukava kun pystyin auttamaan 😊 Jos tulee lisää kysymyksiä, kysy rohkeasti. Voit myös soittaa numeroon 040 123 4567 niin jutellaan lisää!";
+    return "Ole hyva! Mukava kun pystyin auttamaan. Jos tulee lisaa kysymyksia, kysy rohkeasti. Voit myos soittaa numeroon 0405044593 niin jutellaan lisaa!";
   }
 
   // If we have context, build a structured response
@@ -267,28 +267,28 @@ function generateLocalResponse(message, context) {
       // Add tip if available
       const tipMatch = context.match(/Vinkki: ([^\n]+)/);
       if (tipMatch) {
-        response += `\n💡 ${tipMatch[1]}`;
+        response += `\nVinkki: ${tipMatch[1]}`;
       }
 
       // Add warning if available
       const warnMatch = context.match(/Tärkeää: ([^\n]+)/);
       if (warnMatch) {
-        response += `\n\n⚠️ ${warnMatch[1]}`;
+        response += `\n\nTarkeaa: ${warnMatch[1]}`;
       }
 
-      response += "\n\nTarvitsetko lisäapua? Soita 040 123 4567!";
+      response += "\n\nTarvitsetko lisäapua? Soita 0405044593!";
       return response;
     }
 
     // Extract service info
     const serviceMatch = context.match(/Palvelu "([^"]+)": (.+?) Hinta: (.+?)\./);
     if (serviceMatch) {
-      return `**${serviceMatch[1].charAt(0).toUpperCase() + serviceMatch[1].slice(1)}**\n\n${serviceMatch[2]}\n\n💰 Hinta: ${serviceMatch[3]}\n\nHaluatko varata ajan? Soita 040 123 4567 tai lähetä viesti osoitteeseen mikko@digi-mikko.fi!`;
+      return `**${serviceMatch[1].charAt(0).toUpperCase() + serviceMatch[1].slice(1)}**\n\n${serviceMatch[2]}\n\nHinta: ${serviceMatch[3]}\n\nHaluatko varata ajan? Soita 0405044593 tai laheta viesti osoitteeseen mikko.kestila@gmail.com!`;
     }
 
     // Price info
     if (/hinta|maksa|kustann|paljonko/i.test(lowerMsg)) {
-      return "**Digi-Mikko hinnat:**\n\n📞 Pikatuki: Ensimmäiset 15 min ILMAISEKSI\n💻 Etätuki: 40 €/tunti\n🏠 Kotikäynti: 50 €/tunti + matkakulut\n🤖 Tekoäly-opastus: 50 €/tunti\n🔒 Tietoturva: 60 €/tunti\n📱 Käyttöönotto: 80 € (2 tuntia)\n👨‍🏫 Koulutus: 120 € (3 tuntia)\n\nSoita 040 123 4567 niin sovitaan sinulle sopiva palvelu!";
+      return "**Digi-Mikko hinnat:**\n\nPikatuki: Ensimmaiset 15 min ILMAISEKSI\nEtatuki: 40 EUR/tunti\nKotikaynti: 50 EUR/tunti + matkakulut\nTekoaly-opastus: 50 EUR/tunti\nTietoturva: 60 EUR/tunti\nKayttoonotto: 80 EUR (2 tuntia)\nKoulutus: 120 EUR (3 tuntia)\n\nSoita 0405044593 niin sovitaan sinulle sopiva palvelu!";
     }
 
     // Security topics
@@ -297,23 +297,25 @@ function generateLocalResponse(message, context) {
       const actionMatch = context.match(/Toimintaohjeet: (.+?)(?=\n|$)/);
       let response = "**Näin tunnistat huijausviestin:**\n\n";
       if (secMatch) {
-        const signs = secMatch[1].split(/(?=⚠️|Kiire|Pelottelu|Liian|Pyydetään|Oudot|Huono|Tuntematon)/).filter(Boolean);
+        const signs = secMatch[1].split(/(?=Kiire|Pelottelu|Liian|Pyydetaan|Oudot|Huono|Tuntematon)/).filter(Boolean);
         signs.forEach((s) => {
-          response += `⚠️ ${s.trim()}\n`;
+          response += `- ${s.trim()}\n`;
         });
       }
       if (actionMatch) {
         response += "\n**Mitä tehdä:**\n";
-        const actions = actionMatch[1].split(/(?=ÄLÄ|Poista|Soita)/).filter(Boolean);
+        const actions = actionMatch[1].split(/(?=Poista|Soita|Ilmoita)/).filter(Boolean);
         actions.forEach((a) => {
-          response += `• ${a.trim()}\n`;
+          response += `- ${a.trim()}\n`;
         });
       }
-      response += "\n🛡️ Muista: Pankki tai viranomaiset eivät KOSKAAN kysy tunnuksiasi!\n\nTarvitsetko tietoturvatarkastuksen? Soita 040 123 4567!";
+      response += "\nMuista: Pankki tai viranomaiset eivat KOSKAAN kysy tunnuksiasi!\n\nTarvitsetko tietoturvatarkastuksen? Soita 0405044593!";
       return response;
     }
   }
 
   // Default
-  return "Kiitos kysymyksestäsi! Voin auttaa monissa asioissa:\n\n📱 Puhelin- ja tietokone-ongelmat\n🔐 Salasanat ja tietoturva\n📧 Sähköposti ja viestintä\n🏦 Verkkopankki\n🤖 Tekoäly ja ChatGPT\n\nKerro tarkemmin ongelmastasi, niin yritän auttaa! Tai soita suoraan 040 123 4567.";
+  return "Kiitos kysymyksestasi! Voin auttaa monissa asioissa:\n\n- Puhelin- ja tietokone-ongelmat\n- Salasanat ja tietoturva\n- Sahkoposti ja viestinta\n- Verkkopankki\n- Tekoaly ja ChatGPT\n\nKerro tarkemmin ongelmastasi, niin yritan auttaa! Tai soita suoraan 0405044593.";
 }
+
+

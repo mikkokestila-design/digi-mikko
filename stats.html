@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digi-Mikko Stats</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .stats-wrap { max-width: 980px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    .stats-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-top: 1rem; }
+    .stats-card { background: #fff; border: 1px solid #dbe7ff; border-radius: 12px; padding: 1rem; box-shadow: 0 8px 20px rgba(15, 52, 96, 0.06); }
+    .stats-card h3 { margin: 0 0 0.4rem; font-size: 0.95rem; color: #334155; }
+    .stats-value { font-size: 1.7rem; font-weight: 700; color: #1d4ed8; }
+    .stats-sub { color: #64748b; font-size: 0.88rem; }
+    .stats-toolbar { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: end; margin-bottom: 1rem; }
+    .stats-toolbar label { font-size: 0.85rem; color: #334155; display: block; }
+    .stats-toolbar input { border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.55rem; min-width: 180px; }
+    .stats-table { width: 100%; border-collapse: collapse; margin-top: 1.2rem; background: #fff; border-radius: 12px; overflow: hidden; }
+    .stats-table th, .stats-table td { padding: 0.7rem; border-bottom: 1px solid #e2e8f0; text-align: left; font-size: 0.92rem; }
+    .stats-table th { background: #eff6ff; color: #1e3a8a; }
+    .stats-error { margin-top: 0.8rem; color: #b91c1c; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><a href="index.html"><img src="logo.svg" alt="Digi-Mikko"></a></div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Etusivu</a></li>
+        <li><a href="services.html">Palvelut</a></li>
+        <li><a href="contact.html">Ota yhteyttä</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="stats-wrap">
+    <h1>Digi-Mikko stats</h1>
+    <p>Private dashboard for daily site statistics.</p>
+
+    <div class="stats-toolbar">
+      <div>
+        <label for="statsKey">Dashboard key</label>
+        <input id="statsKey" type="password" placeholder="Enter key">
+      </div>
+      <div>
+        <label for="statsDate">Date (UTC)</label>
+        <input id="statsDate" type="date">
+      </div>
+      <button id="loadStats" class="btn btn-primary" type="button">Load stats</button>
+    </div>
+
+    <div id="statsError" class="stats-error" aria-live="polite"></div>
+
+    <section class="stats-grid" id="statsGrid"></section>
+
+    <table class="stats-table" id="topPagesTable" style="display:none;">
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Views</th>
+          <th>Events</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <script>
+    (function() {
+      const keyInput = document.getElementById('statsKey');
+      const dateInput = document.getElementById('statsDate');
+      const loadBtn = document.getElementById('loadStats');
+      const statsGrid = document.getElementById('statsGrid');
+      const statsError = document.getElementById('statsError');
+      const topPagesTable = document.getElementById('topPagesTable');
+      const topPagesBody = topPagesTable.querySelector('tbody');
+
+      const today = new Date().toISOString().slice(0, 10);
+      dateInput.value = today;
+
+      function metricCard(label, value, sub) {
+        const card = document.createElement('article');
+        card.className = 'stats-card';
+        card.innerHTML = '<h3>' + label + '</h3><div class="stats-value">' + value + '</div><div class="stats-sub">' + (sub || '') + '</div>';
+        return card;
+      }
+
+      function safeNum(n) {
+        if (typeof n !== 'number') return 0;
+        return n;
+      }
+
+      async function loadStats() {
+        statsError.textContent = '';
+        statsGrid.innerHTML = '';
+        topPagesBody.innerHTML = '';
+        topPagesTable.style.display = 'none';
+
+        const key = keyInput.value.trim();
+        const date = dateInput.value;
+
+        if (!key) {
+          statsError.textContent = 'Please enter dashboard key.';
+          return;
+        }
+
+        try {
+          const res = await fetch('/.netlify/functions/stats-read?date=' + encodeURIComponent(date), {
+            headers: { 'x-stats-key': key }
+          });
+
+          const data = await res.json();
+          if (!res.ok || !data.ok) {
+            statsError.textContent = (data && data.error) ? data.error : 'Failed to load stats.';
+            return;
+          }
+
+          const c = data.current.totals;
+          const p = data.previous.totals;
+
+          const cards = [
+            metricCard('Page views', safeNum(c.pageViews), 'Prev: ' + safeNum(p.pageViews)),
+            metricCard('Unique visitors', safeNum(c.uniqueVisitors), 'Prev: ' + safeNum(p.uniqueVisitors)),
+            metricCard('Form submits', safeNum(c.formSubmits), 'Prev: ' + safeNum(p.formSubmits)),
+            metricCard('Phone clicks', safeNum(c.phoneClicks), 'Prev: ' + safeNum(p.phoneClicks)),
+            metricCard('Email clicks', safeNum(c.emailClicks), 'Prev: ' + safeNum(p.emailClicks)),
+            metricCard('Button clicks', safeNum(c.buttonClicks), 'Prev: ' + safeNum(p.buttonClicks)),
+            metricCard('Total events', safeNum(c.totalEvents), 'Prev: ' + safeNum(p.totalEvents))
+          ];
+
+          cards.forEach(card => statsGrid.appendChild(card));
+
+          (data.current.topPages || []).forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = '<td>' + row.path + '</td><td>' + safeNum(row.pageViews) + '</td><td>' + safeNum(row.events) + '</td>';
+            topPagesBody.appendChild(tr);
+          });
+
+          if ((data.current.topPages || []).length > 0) {
+            topPagesTable.style.display = 'table';
+          }
+        } catch (err) {
+          statsError.textContent = 'Error loading stats: ' + String(err.message || err);
+        }
+      }
+
+      loadBtn.addEventListener('click', loadStats);
+    })();
+  </script>
+</body>
+</html>

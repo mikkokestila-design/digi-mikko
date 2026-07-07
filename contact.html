@@ -1,29 +1,38 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ota yhteyttä - Digi-Mikko</title>
     <meta name="description" content="Ota yhteyttä Digi-Mikkoon. Varaa aika tai kysy lisätietoja digituesta ikäihmisille.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="canonical" href="https://digi-mikko.fi/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ota yhteyttä - Digi-Mikko">
+    <meta property="og:description" content="Varaa digituki kotikäynnille tai etätukeen. Vastaamme nopeasti.">
+    <meta property="og:url" content="https://digi-mikko.fi/contact.html">
+    <meta property="og:image" content="https://digi-mikko.fi/logo.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Siirry sisältöön</a>
     <!-- AI Chatbot Widget -->
     <div class="chatbot-widget" id="chatbot">
         <div class="chatbot-header">
-            <span class="chatbot-title">🤖 Digi-Digi-Mikko</span>
-            <button class="chatbot-minimize" id="chatbotMinimize">−</button>
+            <span class="chatbot-title">Digi-Mikko</span>
+            <button class="chatbot-minimize" id="chatbotMinimize" aria-label="Pienennä chatbot">−</button>
         </div>
         <div class="chatbot-body" id="chatbotBody">
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="bot-message">Hei! Olen Digi-Digi-Mikko, teko-älyllä toimiva avustajasi. Miten voin auttaa sinua tänään?</div>
+            <div class="chatbot-messages" id="chatbotMessages" aria-live="polite">
+                <div class="bot-message">Hei! Olen Digi-Mikko, tekoälyllä toimiva avustajasi. Miten voin auttaa sinua tänään?</div>
             </div>
             <div class="chatbot-input-area">
-                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." />
-                <button id="chatbotSend">Lähetä</button>
+                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." aria-label="Chatbot-kenttä" />
+                <button id="chatbotSend" type="button">Lähetä</button>
             </div>
         </div>
-        <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Avaa chatbot">💬</button>
     </div>
 
     <header>
@@ -41,7 +50,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="page-hero">
             <div class="container">
                 <h1>Ota yhteyttä</h1>
@@ -56,64 +65,93 @@
                     <div class="contact-form-container">
                         <h2>Lähetä viesti</h2>
                         <p>Täytä alla oleva lomake, niin otamme sinuun yhteyttä 24 tunnin sisällä.</p>
+                        <div class="conversion-points" aria-label="Miksi täyttää lomake">
+                            <span>✓ Ei sitoutumista</span>
+                            <span>✓ Selkeä hinta etukäteen</span>
+                            <span>✓ Yhteydenotto sinulle sopivalla tavalla</span>
+                        </div>
+                        <div class="form-progress-wrap" aria-live="polite">
+                            <div class="form-progress-label">Lomakkeen täyttö: <strong id="formProgressText">0%</strong></div>
+                            <div class="form-progress-track">
+                                <div class="form-progress-bar" id="formProgressBar"></div>
+                            </div>
+                        </div>
                         
-                        <form id="contactForm" class="contact-form">
+                        <form id="contactForm" class="contact-form" name="contact" method="POST" action="/contact.html?submitted=true" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contact">
+                            <p style="display:none;">
+                                <label>Älä täytä tätä kenttää: <input name="bot-field"></label>
+                            </p>
                             <div class="form-group">
                                 <label for="name">Nimesi *</label>
-                                <input type="text" id="name" name="name" required placeholder="Esim. Maija Meikäläinen">
+                                <input type="text" id="name" name="name" required data-required-core="true" placeholder="Esim. Maija Meikäläinen" autocomplete="name">
                             </div>
 
                             <div class="form-group">
                                 <label for="phone">Puhelinnumero *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="Esim. 040 123 4567">
+                                <input type="tel" id="phone" name="phone" required data-required-core="true" placeholder="Esim. 0405044593" autocomplete="tel">
                                 <small>Soitamme sinulle takaisin tähän numeroon</small>
                             </div>
 
                             <div class="form-group">
-                                <label for="email">Sähköpostiosoite</label>
-                                <input type="email" id="email" name="email" placeholder="Esim. maija@example.com">
-                                <small>Valinnainen, mutta suositeltava</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="service">Minkä palvelun kaipaisit? *</label>
-                                <select id="service" name="service" required>
-                                    <option value="">Valitse palvelu...</option>
-                                    <option value="kotikäynti">Kotikäynti</option>
-                                    <option value="etätuki">Etätuki</option>
-                                    <option value="käyttöönotto">Laitteen käyttöönotto</option>
-                                    <option value="koulutus">Henkilökohtainen koulutus</option>
-                                    <option value="tekninen">Tekninen apu</option>
-                                    <option value="pikatuki">Pikatuki</option>
-                                    <option value="muu">Muu / En ole varma</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
                                 <label for="message">Kerro ongelmastasi *</label>
-                                <textarea id="message" name="message" rows="6" required placeholder="Esim. Tarvitsen apua sähköpostin käyttöön. Uusi puhelin hankittu eikä osaa ottaa käyttöön..."></textarea>
-                                <small>Mitä tarkemmin kerrot, sitä paremmin voimme auttaa</small>
+                                <textarea id="message" name="message" rows="6" required data-required-core="true" placeholder="Esim. Tarvitsen apua sähköpostin käyttöön. Uusi puhelin hankittu eikä osaa ottaa käyttöön..."></textarea>
+                                <small>Mitä tarkemmin kerrot, sitä paremmin voimme auttaa. <span id="messageCount">0</span>/600 merkkiä</small>
                             </div>
 
-                            <div class="form-group">
-                                <label for="preferred-time">Milloin sinulle sopisi parhaiten?</label>
-                                <textarea id="preferred-time" name="preferred-time" rows="3" placeholder="Esim. Arkipäivisin klo 10-14 tai lauantaina"></textarea>
-                            </div>
+                            <details class="advanced-form-section">
+                                <summary>Lisätiedot (valinnainen)</summary>
+
+                                <div class="form-group mt-2">
+                                    <label for="service">Minkä palvelun kaipaisit?</label>
+                                    <select id="service" name="service">
+                                        <option value="">Valitse palvelu...</option>
+                                        <option value="kotikäynti">Kotikäynti</option>
+                                        <option value="etätuki">Etätuki</option>
+                                        <option value="käyttöönotto">Laitteen käyttöönotto</option>
+                                        <option value="koulutus">Henkilökohtainen koulutus</option>
+                                        <option value="tekninen">Tekninen apu</option>
+                                        <option value="pikatuki">Pikatuki</option>
+                                        <option value="tietoturva">Tietoturvapalvelut</option>
+                                        <option value="tekoäly">Tekoäly-opastus</option>
+                                        <option value="muu">Muu / En ole varma</option>
+                                    </select>
+                                </div>
+
+                                <fieldset class="form-group preferred-contact-group">
+                                    <legend>Miten toivot yhteydenoton?</legend>
+                                    <label class="radio-label"><input type="radio" name="preferred_contact" value="phone" checked> Puhelu</label>
+                                    <label class="radio-label"><input type="radio" name="preferred_contact" value="email"> Sähköposti</label>
+                                    <label class="radio-label"><input type="radio" name="preferred_contact" value="whatsapp"> WhatsApp</label>
+                                </fieldset>
+
+                                <div class="form-group">
+                                    <label for="email">Sähköpostiosoite</label>
+                                    <input type="email" id="email" name="email" placeholder="Esim. maija@example.com" autocomplete="email">
+                                    <small>Valinnainen, mutta suositeltava</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="preferred-time">Milloin sinulle sopisi parhaiten?</label>
+                                    <textarea id="preferred-time" name="preferred-time" rows="3" placeholder="Esim. Arkipäivisin klo 10-14 tai lauantaina"></textarea>
+                                </div>
+                            </details>
 
                             <div class="form-group checkbox-group">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" id="consent" name="consent" required>
-                                    <span>Hyväksyn, että yhteystietojani käytetään yhteydenottoon *</span>
+                                    <input type="checkbox" id="consent" name="consent">
+                                    <span>Olen lukenut tietosuojaselosteen</span>
                                 </label>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-large">Lähetä viesti</button>
                             
                             <p class="form-note">* = Pakollinen tieto</p>
+                            <p class="form-trust-note">Tietosi käsitellään luottamuksellisesti, eikä niitä luovuteta eteenpäin.</p>
                         </form>
 
-                        <div id="formSuccess" class="success-message" style="display: none;">
-                            <h3>✅ Kiitos yhteydenotostasi!</h3>
+                        <div id="formSuccess" class="success-message" role="status" aria-live="polite" style="display: none;">
+                            <h3>Kiitos yhteydenotostasi!</h3>
                             <p>Olemme vastaanottaneet viestisi ja otamme sinuun yhteyttä pian.</p>
                         </div>
                     </div>
@@ -121,22 +159,22 @@
                     <!-- Contact Info Sidebar -->
                     <div class="contact-info-sidebar">
                         <div class="contact-card">
-                            <h3>📞 Soita meille</h3>
-                            <p class="contact-detail"><strong>040 123 4567</strong></p>
+                            <h3>Soita meille</h3>
+                            <p class="contact-detail"><strong>0405044593</strong></p>
                             <p>Ma-Pe: 9:00-18:00<br>La: 10:00-14:00</p>
                             <p class="small-text">Ensimmäiset 15 min ilmaista neuvontaa!</p>
-                            <a href="tel:+358401234567" class="btn btn-secondary">Soita nyt</a>
+                            <a href="tel:+358405044593" class="btn btn-secondary">Soita nyt</a>
                         </div>
 
                         <div class="contact-card">
-                            <h3>📧 Sähköposti</h3>
-                            <p class="contact-detail">mikko@digi-mikko.fi</p>
+                            <h3>Sähköposti</h3>
+                            <p class="contact-detail">mikko.kestila@gmail.com</p>
                             <p>Vastaamme sähköposteihin arkisin 24 tunnin sisällä.</p>
-                            <a href="mailto:mikko@digi-mikko.fi" class="btn btn-secondary">Lähetä email</a>
+                            <a href="mailto:mikko.kestila@gmail.com" class="btn btn-secondary">Lähetä email</a>
                         </div>
 
                         <div class="contact-card">
-                            <h3>📍 Palvelualue</h3>
+                            <h3>Palvelualue</h3>
                             <p>Pääkaupunkiseutu ja lähikunnat:</p>
                             <ul class="area-list">
                                 <li>Helsinki</li>
@@ -149,13 +187,13 @@
                         </div>
 
                         <div class="contact-card">
-                            <h3>💬 WhatsApp</h3>
+                            <h3>WhatsApp</h3>
                             <p>Voit myös lähettää viestin WhatsAppilla numeroon:</p>
-                            <p class="contact-detail"><strong>040 123 4567</strong></p>
+                            <p class="contact-detail"><strong>0405044593</strong></p>
                         </div>
 
                         <div class="contact-card highlight">
-                            <h3>⚡ Kiireellinen apu?</h3>
+                            <h3>Kiireellinen apu?</h3>
                             <p>Jos tarvitset apua heti, soita suoraan. Yritämme vastata aina mahdollisimman nopeasti!</p>
                         </div>
                     </div>
@@ -174,7 +212,7 @@
                     </div>
                     <div class="faq-item">
                         <h3>Paljonko palvelut maksavat?</h3>
-                        <p>Kotikäynti 50 €/tunti + matkakulut. Etätuki 40 €/tunti. Katso kaikki hinnat <a href="services.html">Palvelut-sivulta</a>.</p>
+                        <p>Kotikäynti 50 EUR/tunti + matkakulut. Etätuki 40 EUR/tunti. Katso kaikki hinnat <a href="services.html">Palvelut-sivulta</a>.</p>
                     </div>
                     <div class="faq-item">
                         <h3>Voinko perua ajan?</h3>
@@ -207,8 +245,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Yhteystiedot</h4>
-                    <p>Puh: 040 123 4567</p>
-                    <p>Email: mikko@digi-mikko.fi</p>
+                    <p>Puh: 0405044593</p>
+                    <p>Email: mikko.kestila@gmail.com</p>
                 </div>
                 <div class="footer-section">
                     <h4>Aukioloajat</h4>
@@ -225,3 +263,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+

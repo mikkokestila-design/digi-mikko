@@ -1,6 +1,6 @@
-# Digi-Mikko Deployment Guide
+﻿# Digi-Mikko Deployment Guide
 
-## 🚀 Publishing to GitHub and Netlify
+## �Ys? Publishing to GitHub and Netlify
 
 Follow these steps to get your website live on the internet!
 
@@ -99,12 +99,12 @@ git push -u origin main
 1. Go to: https://app.netlify.com/drop
 2. Drag the entire `digi-mikko` folder onto the page
 3. Your site is live instantly!
-4. ⚠️ Note: This is temporary unless you claim it
+4. �s�️ Note: This is temporary unless you claim it
 
 ### Method 2: Netlify with GitHub (Recommended)
 1. Go to: https://app.netlify.com/signup
 2. Sign up with GitHub account
-3. Click "Add new site" → "Import an existing project"
+3. Click "Add new site" �?' "Import an existing project"
 4. Choose "Deploy with GitHub"
 5. Authorize Netlify to access your repositories
 6. Select `digi-mikko` repository
@@ -122,13 +122,13 @@ git push -u origin main
 Your site gets a free URL like: `random-name-12345.netlify.app`
 
 To customize it:
-1. Go to Site settings → Domain management
-2. Click "Options" → "Edit site name"
+1. Go to Site settings �?' Domain management
+2. Click "Options" �?' "Edit site name"
 3. Change to: `digi-mikko.netlify.app` (if available)
 
 ### Custom Domain (.fi or .com)
 1. Purchase domain from: Louhi.fi, Namecheap, or Google Domains
-2. In Netlify: Site settings → Domain management → Add custom domain
+2. In Netlify: Site settings �?' Domain management �?' Add custom domain
 3. Follow DNS configuration instructions
 4. Netlify provides free SSL certificate automatically
 
@@ -139,7 +139,7 @@ To customize it:
 If you prefer GitHub Pages instead of Netlify:
 
 1. Go to your repository on GitHub
-2. Click "Settings" → "Pages"
+2. Click "Settings" �?' "Pages"
 3. Under "Source", select "main" branch
 4. Click "Save"
 5. Your site will be live at: `https://YOUR-USERNAME.github.io/digi-mikko/`
@@ -179,7 +179,7 @@ git log --oneline
 
 ### Authentication error when pushing
 1. GitHub now requires personal access token, not password
-2. Create token: GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Create token: GitHub �?' Settings �?' Developer settings �?' Personal access tokens �?' Tokens (classic)
 3. Generate new token with `repo` scope
 4. Use token as password when prompted
 
@@ -214,14 +214,14 @@ If using Netlify with GitHub integration, your site will automatically update wi
 
 ## Next Steps After Deployment
 
-1. ✅ Test all pages and links
-2. ✅ Test contact form
-3. ✅ Test on mobile devices
-4. ✅ Add Google Analytics (optional)
-5. ✅ Submit to Google Search Console
-6. ✅ Set up email forwarding for contact@digi-mikko.fi
-7. ✅ Create social media accounts
-8. ✅ Add reCAPTCHA to contact form
+1. �o. Test all pages and links
+2. �o. Test contact form
+3. �o. Test on mobile devices
+4. �o. Add Google Analytics (optional)
+5. �o. Submit to Google Search Console
+6. �o. Set up email forwarding for contact@digi-mikko.fi
+7. �o. Create social media accounts
+8. �o. Add reCAPTCHA to contact form
 
 ---
 
@@ -234,4 +234,5 @@ If using Netlify with GitHub integration, your site will automatically update wi
 
 ---
 
-**Your website will be live and accessible to everyone once deployed! 🎉**
+**Your website will be live and accessible to everyone once deployed! �YZ?**
+

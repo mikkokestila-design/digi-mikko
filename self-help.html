@@ -1,29 +1,38 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ilmaiset ohjeet - Digi-Mikko</title>
     <meta name="description" content="Ilmaiset askel-askeleelta ohjeet yleisimpiin digitaalisiin ongelmiin ikäihmisille.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="canonical" href="https://digi-mikko.fi/self-help.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ilmaiset ohjeet - Digi-Mikko">
+    <meta property="og:description" content="Selkeät ohjeet puhelimen, sähköpostin, verkkopankin ja tietoturvan käyttöön.">
+    <meta property="og:url" content="https://digi-mikko.fi/self-help.html">
+    <meta property="og:image" content="https://digi-mikko.fi/logo.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Siirry sisältöön</a>
     <!-- AI Chatbot Widget -->
     <div class="chatbot-widget" id="chatbot">
         <div class="chatbot-header">
-            <span class="chatbot-title">🤖 Digi-Digi-Mikko</span>
-            <button class="chatbot-minimize" id="chatbotMinimize">−</button>
+            <span class="chatbot-title">Digi-Mikko</span>
+            <button class="chatbot-minimize" id="chatbotMinimize" aria-label="Pienennä chatbot">-</button>
         </div>
         <div class="chatbot-body" id="chatbotBody">
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="bot-message">Hei! Olen Digi-Digi-Mikko, teko-älyllä toimiva avustajasi. Miten voin auttaa sinua tänään?</div>
+            <div class="chatbot-messages" id="chatbotMessages" aria-live="polite">
+                <div class="bot-message">Hei! Olen Digi-Mikko, tekoälyllä toimiva avustajasi. Miten voin auttaa sinua tänään?</div>
             </div>
             <div class="chatbot-input-area">
-                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." />
-                <button id="chatbotSend">Lähetä</button>
+                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." aria-label="Chatbot-kenttä" />
+                <button id="chatbotSend" type="button">Lähetä</button>
             </div>
         </div>
-        <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Avaa chatbot">Chat</button>
     </div>
 
     <header>
@@ -37,30 +46,30 @@
                 <li><a href="self-help.html" class="active">Ohjeet</a></li>
                 <li><a href="contact.html">Ota yhteyttä</a></li>
             </ul>
-            <button class="mobile-menu-toggle" aria-label="Avaa valikko">☰</button>
+            <button class="mobile-menu-toggle" aria-label="Avaa valikko">Menu</button>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="page-hero">
             <div class="container">
                 <h1>Ilmaiset ohjeet</h1>
                 <p class="hero-subtitle">Kokeile ensin itse näiden selkeiden ohjeiden avulla</p>
-                <p class="help-note">💡 Jos et saa ongelmaa ratkaistua, <a href="contact.html">ota yhteyttä</a> - autamme mielellään!</p>
+                <p class="help-note">Jos et saa ongelmaa ratkaistua, <a href="contact.html">ota yhteyttä</a> - autamme mielellään!</p>
             </div>
         </section>
 
         <!-- Search/Filter -->
         <section class="help-filter">
             <div class="container">
-                <input type="text" id="helpSearch" placeholder="🔍 Hae ohjeista..." class="search-box">
+                <input type="text" id="helpSearch" placeholder="Hae ohjeista..." class="search-box">
                 <div class="category-filters">
                     <button class="filter-btn active" data-category="all">Kaikki</button>
-                    <button class="filter-btn" data-category="phone">📱 Puhelin</button>
-                    <button class="filter-btn" data-category="computer">💻 Tietokone</button>
-                    <button class="filter-btn" data-category="email">📧 Sähköposti</button>
-                    <button class="filter-btn" data-category="banking">🏦 Pankki</button>
-                    <button class="filter-btn" data-category="security">🔒 Turvallisuus</button>
+                    <button class="filter-btn" data-category="phone">Puhelin</button>
+                    <button class="filter-btn" data-category="computer">Tietokone</button>
+                    <button class="filter-btn" data-category="email">Sahkoposti</button>
+                    <button class="filter-btn" data-category="banking">Pankki</button>
+                    <button class="filter-btn" data-category="security">Turvallisuus</button>
                 </div>
             </div>
         </section>
@@ -71,7 +80,7 @@
                 <!-- Article 1 -->
                 <article class="help-article" id="take-photo" data-category="phone">
                     <div class="article-header">
-                        <h2>📱 Kuvan ottaminen älypuhelimella</h2>
+                        <h2>Kuvan ottaminen alypuhelimella</h2>
                         <span class="difficulty easy">Helppo</span>
                     </div>
                     <div class="article-content">
@@ -95,7 +104,7 @@
                             </li>
                         </ol>
                         <div class="tip-box">
-                            <strong>💡 Vinkki:</strong> Pidä puhelin vakaasti molemmilla käsillä ja odota hetki ennen kuin painat kamera-nappia. Näin kuvasta tulee terävämpÄ!
+                            <strong>Vinkki:</strong> Pidä puhelin vakaasti molemmilla käsillä ja odota hetki ennen kuin painat kamera-nappia. Näin kuvasta tulee terävämpi!
                         </div>
                     </div>
                 </article>
@@ -103,7 +112,7 @@
                 <!-- Article 2 -->
                 <article class="help-article" id="change-password" data-category="security">
                     <div class="article-header">
-                        <h2>🔐 Salasanan vaihtaminen</h2>
+                        <h2>Salasanan vaihtaminen</h2>
                         <span class="difficulty medium">Keskitaso</span>
                     </div>
                     <div class="article-content">
@@ -133,7 +142,7 @@
                         </ol>
                         
                         <div class="warning-box">
-                            <strong>⚠️ Tärkeää:</strong> Älä koskaan kerro salasanaasi kenellekään! Pankki tai viranomaiset eivät koskaan kysy salasanaasi puhelimessa tai sähköpostissa.
+                            <strong>Tärkeää:</strong> Alä koskaan kerro salasanaasi kenellekään! Pankki tai viranomaiset eivät koskaan kysy salasanaasi puhelimessa tai sähköpostissa.
                         </div>
                     </div>
                 </article>
@@ -141,7 +150,7 @@
                 <!-- Article 3 -->
                 <article class="help-article" id="send-email" data-category="email">
                     <div class="article-header">
-                        <h2>📧 Sähköpostin lähettäminen</h2>
+                        <h2>Sahkopostin lahettaminen</h2>
                         <span class="difficulty easy">Helppo</span>
                     </div>
                     <div class="article-content">
@@ -174,7 +183,7 @@
                         </ol>
                         
                         <div class="tip-box">
-                            <strong>💡 Vinkki:</strong> Voit tallentaa viestin luonnoksena klikkaamalla "Tallenna luonnos". Näin voit jatkaa kirjoittamista myöhemmin.
+                            <strong>Vinkki:</strong> Voit tallentaa viestin luonnoksena klikkaamalla "Tallenna luonnos". Näin voit jatkaa kirjoittamista myöhemmin.
                         </div>
                     </div>
                 </article>
@@ -182,7 +191,7 @@
                 <!-- Article 4 -->
                 <article class="help-article" id="zoom-call" data-category="computer">
                     <div class="article-header">
-                        <h2>👨‍👩‍👧 Videoyhteyden aloittaminen (Zoom)</h2>
+                        <h2>Videoyhteyden aloittaminen (Zoom)</h2>
                         <span class="difficulty medium">Keskitaso</span>
                     </div>
                     <div class="article-content">
@@ -212,13 +221,13 @@
                         
                         <h3>Tärkeät painikkeet Zoomissa:</h3>
                         <ul>
-                            <li><strong>🎤 Mute/Mykistä:</strong> Sammuttaa mikrofonisi</li>
-                            <li><strong>📹 Stop Video:</strong> Sammuttaa kamerasi</li>
-                            <li><strong>📞 Leave/Poistu:</strong> Poistut kokouksesta</li>
+                                <li><strong>Mute/Mykista:</strong> Sammuttaa mikrofonisi</li>
+                                <li><strong>Stop Video:</strong> Sammuttaa kamerasi</li>
+                                <li><strong>Leave/Poistu:</strong> Poistut kokouksesta</li>
                         </ul>
                         
                         <div class="tip-box">
-                            <strong>💡 Vinkki:</strong> Kokeile Zoomia etukäteen! Voit testata kameran ja mikrofonin toimivuutta osoitteessa <a href="https://zoom.us/test" target="_blank">zoom.us/test</a>
+                            <strong>Vinkki:</strong> Kokeile Zoomia etukäteen! Voit testata kameran ja mikrofonin toimivuutta osoitteessa <a href="https://zoom.us/test" target="_blank">zoom.us/test</a>
                         </div>
                     </div>
                 </article>
@@ -226,7 +235,7 @@
                 <!-- Article 5 -->
                 <article class="help-article" id="online-banking" data-category="banking">
                     <div class="article-header">
-                        <h2>🏦 Verkkopankin käyttö turvallisesti</h2>
+                        <h2>Verkkopankin kaytto turvallisesti</h2>
                         <span class="difficulty medium">Keskitaso</span>
                     </div>
                     <div class="article-content">
@@ -234,7 +243,7 @@
                         <ol class="step-list">
                             <li>
                                 <strong>Mene pankkisi sivuille</strong>
-                                <p>Kirjoita pankkisi osoite suoraan selaimen osoiteriville. ÄLÄ klikkaa sähköpostin linkkejä!</p>
+                                <p>Kirjoita pankkisi osoite suoraan selaimen osoiteriville. Ala klikkaa sähköpostin linkkejä!</p>
                             </li>
                             <li>
                                 <strong>Tarkista osoite</strong>
@@ -257,10 +266,10 @@
                         <h3>Turvallisuusvinkit:</h3>
                         <div class="warning-box">
                             <ul>
-                                <li>⚠️ Älä koskaan jaa tunnuksiasi kenellekään</li>
-                                <li>⚠️ Pankki ei koskaan kysy tunnuksia puhelimitse</li>
-                                <li>⚠️ Älä kirjaudu verkkopankkiin julkisessa wifi-verkossa</li>
-                                <li>⚠️ Jos jokin tuntuu oudolta, lopeta ja soita pankkiin</li>
+                                <li>Alä koskaan jaa tunnuksiasi kenellekään</li>
+                                <li>Pankki ei koskaan kysy tunnuksia puhelimitse</li>
+                                <li>Alä kirjaudu verkkopankkiin julkisessa wifi-verkossa</li>
+                                <li>Jos jokin tuntuu oudolta, lopeta ja soita pankkiin</li>
                             </ul>
                         </div>
                     </div>
@@ -269,7 +278,7 @@
                 <!-- Article 6 -->
                 <article class="help-article" id="wifi-connection" data-category="computer">
                     <div class="article-header">
-                        <h2>📡 WiFi-verkkoon yhdistäminen</h2>
+                        <h2>WiFi-verkkoon yhdistaminen</h2>
                         <span class="difficulty easy">Helppo</span>
                     </div>
                     <div class="article-content">
@@ -283,7 +292,7 @@
                             <li>Odota hetki - olet nyt verkossa!</li>
                         </ol>
                         
-                        <h3>Älypuhelimella:</h3>
+                        <h3>Alypuhelimella:</h3>
                         <ol class="step-list">
                             <li>Avaa Asetukset</li>
                             <li>Valitse "WiFi" tai "WLAN"</li>
@@ -294,7 +303,7 @@
                         </ol>
                         
                         <div class="tip-box">
-                            <strong>💡 Vinkki:</strong> WiFi-salasana löytyy usein reitittimen pohjasta tarrasta. Etsi tekstiä "Password", "Key" tai "Salasana".
+                            <strong>Vinkki:</strong> WiFi-salasana löytyy usein reitittimen pohjasta tarrasta. Etsi tekstiä "Password", "Key" tai "Salasana".
                         </div>
                     </div>
                 </article>
@@ -302,34 +311,34 @@
                 <!-- Article 7 -->
                 <article class="help-article" id="scam-recognition" data-category="security">
                     <div class="article-header">
-                        <h2>🛡️ Huijausviestien tunnistaminen</h2>
+                        <h2>Huijausviestien tunnistaminen</h2>
                         <span class="difficulty medium">Keskitaso</span>
                     </div>
                     <div class="article-content">
                         <h3>Tyypillisiä merkkejä huijausviestistä:</h3>
                         <div class="warning-box">
                             <ul>
-                                <li>⚠️ Kiire: "Toimi heti tai tilisi lukitaan!"</li>
-                                <li>⚠️ Pelottelu: "Sinun tilisi on vaarassa!"</li>
-                                <li>⚠️ Liian hyvä ollakseen totta: "Olet voittanut miljoona euroa!"</li>
-                                <li>⚠️ Pyydetään salasanoja tai tunnuksia</li>
-                                <li>⚠️ Oudot linkit (esim. "p4nkki.fi" oikean "pankki.fi" sijaan)</li>
-                                <li>⚠️ Huono kieli ja kirjoitusvirheet</li>
-                                <li>⚠️ Tuntematon lähettäjä</li>
+                                <li>Kiire: "Toimi heti tai tilisi lukitaan!"</li>
+                                <li>Pelottelu: "Sinun tilisi on vaarassa!"</li>
+                                <li>Liian hyvä ollakseen totta: "Olet voittanut miljoona euroa!"</li>
+                                <li>Pyydetään salasanoja tai tunnuksia</li>
+                                <li>Oudot linkit (esim. "p4nkki.fi" oikean "pankki.fi" sijaan)</li>
+                                <li>Huono kieli ja kirjoitusvirheet</li>
+                                <li>Tuntematon lähettäjä</li>
                             </ul>
                         </div>
                         
                         <h3>Mitä tehdä epäilyttävän viestin saatuasi:</h3>
                         <ol class="step-list">
-                            <li><strong>ÄLÄ klikkaa linkkejä</strong></li>
-                            <li><strong>ÄLÄ vastaa viestiin</strong></li>
-                            <li><strong>ÄLÄ anna henkilötietoja</strong></li>
+                            <li><strong>Ala klikkaa linkkejä</strong></li>
+                            <li><strong>Ala vastaa viestiin</strong></li>
+                            <li><strong>Ala anna henkilötietoja</strong></li>
                             <li>Poista viesti tai merkitse roskapostiksi</li>
                             <li>Jos epäilyttävä viesti väittää olevan pankistasi, soita pankkiin ja varmista</li>
                         </ol>
                         
                         <div class="tip-box">
-                            <strong>💡 Muista:</strong> Pankit, viranomaiset ja luotettavat yritykset eivät KOSKAAN pyydä salasanoja, pankkitunnuksia tai luottokorttitietoja sähköpostitse tai tekstiviestitse!
+                            <strong>Muista:</strong> Pankit, viranomaiset ja luotettavat yritykset eivät KOSKAAN pyydä salasanoja, pankkitunnuksia tai luottokorttitietoja sähköpostitse tai tekstiviestitse!
                         </div>
                     </div>
                 </article>
@@ -337,7 +346,7 @@
                 <!-- Article 8 -->
                 <article class="help-article" id="whatsapp-basics" data-category="phone">
                     <div class="article-header">
-                        <h2>💬 WhatsApp-viestien lähettäminen</h2>
+                        <h2>WhatsApp-viestien lahettaminen</h2>
                         <span class="difficulty easy">Helppo</span>
                     </div>
                     <div class="article-content">
@@ -364,13 +373,13 @@
                         <h3>Kuvan lähettäminen:</h3>
                         <ol class="step-list">
                             <li>Avaa keskustelu</li>
-                            <li>Napauta paperliitti- tai kamera-kuvaketta</li>
+                            <li>Napauta paperiliitin- tai kamera-kuvaketta</li>
                             <li>Valitse "Galleria" ja valitse kuva</li>
                             <li>Napauta vihreää lähetyspainiketta</li>
                         </ol>
                         
                         <div class="tip-box">
-                            <strong>💡 Vinkki:</strong> Näet viestin perässä merkkejä: ✓ = lähetetty, ✓✓ = toimitettu, sininen ✓✓ = luettu.
+                            <strong>Vinkki:</strong> Näet viestin perässä merkkejä: yksi merkki = lähetetty, kaksi merkkiä = toimitettu, sininen kaksi merkkiä = luettu.
                         </div>
                     </div>
                 </article>
@@ -384,7 +393,7 @@
                 <p>Ei hätää! Ota yhteyttä, niin autamme sinua henkilökohtaisesti.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn btn-primary">Lähetä viesti</a>
-                    <a href="tel:+358401234567" class="btn btn-secondary">📞 Soita: 040 123 4567</a>
+                    <a href="tel:+358405044593" class="btn btn-secondary">Soita: 0405044593</a>
                 </div>
             </div>
         </section>
@@ -399,8 +408,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Yhteystiedot</h4>
-                    <p>Puh: 040 123 4567</p>
-                    <p>Email: mikko@digi-mikko.fi</p>
+                    <p>Puh: 0405044593</p>
+                    <p>Email: mikko.kestila@gmail.com</p>
                 </div>
                 <div class="footer-section">
                     <h4>Aukioloajat</h4>
@@ -417,3 +426,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+

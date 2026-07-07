@@ -1,8 +1,8 @@
-{
+﻿{
   "palvelut": {
     "kotikäynti": {
       "kuvaus": "Tulen sinun luoksesi kotiin ja käymme rauhassa läpi ongelmasi omalla laitteellasi.",
-      "hinta": "50 €/tunti + matkakulut 0,50 €/km",
+      "hinta": "50 �,�/tunti + matkakulut 0,50 �,�/km",
       "sisältö": [
         "Henkilökohtainen opastus kotonasi",
         "Käytämme sinun omia laitteitasi",
@@ -13,7 +13,7 @@
     },
     "etätuki": {
       "kuvaus": "Puhelimitse tai etäyhteyden kautta voin auttaa sinua nopeasti ilman kotikäyntiä.",
-      "hinta": "40 €/tunti, ei matkakuluja",
+      "hinta": "40 �,�/tunti, ei matkakuluja",
       "sisältö": [
         "Nopea apu puhelimitse",
         "Turvallinen etäyhteys tietokoneellesi",
@@ -23,7 +23,7 @@
     },
     "käyttöönotto": {
       "kuvaus": "Autan uuden laitteen käyttöönotossa ja opetan perusteet.",
-      "hinta": "80 € (sisältää 2 tuntia + kotikäynti lähialueella)",
+      "hinta": "80 �,� (sisältää 2 tuntia + kotikäynti lähialueella)",
       "sisältö": [
         "Laitteen peruskäyttöönotto",
         "Sovellusten asennus",
@@ -33,7 +33,7 @@
     },
     "koulutus": {
       "kuvaus": "Räätälöity henkilökohtainen koulutus sinun tarpeisiisi.",
-      "hinta": "120 € (3 tuntia)",
+      "hinta": "120 �,� (3 tuntia)",
       "aiheet": [
         "Sähköposti (Gmail, Outlook)",
         "Verkkopankki ja e-laskut",
@@ -45,7 +45,7 @@
     },
     "tekninen_apu": {
       "kuvaus": "Teknisten ongelmien selvitys ja korjaus.",
-      "hinta": "50 €/tunti + mahdolliset varaosakustannukset",
+      "hinta": "50 �,�/tunti + mahdolliset varaosakustannukset",
       "sisältö": [
         "Ongelman diagnosointi",
         "Virustorjunta ja haittaohjelmien poisto",
@@ -57,7 +57,7 @@
     },
     "pikatuki": {
       "kuvaus": "Soita, niin yritän auttaa heti puhelimessa.",
-      "hinta": "Ensimmäiset 15 minuuttia ILMAISEKSI, sen jälkeen 40 €/tunti",
+      "hinta": "Ensimmäiset 15 minuuttia ILMAISEKSI, sen jälkeen 40 �,�/tunti",
       "sisältö": [
         "Nopeat kysymykset",
         "Unohtunut salasana",
@@ -66,7 +66,7 @@
     },
     "tietoturva": {
       "kuvaus": "Suojaa itsesi ja laitteesi verkkouhkilta.",
-      "hinta": "60 €/tunti (kattava tarkastus 2-3h)",
+      "hinta": "60 �,�/tunti (kattava tarkastus 2-3h)",
       "sisältö": [
         "Tietoturvakatsaus kaikille laitteille",
         "Virustorjunnan asennus ja päivitys",
@@ -79,7 +79,7 @@
     },
     "tekoäly": {
       "kuvaus": "Opi käyttämään tekoälyä arkesi helpottamiseen.",
-      "hinta": "50 €/tunti (suositus 2 tunnin paketti)",
+      "hinta": "50 �,�/tunti (suositus 2 tunnin paketti)",
       "sisältö": [
         "ChatGPT:n peruskäyttö",
         "AI-avustajien käyttö kirjoittamiseen",
@@ -91,8 +91,8 @@
     }
   },
   "yhteystiedot": {
-    "puhelin": "040 123 4567",
-    "email": "mikko@digi-mikko.fi",
+    "puhelin": "0405044593",
+    "email": "mikko.kestila@gmail.com",
     "aukioloajat": "Ma-Pe 9:00-18:00, La 10:00-14:00",
     "alue": "Pääkaupunkiseutu ja lähikunnat",
     "maksaminen": "Käteinen tai lasku. Voit maksaa heti tai lasku jälkikäteen.",
@@ -123,7 +123,7 @@
         "Syötä uusi salasana kahdesti.",
         "Klikkaa 'Tallenna'."
       ],
-      "tärkeää": "Älä koskaan kerro salasanaasi kenellekään! Pankki tai viranomaiset eivät koskaan kysy salasanaasi."
+      "tärkeää": "�"lä koskaan kerro salasanaasi kenellekään! Pankki tai viranomaiset eivät koskaan kysy salasanaasi."
     },
     "sähköposti": {
       "otsikko": "Sähköpostin lähettäminen",
@@ -155,16 +155,16 @@
       "otsikko": "Verkkopankin käyttö turvallisesti",
       "taso": "keskitaso",
       "vaiheet": [
-        "Kirjoita pankkisi osoite suoraan selaimen osoiteriville. ÄLÄ klikkaa sähköpostin linkkejä!",
+        "Kirjoita pankkisi osoite suoraan selaimen osoiteriville. �"L�" klikkaa sähköpostin linkkejä!",
         "Varmista, että osoite alkaa 'https://' ja näet lukkomerkin.",
         "Kirjaudu verkkopankkitunnuksillasi tai mobiiliavaimella.",
         "Tee asioitasi (maksa laskuja, tarkista saldo jne.).",
         "Kirjaudu AINA ulos kun olet valmis."
       ],
       "turvallisuus": [
-        "Älä koskaan jaa tunnuksiasi kenellekään.",
+        "�"lä koskaan jaa tunnuksiasi kenellekään.",
         "Pankki ei koskaan kysy tunnuksia puhelimitse.",
-        "Älä kirjaudu verkkopankkiin julkisessa wifi-verkossa.",
+        "�"lä kirjaudu verkkopankkiin julkisessa wifi-verkossa.",
         "Jos jokin tuntuu oudolta, lopeta ja soita pankkiin."
       ]
     },
@@ -201,9 +201,9 @@
         "Tuntematon lähettäjä."
       ],
       "toimintaohjeet": [
-        "ÄLÄ klikkaa linkkejä.",
-        "ÄLÄ vastaa viestiin.",
-        "ÄLÄ anna henkilötietoja.",
+        "�"L�" klikkaa linkkejä.",
+        "�"L�" vastaa viestiin.",
+        "�"L�" anna henkilötietoja.",
         "Poista viesti tai merkitse roskapostiksi.",
         "Soita pankkiin jos viesti väittää olevansa sieltä."
       ],
@@ -224,7 +224,7 @@
         "Valitse 'Galleria' ja valitse kuva.",
         "Napauta vihreää lähetyspainiketta."
       ],
-      "vinkki": "Merkit: ✓ = lähetetty, ✓✓ = toimitettu, sininen ✓✓ = luettu."
+      "vinkki": "Merkit: �o" = lähetetty, �o"�o" = toimitettu, sininen �o"�o" = luettu."
     },
     "tulostaminen": {
       "otsikko": "Tulostaminen tietokoneelta",
@@ -268,7 +268,7 @@
       ],
       "tietokone": [
         "Liitä USB-muistitikku tai ulkoinen kovalevy.",
-        "Kopioi tärkeät tiedostot muistitikulle (klikkaa hiiren oikealla → Kopioi, sitten liitä muistitikulle).",
+        "Kopioi tärkeät tiedostot muistitikulle (klikkaa hiiren oikealla �?' Kopioi, sitten liitä muistitikulle).",
         "Voit myös käyttää OneDrivea tai Google Drivea pilvivarmuuskopiointiin."
       ],
       "tärkeää": "Tee varmuuskopiot säännöllisesti! Suositus vähintään kerran kuukaudessa."
@@ -284,8 +284,8 @@
       "otsikko": "Tekstin koon suurentaminen",
       "taso": "helppo",
       "selain": "Pidä Ctrl-näppäin pohjassa ja paina + (plus) suurentaaksesi tai - (miinus) pienentääksesi. Ctrl + 0 palauttaa normaaliksi.",
-      "windows": "Asetukset → Helppokäyttöisyys → Näyttö → Tekstin koko → vedä liukusäädintä oikealle.",
-      "puhelin": "Asetukset → Näyttö → Fonttikoko → valitse suurempi koko."
+      "windows": "Asetukset �?' Helppokäyttöisyys �?' Näyttö �?' Tekstin koko �?' vedä liukusäädintä oikealle.",
+      "puhelin": "Asetukset �?' Näyttö �?' Fonttikoko �?' valitse suurempi koko."
     },
     "päivitykset": {
       "otsikko": "Laitteen ja sovellusten päivittäminen",
@@ -326,12 +326,12 @@
       "puhelin": [
         "Pyyhkäise ylhäältä alas nähdäksesi pika-asetukset.",
         "Vedä kirkkauden liukusäädintä vasemmalle (tummempi) tai oikealle (kirkkaampi).",
-        "Tekstikokoa muutetaan: Asetukset → Näyttö → Fonttikoko."
+        "Tekstikokoa muutetaan: Asetukset �?' Näyttö �?' Fonttikoko."
       ],
       "tietokone": [
         "Klikkaa oikeassa alanurkassa olevaa ilmoitusaluetta.",
         "Vedä kirkkauden liukusäädintä.",
-        "Tekstikokoa muutetaan: Asetukset → Helppokäyttöisyys → Näyttö → Tekstin koko."
+        "Tekstikokoa muutetaan: Asetukset �?' Helppokäyttöisyys �?' Näyttö �?' Tekstin koko."
       ],
       "vinkki": "Yötilassa (tumma tila) näyttö on miellyttävämpi silmille pimeässä. Löytyy yleensä pika-asetuksista."
     },
@@ -347,15 +347,325 @@
         "Napauta haluttua kappaletta aloittaaksesi kuuntelun.",
         "Alaosassa näet soittimen jolla voit pysäyttää, kelata ja säätää äänenvoimakkuutta."
       ],
-      "vinkki": "Spotify Free on ilmainen mutta sisältää mainoksia. Spotify Premium (10,99€/kk) poistaa mainokset."
+      "vinkki": "Spotify Free on ilmainen mutta sisältää mainoksia. Spotify Premium (10,99�,�/kk) poistaa mainokset."
+    },
+    "verkkokaupoista_ostaminen": {
+      "otsikko": "Turvallinen ostaminen verkosta",
+      "taso": "keskitaso",
+      "kategoria": "internet",
+      "vaiheet": [
+        "Käytä tunnettuja verkkokauppoja (verkkokauppa.com, prisma.fi, S-kaupat.fi).",
+        "Tarkista, että osoite alkaa 'https://' ja näet lukkomerkin.",
+        "Lisää tuotteet ostoskoriin.",
+        "Mene kassalle ja täytä toimitustiedot.",
+        "Valitse maksutapa: verkkopankki, kortti tai MobilePay.",
+        "Tarkista tilausvahvistus sähköpostistasi."
+      ],
+      "turvallisuus": [
+        "�"lä osta sivuilta jotka näyttävät epäilyttäviltä.",
+        "Vertaa hintoja useista kaupoista.",
+        "Tarkista palautusehdot ennen ostoa.",
+        "Verkkokaupalla on 14 päivän peruutusoikeus EU:ssa."
+      ]
+    },
+    "bluetooth_yhdistäminen": {
+      "otsikko": "Bluetooth-laitteen yhdistäminen",
+      "taso": "keskitaso",
+      "kategoria": "laitteet",
+      "vaiheet": [
+        "Laita Bluetooth-laite (kuulokkeet, kaiutin tms.) paritustilaan. Yleensä pitkä painallus virtanäppäimeen.",
+        "Avaa puhelimesta tai tietokoneesta Asetukset.",
+        "Valitse 'Bluetooth' ja varmista, että se on päällä.",
+        "Etsi laitteesi listasta ja napauta sen nimeä.",
+        "Jos kysytään PIN-koodia, syötä 0000 tai 1234 (yleisin).",
+        "Kun yhdistäminen onnistuu, laite näkyy 'Yhdistetty' tilassa."
+      ],
+      "vinkki": "Jos laite ei näy listassa, sammuta Bluetooth ja käynnistä uudelleen. Varmista myös, että laite on tarpeeksi lähellä (alle 10 metriä)."
+    },
+    "ilmoitukset_hallinta": {
+      "otsikko": "Puhelimen ilmoitusten hallinta",
+      "taso": "helppo",
+      "kategoria": "puhelin",
+      "vaiheet": [
+        "Avaa Asetukset.",
+        "Valitse 'Ilmoitukset' tai 'Sovellukset ja ilmoitukset'.",
+        "Näet listan sovelluksista jotka lähettävät ilmoituksia.",
+        "Napauta sovellusta, jonka ilmoitukset häiritsevät.",
+        "Kytke ilmoitukset pois päältä liukukytkimellä.",
+        "Voit myös valita '�"lä häiritse' -tilan pika-asetuksista."
+      ],
+      "vinkki": "Pidä tärkeät ilmoitukset päällä (puhelin, WhatsApp) mutta sammuta turhat (pelit, mainokset)."
+    },
+    "akun_säästö": {
+      "otsikko": "Puhelimen akun säästäminen",
+      "taso": "helppo",
+      "kategoria": "puhelin",
+      "vaiheet": [
+        "Vähennä näytön kirkkautta pika-asetuksista.",
+        "Kytke WiFi ja Bluetooth pois kun et käytä niitä.",
+        "Sulje sovellukset joita et käytä (pyyhkäise pois viimeisimmät).",
+        "Ota käyttöön virransäästötila: Asetukset �?' Akku �?' Virransäästö.",
+        "Lyhennä näytön sammumisaikaa: Asetukset �?' Näyttö �?' Näytön aikakatkaisu."
+      ],
+      "vinkki": "Lataa puhelinta kun akku on 20-80%. Täysi lataus ja täysi tyhjennys kuluttavat akkua enemmän."
+    },
+    "pdf_avaaminen": {
+      "otsikko": "PDF-tiedoston avaaminen ja tulostaminen",
+      "taso": "helppo",
+      "kategoria": "tietokone",
+      "vaiheet": [
+        "Kaksoisklikkaa PDF-tiedostoa avataksesi sen.",
+        "Tiedosto aukeaa selaimessa tai Adobe Readerissa.",
+        "Voit suurentaa tekstiä painamalla Ctrl ja + (plus).",
+        "Tulostaaksesi paina Ctrl + P.",
+        "Valitse tulostin ja klikkaa 'Tulosta'."
+      ],
+      "vinkki": "Jos PDF ei avaudu, asenna ilmainen Adobe Acrobat Reader osoitteesta get.adobe.com/fi/reader."
+    },
+    "suomi_fi_viestit": {
+      "otsikko": "Suomi.fi-viestit - Viranomaispostia sähköisesti",
+      "taso": "keskitaso",
+      "kategoria": "viranomaiset",
+      "vaiheet": [
+        "Mene osoitteeseen viestit.suomi.fi.",
+        "Kirjaudu pankkitunnuksilla.",
+        "Aktivoi palvelu ensimmäisellä kerralla.",
+        "Viranomaiset (verottaja, Kela, kunta) lähettävät kirjeensä tänne.",
+        "Saat sähköposti-ilmoituksen uusista viesteistä.",
+        "Vanhat viestit säilyvät palvelussa."
+      ],
+      "tärkeää": "Kun aktivoit Suomi.fi-viestit, osa viranomaisten kirjeistä ei enää tule paperisena. Tarkista palvelu säännöllisesti."
+    },
+    "sähköpostin_liite": {
+      "otsikko": "Liitetiedoston lisääminen sähköpostiin",
+      "taso": "helppo",
+      "kategoria": "email",
+      "vaiheet": [
+        "Avaa sähköpostiohjelma ja klikkaa 'Uusi viesti'.",
+        "Kirjoita vastaanottaja ja aihe normaalisti.",
+        "Etsi paperiliitti-kuvake (�Y"Z) viestin alareunasta tai yläosasta.",
+        "Klikkaa sitä ja selaa tiedostosi.",
+        "Valitse haluamasi tiedosto ja klikkaa 'Avaa'.",
+        "Liite näkyy nyt viestin alaosassa. Voit lisätä useita liitteitä.",
+        "Lähetä viesti normaalisti."
+      ],
+      "vinkki": "Useimmat sähköpostipalvelut rajoittavat liitteen koon 25 megatavuun. Suurille tiedostoille käytä Google Drivea tai OneDrivea."
+    },
+    "teams_kokous": {
+      "otsikko": "Microsoft Teams -kokoukseen liittyminen",
+      "taso": "keskitaso",
+      "kategoria": "tietokone",
+      "vaiheet": [
+        "Saat kokouskutsun sähköpostiin. Klikkaa 'Liity Teams-kokoukseen' linkkiä.",
+        "Selain avautuu. Valitse 'Käytä sen sijaan verkkosovellusta' tai avaa Teams-sovellus.",
+        "Kirjoita nimesi jos kysytään.",
+        "Tarkista, että kamera ja mikrofoni ovat päällä.",
+        "Klikkaa 'Liity nyt' painiketta.",
+        "Olet nyt kokouksessa! Voit mykistää mikrofonin painamalla mikrofoni-kuvaketta."
+      ],
+      "painikkeet": "Mikrofoni = mykistä/avaa. Kamera = sammuta/käynnistä. Käsi ylös = pyydä puheenvuoro. Puhelin-kuvake = poistu.",
+      "vinkki": "Testaa ääni ja kuva etukäteen Teams-sovelluksen asetuksissa."
+    },
+    "digipostiv_kela": {
+      "otsikko": "Kelan asiointipalvelu verkossa",
+      "taso": "keskitaso",
+      "kategoria": "viranomaiset",
+      "vaiheet": [
+        "Mene osoitteeseen kela.fi ja klikkaa 'OmaKela'.",
+        "Kirjaudu pankkitunnuksilla tai mobiilivarmenteella.",
+        "Näet omat etuuspäätöksesi ja hakemuksesi.",
+        "Voit hakea etuuksia ja lähettää liitteitä.",
+        "Viestit-osiossa voit lähettää kysymyksiä Kelalle.",
+        "Muista kirjautua ulos, kun olet valmis."
+      ],
+      "tärkeää": "Kelaan voi asioida myös puhelimitse numerossa 020 634 11 (ma-pe 9-16)."
+    },
+    "google_haku": {
+      "otsikko": "Tiedon etsiminen Googlesta",
+      "taso": "helppo",
+      "kategoria": "internet",
+      "vaiheet": [
+        "Avaa selain (Chrome, Edge tai Safari).",
+        "Kirjoita osoiteriville google.fi ja paina Enter.",
+        "Kirjoita hakukenttään mitä etsit, esim. 'sää Helsinki'.",
+        "Paina Enter tai napauta suurennuslasi-kuvaketta.",
+        "Tulokset näkyvät listana. Napauta sinistä otsikkoa avataksesi sivun.",
+        "Palaa takaisin hakutuloksiin painamalla selaimen nuoli-painiketta vasemmalla."
+      ],
+      "vinkki": "Käytä yksinkertaisia hakusanoja. Esim. 'resepti lohikeitto' toimii paremmin kuin 'miten tehdään lohikeittoa'."
+    },
+    "puhelimen_uudelleenkäynnistys": {
+      "otsikko": "Puhelimen uudelleenkäynnistys ongelmatilanteessa",
+      "taso": "helppo",
+      "kategoria": "puhelin",
+      "vaiheet": [
+        "Paina virtapainiketta pitkään (5-10 sekuntia).",
+        "Ruudulle tulee valikko. Valitse 'Käynnistä uudelleen' tai 'Restart'.",
+        "Jos ruutu ei reagoi, pidä virtapainiketta pohjassa 15-20 sekuntia.",
+        "Puhelin sammuu ja käynnistyy uudelleen.",
+        "Odota, kunnes puhelin on täysin käynnistynyt."
+      ],
+      "vinkki": "Uudelleenkäynnistys ratkaisee monia ongelmia! Kokeile aina ensin tätä jos jokin ei toimi."
+    },
+    "rekisteröityminen_palveluun": {
+      "otsikko": "Uuteen verkkopalveluun rekisteröityminen",
+      "taso": "keskitaso",
+      "kategoria": "internet",
+      "vaiheet": [
+        "Mene palvelun verkkosivulle.",
+        "Etsi 'Rekisteröidy', 'Luo tili' tai 'Sign up' -painike.",
+        "Syötä sähköpostiosoitteesi ja keksi vahva salasana.",
+        "Täytä muut pyydetyt tiedot (nimi jne.).",
+        "Hyväksy käyttöehdot (lue ne ensin!).",
+        "Avaa sähköpostisi - löydät vahvistusviestin. Klikkaa vahvistuslinkkiä.",
+        "Tilisi on nyt valmis käytettäväksi!"
+      ],
+      "tärkeää": "Käytä jokaiseen palveluun eri salasanaa. Jos yksi salasana vuotaa, muut tilisi pysyvät turvassa."
+    },
+    "digi_postilaatikko": {
+      "otsikko": "Postin OmaPosti - Digitaalinen postilaatikko",
+      "taso": "keskitaso",
+      "kategoria": "viranomaiset",
+      "vaiheet": [
+        "Mene osoitteeseen omaposti.posti.fi.",
+        "Kirjaudu pankkitunnuksilla.",
+        "Näet digitaalisesti vastaanotetut kirjeet.",
+        "Voit lukea kirjeet avataamalla ne.",
+        "Virallinen posti (verottaja, Kela jne.) tulee tänne jos olet aktivoinut palvelun.",
+        "Voit myös lähettää kirjeitä digitaalisesti."
+      ],
+      "vinkki": "Kun aktivoit OmaPostin, monet viranomaiskirjeet tulevat vain sähköisesti. Tarkista postilaatikkosi säännöllisesti."
+    },
+    "hätänumero_112": {
+      "otsikko": "112 Suomi -sovellus hätätilanteissa",
+      "taso": "helppo",
+      "kategoria": "turvallisuus",
+      "vaiheet": [
+        "Asenna '112 Suomi' -sovellus sovelluskaupasta (ilmainen).",
+        "Avaa sovellus ja anna sille lupa käyttää sijaintiasi.",
+        "Hätätilanteessa paina sovelluksen suurta punaista painiketta.",
+        "Sovellus soittaa automaattisesti 112:een ja välittää sijaintisi.",
+        "Kerro hätäkeskukselle mitä on tapahtunut."
+      ],
+      "tärkeää": "112 Suomi -sovellus on virallinen hätäkeskuslaitoksen sovellus. Se on ilmainen ja voi pelastaa henkiä."
+    },
+    "apteekin_verkkopalvelu": {
+      "otsikko": "Apteekin verkkopalvelun käyttö",
+      "taso": "keskitaso",
+      "kategoria": "terveys",
+      "vaiheet": [
+        "Avaa selain ja mene apteekki.fi tai oma-apteekkisi sivulle.",
+        "Kirjaudu sisään pankkitunnuksilla tai mobiilivarmenteella.",
+        "Näet reseptisi ja niiden uusimistiedot.",
+        "Voit tilata reseptilääkkeitä noutoon tai kotiin toimitettuna.",
+        "Valitse noutoapteekkisi listasta.",
+        "Maksa tilaus verkossa tai noutohetkellä."
+      ],
+      "tärkeää": "Reseptilääkkeitä voi tilata vain kun lääkäri on kirjoittanut voimassa olevan reseptin."
+    },
+    "yle_areena": {
+      "otsikko": "Yle Areena - TV-ohjelmien katselu",
+      "taso": "helppo",
+      "kategoria": "viihde",
+      "vaiheet": [
+        "Avaa selain ja mene osoitteeseen areena.yle.fi, tai asenna Yle Areena -sovellus.",
+        "Luo Yle-tunnus tai kirjaudu sisään (ilmainen).",
+        "Selaa ohjelmia kategorioittain tai käytä hakua.",
+        "Klikkaa ohjelmaa aloittaaksesi katselun.",
+        "Voit pysäyttää, kelata eteen ja taakse."
+      ],
+      "vinkki": "Yle Areena on täysin ilmainen! Sieltä löydät TV-ohjelmat, elokuvat, dokumentit ja radion."
+    },
+    "karttasovellus": {
+      "otsikko": "Google Maps - Reitin hakeminen",
+      "taso": "helppo",
+      "kategoria": "puhelin",
+      "vaiheet": [
+        "Avaa Google Maps -sovellus (tai mene maps.google.fi).",
+        "Napauta hakukenttää ja kirjoita määränpää (esim. 'Meilahden sairaala').",
+        "Napauta 'Reittiohjeet' (nuoli-kuvake).",
+        "Valitse kulkutapa: auto, julkinen liikenne, kävely.",
+        "Napauta 'Aloita' niin saat reaaliaikaiset ohjeet.",
+        "Sovellus opastaa sinua perille äänellä."
+      ],
+      "vinkki": "Julkisen liikenteen reiteissä näet myös bussien ja junien aikataulut."
+    },
+    "vahva_tunnistautuminen": {
+      "otsikko": "Vahva tunnistautuminen (pankkitunnukset ja mobiili)",
+      "taso": "keskitaso",
+      "kategoria": "turvallisuus",
+      "vaiheet": [
+        "Kun palvelu pyytää tunnistautumista, valitse tunnistautumistapa.",
+        "Pankkitunnukset: Syötä käyttäjätunnus ja salasana, sen jälkeen avainluku.",
+        "Mobiiliauttaja: Syötä puhelinnumero, hyväksy pyyntö kännykässä.",
+        "Mobiilivarmenne: Toimi mobiiliauttajan tapaan mutta vaatii SIM-kortin aktivoinnin.",
+        "Henkilökortti: Laita kortti lukijaan ja syötä PIN-koodi."
+      ],
+      "tärkeää": "�"lä koskaan anna tunnistautumistietojasi toiselle henkilölle. Aitot palvelut eivät koskaan kysy niitä puhelimitse."
+    },
+    "kanta_palvelu": {
+      "otsikko": "Kanta.fi - Omat terveystiedot",
+      "taso": "keskitaso",
+      "kategoria": "terveys",
+      "vaiheet": [
+        "Mene osoitteeseen kanta.fi.",
+        "Klikkaa 'Kirjaudu Omakantaan'.",
+        "Tunnistaudu pankkitunnuksilla, mobiilivarmenteella tai henkilökortilla.",
+        "Näet terveystietosi: lääkemääräykset, laboratoriotulokset, hoitokertomukset.",
+        "Voit uusia reseptejä 'Reseptit' -osiossa.",
+        "Muista kirjautua ulos, kun olet valmis."
+      ],
+      "vinkki": "Kanta.fi on turvallinen valtion palvelu. Kaikki terveystietosi ovat siellä yhdessä paikassa."
+    },
+    "videopuhelu_whatsapp": {
+      "otsikko": "WhatsApp-videopuhelu",
+      "taso": "helppo",
+      "kategoria": "puhelin",
+      "vaiheet": [
+        "Avaa WhatsApp.",
+        "Napauta sen henkilön keskustelua, jolle haluat soittaa.",
+        "Napauta oikeassa yläkulmassa olevaa videokamera-kuvaketta.",
+        "Odota, että toinen henkilö vastaa.",
+        "Puhelu käynnistyy! Näet toisen henkilön kuvassa.",
+        "Lopeta puhelu napauttamalla punaista puhelinkuvaketta."
+      ],
+      "vinkki": "Varmista, että sinulla on hyvä WiFi-yhteys ennen videopuhelua. Se kuluttaa paljon dataa."
+    },
+    "valokuvien_siirto": {
+      "otsikko": "Valokuvien siirto puhelimesta tietokoneelle",
+      "taso": "keskitaso",
+      "kategoria": "puhelin",
+      "vaiheet": [
+        "Yhdistä puhelin tietokoneeseen USB-johdolla.",
+        "Puhelimen ruudulle voi tulla kysymys - valitse 'Tiedostonsiirto'.",
+        "Avaa tietokoneella 'Tämä tietokone' (Windows) tai 'Finder' (Mac).",
+        "Näet puhelimesi listassa. Klikkaa sitä.",
+        "Etsi kansio nimeltä DCIM tai Camera.",
+        "Kopioi haluamasi kuvat tietokoneen kansioon (esim. Kuvat-kansioon)."
+      ],
+      "vinkki": "Voit myös käyttää Google Kuvia - kuvat siirtyvät automaattisesti pilveen ja näet ne tietokoneella osoitteessa photos.google.com."
+    },
+    "tabletin_käyttö": {
+      "otsikko": "Tabletin peruskäyttö",
+      "taso": "helppo",
+      "kategoria": "tabletti",
+      "vaiheet": [
+        "Käynnistä tabletti painamalla virtapainiketta pitkään (3 sekuntia).",
+        "Avaa näytön lukitus pyyhkäisemällä ylöspäin tai syöttämällä PIN-koodi.",
+        "Kotinäytöllä näet sovelluskuvakkeet. Napauta sovellusta avataksesi sen.",
+        "Vaihda sovellusten välillä pyyhkäisemällä alhaalta ylös.",
+        "Sulje tabletti painamalla virtapainiketta pitkään ja valitsemalla 'Sammuta'."
+      ],
+      "vinkki": "Pidä tablettia molemmin käsin vaakatasossa, niin se on helpointa käyttää."
     }
   },
   "usein_kysytyt": {
     "mikä_on_digi_mikko": "Digi-Mikko on digituki ikäihmisille. Autamme kaikissa tietokoneen, älypuhelimen ja tabletin ongelmissa. Voimme tulla kotiin tai auttaa etänä.",
-    "miten_varaan_ajan": "Voit varata ajan soittamalla numeroon 040 123 4567 tai lähettämällä viestin yhteystietolomakkeella sivullamme. Palvelemme ma-pe 9-18 ja la 10-14.",
-    "paljonko_maksaa": "Hinnat vaihtelevat palvelun mukaan: Etätuki 40€/h, Kotikäynti 50€/h, Käyttöönotto 80€ (2h), Koulutus 120€ (3h), Tietoturva 60€/h, AI-opastus 50€/h. Ensimmäinen 15 min puhelintukea on ilmaista!",
+    "miten_varaan_ajan": "Voit varata ajan soittamalla numeroon 0405044593 tai lähettämällä viestin yhteystietolomakkeella sivullamme. Palvelemme ma-pe 9-18 ja la 10-14.",
+    "paljonko_maksaa": "Hinnat vaihtelevat palvelun mukaan: Etätuki 40�,�/h, Kotikäynti 50�,�/h, Käyttöönotto 80�,� (2h), Koulutus 120�,� (3h), Tietoturva 60�,�/h, AI-opastus 50�,�/h. Ensimmäinen 15 min puhelintukea on ilmaista!",
     "missä_toimitte": "Toimimme pääkaupunkiseudulla ja lähikunnissa. Etätuki toimii kaikkialla Suomessa.",
     "saanko_kotiin": "Kyllä! Kotikäynti on yksi suosituimmista palveluistamme. Tulen luoksesi ja autamme rauhassa omilla laitteillasi.",
     "voiko_perua": "Kyllä, voit perua ajan 24 tuntia ennen sovittua aikaa ilman veloitusta."
   }
 }
+

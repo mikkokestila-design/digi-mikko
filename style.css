@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap');
+
 /* ===================================
    DIGI-MIKKO STYLES
    Accessible design for elderly users
@@ -54,12 +56,16 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: var(--font-base);
     line-height: 1.7;
     color: var(--text-dark);
-    background-color: var(--bg-white);
+    background: radial-gradient(circle at top right, #eef6ff 0%, #ffffff 45%);
     overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -70,6 +76,7 @@ body {
 
 /* Typography */
 h1 {
+    font-family: 'Fraunces', Georgia, serif;
     font-size: var(--font-3xl);
     font-weight: 700;
     line-height: 1.2;
@@ -77,6 +84,7 @@ h1 {
 }
 
 h2 {
+    font-family: 'Fraunces', Georgia, serif;
     font-size: var(--font-2xl);
     font-weight: 700;
     line-height: 1.3;
@@ -85,6 +93,7 @@ h2 {
 }
 
 h3 {
+    font-family: 'Fraunces', Georgia, serif;
     font-size: var(--font-xl);
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
@@ -92,6 +101,7 @@ h3 {
 }
 
 h4 {
+    font-family: 'Fraunces', Georgia, serif;
     font-size: var(--font-lg);
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
@@ -213,6 +223,28 @@ nav {
     cursor: pointer;
     border-radius: 6px;
     color: var(--primary-color);
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    z-index: 2000;
+    background: #111827;
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
 }
 
 /* Buttons */
@@ -339,6 +371,35 @@ nav {
     font-size: var(--font-xl);
     margin-bottom: var(--spacing-lg);
     opacity: 0.95;
+}
+
+.hero-cta-note {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.trust-strip {
+    padding: 1rem 0 0.5rem;
+    background: transparent;
+}
+
+.trust-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.trust-pill {
+    background: #ffffff;
+    border: 1px solid #dbe7ff;
+    border-radius: 999px;
+    padding: 0.65rem 0.9rem;
+    text-align: center;
+    font-weight: 600;
+    color: #1f2937;
+    box-shadow: var(--shadow-sm);
+    font-size: 0.95rem;
 }
 
 .hero-image-container {
@@ -961,6 +1022,74 @@ nav {
     margin-bottom: var(--spacing-lg);
 }
 
+.conversion-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.conversion-points span {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-progress-wrap {
+    margin-bottom: 1rem;
+}
+
+.form-progress-label {
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+    color: var(--text-light);
+}
+
+.form-progress-track {
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    overflow: hidden;
+}
+
+.form-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transition: width 0.2s ease;
+}
+
+.preferred-contact-group {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+}
+
+.preferred-contact-group legend {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0 0.3rem;
+}
+
+.radio-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    font-size: 1rem;
+}
+
+.radio-label input[type="radio"] {
+    width: 18px;
+    height: 18px;
+}
+
 .form-group label {
     display: block;
     font-weight: 600;
@@ -1020,6 +1149,38 @@ nav {
     color: var(--text-light);
     font-size: var(--font-base);
     margin-top: var(--spacing-md);
+}
+
+.form-trust-note {
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.advanced-form-section {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1rem;
+    background: #f8fbff;
+}
+
+.advanced-form-section summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.advanced-form-section[open] summary {
+    margin-bottom: 0.7rem;
+}
+
+.mt-2 {
+    margin-top: 0.8rem;
+}
+
+.mobile-quickbar {
+    display: none;
 }
 
 .success-message {
@@ -1172,6 +1333,50 @@ footer {
     
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .trust-strip-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mobile-quickbar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1200;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        padding: 0.6rem;
+        background: rgba(255,255,255,0.96);
+        border-top: 1px solid #dbe7ff;
+        box-shadow: 0 -8px 24px rgba(0,0,0,0.08);
+        backdrop-filter: blur(6px);
+    }
+
+    .mobile-quickbar a {
+        display: block;
+        text-align: center;
+        padding: 0.7rem 0.6rem;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 0.95rem;
+    }
+
+    .mobile-quickbar-call {
+        color: #ffffff;
+        background: linear-gradient(135deg, #0ea5a3, #0f766e);
+    }
+
+    .mobile-quickbar-book {
+        color: #ffffff;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    }
+
+    body {
+        padding-bottom: 80px;
     }
     
     .cta-buttons {

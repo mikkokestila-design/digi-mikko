@@ -1,29 +1,54 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digi-Mikko - Digituki ikäihmisille</title>
     <meta name="description" content="Digiapu ja -tuki ikäihmisille. Autamme kaikissa digitaalisissa ongelmissa.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="canonical" href="https://digi-mikko.fi/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Digi-Mikko - Digituki ikäihmisille">
+    <meta property="og:description" content="Digiapu ja -tuki ikäihmisille. Autamme kaikissa digitaalisissa ongelmissa.">
+    <meta property="og:url" content="https://digi-mikko.fi/">
+    <meta property="og:image" content="https://digi-mikko.fi/logo.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Digi-Mikko - Digituki ikäihmisille">
+    <meta name="twitter:description" content="Digiapu ja -tuki ikäihmisille. Autamme kaikissa digitaalisissa ongelmissa.">
+    <meta name="twitter:image" content="https://digi-mikko.fi/logo.svg">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Digi-Mikko",
+      "description": "Digituki ikäihmisille",
+      "telephone": "+358405044593",
+      "email": "mikko.kestila@gmail.com",
+      "url": "https://digi-mikko.fi/",
+      "areaServed": "Pääkaupunkiseutu"
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Siirry sisältöön</a>
     <!-- AI Chatbot Widget -->
     <div class="chatbot-widget" id="chatbot">
         <div class="chatbot-header">
-            <span class="chatbot-title">🤖 Digi-Digi-Mikko</span>
-            <button class="chatbot-minimize" id="chatbotMinimize">−</button>
+            <span class="chatbot-title">Digi-Mikko</span>
+            <button class="chatbot-minimize" id="chatbotMinimize" aria-label="Pienennä chatbot">-</button>
         </div>
         <div class="chatbot-body" id="chatbotBody">
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="bot-message">Hei! Olen Digi-Digi-Mikko, teko-älyllä toimiva avustajasi. Miten voin auttaa sinua tänään?</div>
+            <div class="chatbot-messages" id="chatbotMessages" aria-live="polite">
+                <div class="bot-message">Hei! Olen Digi-Mikko, tekoälyllä toimiva avustajasi. Miten voin auttaa sinua tänään?</div>
             </div>
             <div class="chatbot-input-area">
-                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." />
-                <button id="chatbotSend">Lähetä</button>
+                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." aria-label="Chatbot-kenttä" />
+                <button id="chatbotSend" type="button">Lähetä</button>
             </div>
         </div>
-        <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Avaa chatbot">Chat</button>
     </div>
 
     <header>
@@ -37,11 +62,11 @@
                 <li><a href="self-help.html">Ohjeet</a></li>
                 <li><a href="contact.html">Ota yhteyttä</a></li>
             </ul>
-            <button class="mobile-menu-toggle" aria-label="Avaa valikko">☰</button>
+            <button class="mobile-menu-toggle" aria-label="Avaa valikko">Menu</button>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
@@ -51,14 +76,26 @@
                     </div>
                 </div>
                 <div class="trust-badge">
-                    <span class="badge-icon">✓</span>
+                    <span class="badge-icon">OK</span>
                     <span class="badge-text">Onko ongelmana ATK? Luota Digi-Mikkoon!</span>
                 </div>
                 <h2>Apua digitaalisiin ongelmiin</h2>
                 <p class="hero-subtitle">Autan ikäihmisiä kaikissa tietokoneen, älypuhelimen ja tabletin ongelmissa. Käymme kotona tai autamme etänä.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">Varaa aika</a>
-                    <a href="tel:+358401234567" class="btn btn-secondary">📞 Soita heti</a>
+                    <a href="contact.html" class="btn btn-primary">Varaa ilmainen kartoitus</a>
+                    <a href="tel:+358405044593" class="btn btn-secondary">Soita 0405044593</a>
+                </div>
+                <p class="hero-cta-note">Ensimmäiset 15 minuuttia neuvontaa maksutta.</p>
+            </div>
+        </section>
+
+        <section class="trust-strip" aria-label="Luottamussignaalit">
+            <div class="container">
+                <div class="trust-strip-grid">
+                    <div class="trust-pill">500+ autettua asiakasta</div>
+                    <div class="trust-pill">⏱️ Vastaus yleensä 24h sisällä</div>
+                    <div class="trust-pill">Turvallinen ja selkeä palvelu</div>
+                    <div class="trust-pill">Etätuki koko Suomeen</div>
                 </div>
             </div>
         </section>
@@ -70,40 +107,40 @@
                 <p class="section-subtitle reveal">Autamme sinua kaikissa digitaalisissa tarpeissasi</p>
                 <div class="services-preview-grid stagger-children">
                     <div class="service-preview-card">
-                        <div class="service-preview-icon">🏠</div>
+                        <div class="service-preview-icon">Koti</div>
                         <h3>Kotikäynti</h3>
                         <p>Henkilökohtainen apu kotonasi</p>
-                        <span class="service-price">50 €/tunti</span>
+                        <span class="service-price">50 EUR/tunti</span>
                     </div>
                     <div class="service-preview-card">
-                        <div class="service-preview-icon">💻</div>
+                        <div class="service-preview-icon">Eta</div>
                         <h3>Etätuki</h3>
                         <p>Nopea apu puhelimitse tai etäyhteydellä</p>
-                        <span class="service-price">40 €/tunti</span>
+                        <span class="service-price">40 EUR/tunti</span>
                     </div>
                     <div class="service-preview-card">
-                        <div class="service-preview-icon">🔒</div>
+                        <div class="service-preview-icon">Turva</div>
                         <h3>Tietoturva</h3>
                         <p>Suojaa tietosi ja laitteet uhkilta</p>
-                        <span class="service-price">60 €/tunti</span>
+                        <span class="service-price">60 EUR/tunti</span>
                     </div>
                     <div class="service-preview-card">
-                        <div class="service-preview-icon">🤖</div>
+                        <div class="service-preview-icon">AI</div>
                         <h3>Tekoäly-opastus</h3>
                         <p>Opi käyttämään ChatGPT:tä ja muita AI-työkaluja</p>
-                        <span class="service-price">50 €/tunti</span>
+                        <span class="service-price">50 EUR/tunti</span>
                     </div>
                     <div class="service-preview-card">
-                        <div class="service-preview-icon">📱</div>
+                        <div class="service-preview-icon">Laite</div>
                         <h3>Laitteen käyttöönotto</h3>
                         <p>Uusi puhelin tai tietokone välittömään käyttöön</p>
-                        <span class="service-price">80 € (2h)</span>
+                        <span class="service-price">80 EUR (2h)</span>
                     </div>
                     <div class="service-preview-card">
-                        <div class="service-preview-icon">👨‍🏫</div>
+                        <div class="service-preview-icon">Koulutus</div>
                         <h3>Henkilökohtainen koulutus</h3>
                         <p>Räätälöity koulutus tarpeillesi</p>
-                        <span class="service-price">120 € (3h)</span>
+                        <span class="service-price">120 EUR (3h)</span>
                     </div>
                 </div>
                 <div class="cta-center">
@@ -142,22 +179,22 @@
                 <h2 class="reveal"><span class="section-heading-line"></span>Miksi valita Digi-Mikko?</h2>
                 <div class="info-grid stagger-children">
                     <div class="info-card">
-                        <span class="icon">👨‍🏫</span>
+                        <span class="icon">Opastus</span>
                         <h3>Kärsivällinen opetus</h3>
                         <p>Käymme asiat läpi rauhassa, juuri sinun tahdissasi. Ei kiire minnekään.</p>
                     </div>
                     <div class="info-card">
-                        <span class="icon">🏠</span>
+                        <span class="icon">Koti</span>
                         <h3>Kotikäynti tai etätuki</h3>
                         <p>Tulen luoksesi tai autamme puhelimitse ja etäyhteyden avulla.</p>
                     </div>
                     <div class="info-card">
-                        <span class="icon">💰</span>
+                        <span class="icon">Hinta</span>
                         <h3>Selkeä hinnoittelu</h3>
                         <p>Ei piilokustannuksia. Sovitaan hinta etukäteen.</p>
                     </div>
                     <div class="info-card">
-                        <span class="icon">🔒</span>
+                        <span class="icon">Turva</span>
                         <h3>Turvallinen ja luotettava</h3>
                         <p>Tietosi ovat turvassa. Kunnioitamme yksityisyyttäsi.</p>
                     </div>
@@ -171,27 +208,27 @@
                 <h2 class="reveal"><span class="section-heading-line"></span>Yleisimpiä ongelmia, joissa autamme</h2>
                 <div class="problems-grid stagger-children">
                     <div class="problem-item">
-                        <span class="problem-icon">📱</span>
-                        <p>Älypuhelimen käytön opastus</p>
+                        <span class="problem-icon">1</span>
+                        <p>Alypuhelimen kayton opastus</p>
                     </div>
                     <div class="problem-item">
-                        <span class="problem-icon">💻</span>
+                        <span class="problem-icon">2</span>
                         <p>Tietokoneen peruskäyttö</p>
                     </div>
                     <div class="problem-item">
-                        <span class="problem-icon">📧</span>
+                        <span class="problem-icon">3</span>
                         <p>Sähköpostin käyttö</p>
                     </div>
                     <div class="problem-item">
-                        <span class="problem-icon">🏦</span>
+                        <span class="problem-icon">4</span>
                         <p>Verkkopankki ja e-laskut</p>
                     </div>
                     <div class="problem-item">
-                        <span class="problem-icon">👨‍👩‍👧</span>
+                        <span class="problem-icon">5</span>
                         <p>Videoyhteydet (Zoom, Teams)</p>
                     </div>
                     <div class="problem-item">
-                        <span class="problem-icon">🛡️</span>
+                        <span class="problem-icon">6</span>
                         <p>Tietoturva ja salasanat</p>
                     </div>
                 </div>
@@ -208,19 +245,19 @@
                 <p class="section-subtitle reveal">Olemme koonneet helppoja ohjeita yleisimpiin ongelmiin</p>
                 <div class="help-articles-preview stagger-children">
                     <article class="help-card">
-                        <h3>📱 Miten otan kuvan puhelimella?</h3>
+                        <h3>Miten otan kuvan puhelimella?</h3>
                         <p>Yksinkertainen ohje valokuvien ottamiseen älypuhelimella.</p>
-                        <a href="self-help.html#take-photo" class="link-arrow">Lue ohje →</a>
+                        <a href="self-help.html#take-photo" class="link-arrow">Lue ohje</a>
                     </article>
                     <article class="help-card">
-                        <h3>🔐 Miten vaihdan salasanan?</h3>
+                        <h3>Miten vaihdan salasanan?</h3>
                         <p>Turvallisen salasanan luominen ja vaihtaminen.</p>
-                        <a href="self-help.html#change-password" class="link-arrow">Lue ohje →</a>
+                        <a href="self-help.html#change-password" class="link-arrow">Lue ohje</a>
                     </article>
                     <article class="help-card">
-                        <h3>📧 Miten lähetän sähköpostia?</h3>
+                        <h3>Miten lahetan sahkopostia?</h3>
                         <p>Askel askeleelta ohje sähköpostin lähettämiseen.</p>
-                        <a href="self-help.html#send-email" class="link-arrow">Lue ohje →</a>
+                        <a href="self-help.html#send-email" class="link-arrow">Lue ohje</a>
                     </article>
                 </div>
                 <div class="cta-center">
@@ -235,16 +272,16 @@
                 <h2 class="reveal">Tarvitsetko apua heti?</h2>
                 <p class="reveal">Ota yhteyttä, niin sovitaan aika joka sinulle sopii.</p>
                 <div class="contact-options stagger-children">
-                    <a href="tel:+358401234567" class="contact-method">
-                        <span class="contact-icon">📞</span>
-                        <span class="contact-text">040 123 4567</span>
+                    <a href="tel:+358405044593" class="contact-method">
+                        <span class="contact-icon">Puh</span>
+                        <span class="contact-text">0405044593</span>
                     </a>
-                    <a href="mailto:mikko@digi-mikko.fi" class="contact-method">
-                        <span class="contact-icon">📧</span>
-                        <span class="contact-text">mikko@digi-mikko.fi</span>
+                    <a href="mailto:mikko.kestila@gmail.com" class="contact-method">
+                        <span class="contact-icon">Email</span>
+                        <span class="contact-text">mikko.kestila@gmail.com</span>
                     </a>
                     <a href="contact.html" class="contact-method">
-                        <span class="contact-icon">📝</span>
+                        <span class="contact-icon">Aika</span>
                         <span class="contact-text">Yhteydenottolomake</span>
                     </a>
                 </div>
@@ -261,8 +298,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Yhteystiedot</h4>
-                    <p>Puh: 040 123 4567</p>
-                    <p>Email: mikko@digi-mikko.fi</p>
+                    <p>Puh: 0405044593</p>
+                    <p>Email: mikko.kestila@gmail.com</p>
                 </div>
                 <div class="footer-section">
                     <h4>Aukioloajat</h4>
@@ -279,3 +316,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+

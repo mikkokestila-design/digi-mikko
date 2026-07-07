@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sivua ei löydy - Digi-Mikko</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="canonical" href="https://digi-mikko.fi/404.html">
     <link rel="stylesheet" href="style.css">
     <style>
         .error-container {
@@ -34,22 +37,23 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Siirry sisältöön</a>
     <!-- AI Chatbot Widget -->
     <div class="chatbot-widget" id="chatbot">
         <div class="chatbot-header">
-            <span class="chatbot-title">🤖 Digi-Digi-Mikko</span>
-            <button class="chatbot-minimize" id="chatbotMinimize">−</button>
+            <span class="chatbot-title">Digi-Mikko</span>
+            <button class="chatbot-minimize" id="chatbotMinimize" aria-label="Pienennä chatbot">-</button>
         </div>
         <div class="chatbot-body" id="chatbotBody">
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="bot-message">Hei! Olen Digi-Digi-Mikko, teko-älyllä toimiva avustajasi. Miten voin auttaa sinua tänään?</div>
+            <div class="chatbot-messages" id="chatbotMessages" aria-live="polite">
+                <div class="bot-message">Hei! Olen Digi-Mikko, tekoälyllä toimiva avustajasi. Miten voin auttaa sinua tänään?</div>
             </div>
             <div class="chatbot-input-area">
-                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." />
-                <button id="chatbotSend">Lähetä</button>
+                <input type="text" id="chatbotInput" placeholder="Kirjoita kysymyksesi..." aria-label="Chatbot-kenttä" />
+                <button id="chatbotSend" type="button">Lähetä</button>
             </div>
         </div>
-        <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Avaa chatbot">Chat</button>
     </div>
 
     <header>
@@ -63,11 +67,11 @@
                 <li><a href="self-help.html">Ohjeet</a></li>
                 <li><a href="contact.html">Ota yhteyttä</a></li>
             </ul>
-            <button class="mobile-menu-toggle" aria-label="Avaa valikko">☰</button>
+            <button class="mobile-menu-toggle" aria-label="Avaa valikko">Menu</button>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <div class="error-container">
             <div class="error-code">404</div>
             <h1 class="error-message">Hups! Sivua ei löytynyt</h1>
@@ -90,8 +94,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Yhteystiedot</h4>
-                    <p>Puh: 040 123 4567</p>
-                    <p>Email: mikko@digi-mikko.fi</p>
+                    <p>Puh: 0405044593</p>
+                    <p>Email: mikko.kestila@gmail.com</p>
                 </div>
                 <div class="footer-section">
                     <h4>Aukioloajat</h4>
@@ -108,3 +112,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
