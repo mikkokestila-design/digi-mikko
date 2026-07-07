@@ -39,18 +39,29 @@ async function sendWithResend({ apiKey, from, to, subject, text, html }) {
   }
 }
 
-exports.handler = async () => {
+exports.handler = async (event) => {
+  const force = event?.queryStringParameters?.force === '1';
   const range = weekRangeEndingYesterday();
   const weekId = weekIdFromEndDate(range.end);
-  const store = getStore('digi_stats');
+  let store;
+  let blobsUnavailable = false;
+
+  try {
+    store = getStore('digi_stats');
+  } catch (err) {
+    blobsUnavailable = true;
+  }
+
   const sentKey = `weekly:${weekId}:email_sent`;
 
-  const alreadySent = await store.get(sentKey, { type: 'json' });
-  if (alreadySent && alreadySent.sent) {
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ ok: true, skipped: true, reason: 'already_sent', week: range })
-    };
+  if (store && !force) {
+    const alreadySent = await store.get(sentKey, { type: 'json' });
+    if (alreadySent && alreadySent.sent) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ ok: true, skipped: true, reason: 'already_sent', week: range })
+      };
+    }
   }
 
   const to = process.env.STATS_EMAIL_TO || 'mikko.kestila@gmail.com';
@@ -79,35 +90,37 @@ exports.handler = async () => {
   const mergedPages = {};
   const uniqueVisitors = new Set();
 
-  for (let daysBack = 7; daysBack >= 1; daysBack -= 1) {
-    const date = dayKeyOffset(daysBack);
-    const stats = await store.get(`daily:${date}`, { type: 'json' });
-    if (!stats) {
-      continue;
-    }
-
-    const totals = stats.totals || {};
-    mergedTotals.page_views += totals.page_views || 0;
-    mergedTotals.form_submits += totals.form_submits || 0;
-    mergedTotals.phone_clicks += totals.phone_clicks || 0;
-    mergedTotals.email_clicks += totals.email_clicks || 0;
-    mergedTotals.button_clicks += totals.button_clicks || 0;
-    mergedTotals.events += totals.events || 0;
-
-    Object.keys(stats.visitors || {}).forEach((id) => uniqueVisitors.add(id));
-
-    Object.entries(stats.pages || {}).forEach(([path, data]) => {
-      if (!mergedPages[path]) {
-        mergedPages[path] = { page_views: 0, events: 0 };
+  if (store) {
+    for (let daysBack = 7; daysBack >= 1; daysBack -= 1) {
+      const date = dayKeyOffset(daysBack);
+      const stats = await store.get(`daily:${date}`, { type: 'json' });
+      if (!stats) {
+        continue;
       }
-      mergedPages[path].page_views += data.page_views || 0;
-      mergedPages[path].events += data.events || 0;
-    });
+
+      const totals = stats.totals || {};
+      mergedTotals.page_views += totals.page_views || 0;
+      mergedTotals.form_submits += totals.form_submits || 0;
+      mergedTotals.phone_clicks += totals.phone_clicks || 0;
+      mergedTotals.email_clicks += totals.email_clicks || 0;
+      mergedTotals.button_clicks += totals.button_clicks || 0;
+      mergedTotals.events += totals.events || 0;
+
+      Object.keys(stats.visitors || {}).forEach((id) => uniqueVisitors.add(id));
+
+      Object.entries(stats.pages || {}).forEach(([path, data]) => {
+        if (!mergedPages[path]) {
+          mergedPages[path] = { page_views: 0, events: 0 };
+        }
+        mergedPages[path].page_views += data.page_views || 0;
+        mergedPages[path].events += data.events || 0;
+      });
+    }
   }
 
   mergedTotals.unique_visitors = uniqueVisitors.size;
 
-  if (mergedTotals.events === 0) {
+  if (mergedTotals.events === 0 && !force) {
     return {
       statusCode: 200,
       body: JSON.stringify({ ok: true, skipped: true, reason: 'no_stats', week: range })
@@ -118,6 +131,7 @@ exports.handler = async () => {
 
   const lines = [
     `Digi-Mikko Weekly Stats (${range.start} to ${range.end})`,
+    blobsUnavailable ? 'Note: Blobs storage unavailable, sending test/empty summary.' : '',
     '',
     `Page views: ${mergedTotals.page_views || 0}`,
     `Unique visitors: ${mergedTotals.unique_visitors || 0}`,
@@ -137,6 +151,7 @@ exports.handler = async () => {
   const text = lines.join('\n');
   const html = `
     <h2>Digi-Mikko Weekly Stats (${range.start} to ${range.end})</h2>
+    ${blobsUnavailable ? '<p><em>Note: Blobs storage unavailable, summary may be empty.</em></p>' : ''}
     <ul>
       <li><strong>Page views:</strong> ${mergedTotals.page_views || 0}</li>
       <li><strong>Unique visitors:</strong> ${mergedTotals.unique_visitors || 0}</li>
@@ -163,11 +178,13 @@ exports.handler = async () => {
     html
   });
 
-  await store.setJSON(sentKey, {
-    sent: true,
-    at: new Date().toISOString(),
-    to
-  });
+  if (store && !force) {
+    await store.setJSON(sentKey, {
+      sent: true,
+      at: new Date().toISOString(),
+      to
+    });
+  }
 
   return {
     statusCode: 200,
